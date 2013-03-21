@@ -1,5 +1,6 @@
 function [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt)
 
+%does not work
 if (nargin<5)
   error('not enough arguments for zusemodel (need at least the 5 first ones)');
 elseif (nargin<6) or isempty(cohc)
