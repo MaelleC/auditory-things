@@ -21,12 +21,12 @@
 
  gentitle = 'click';
  
- %vihc = vihc(1: length(synout));
- %save 'zsavef/saveclick'
+ vihc = vihc(1: length(synout));
+ %save 'zsavef/saveclick';
  
- zgfourgraphs(y, vihc(1: length(synout)), psth, synout, reptime, nrep, tdres, gentitle)
+ zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  
- %zgpsthgraph(psth(1 :length(psth)/10), psth_noref(1 :length(psth)/10), reptime/10, nrep, tdres, gentitle);
+ zgpsthgraph(psth(1 :length(psth)/10), psth_noref(1 :length(psth)/10), reptime/10, nrep, tdres, gentitle);
  
 %
 %[vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt)

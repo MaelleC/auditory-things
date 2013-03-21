@@ -1,4 +1,4 @@
-function [] = zfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle)
+function [] = zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle)
 
 figure;
  %a = (0:length(y)-1);

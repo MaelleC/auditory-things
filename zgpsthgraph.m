@@ -1,4 +1,4 @@
-function [] = zpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle)
+function [] = zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle)
 
 figure;
 x = (0:length(psth)-1);

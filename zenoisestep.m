@@ -27,11 +27,11 @@
  
  gentitle = 'modnoise';
 
- %vihc = vihc(1: length(synout));
- %save 'zsavef/savenoisestep'
+ vihc = vihc(1: length(synout));
+ %save 'zsavef/savenoisestep';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
- %zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle)
+ zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
 
  %
  %[vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt)
