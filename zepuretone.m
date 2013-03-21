@@ -26,7 +26,8 @@
  
  gentitle = 'pure tone';
  vihc = vihc(1: length(synout));
- %ssave 'zsavef/savetone';
+ %save 'zsavef/savetone';
+ %ssave 'zsavef/rmdsavetone';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

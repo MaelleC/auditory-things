@@ -3,7 +3,6 @@
  nrep = 500;
  tdres = 1/100e3;
  reptime = 0.1;
- %pression = -6.32e-8; %-50dB, but does not work
  pression = -6.32e-3; %50dB : ok
  cohc = 1;
  cihc = 1;
@@ -23,6 +22,7 @@
  
  vihc = vihc(1: length(synout));
  %save 'zsavef/saveclick';
+ %save 'zsavef/rmdsaveclick';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  
