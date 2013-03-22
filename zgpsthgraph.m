@@ -7,13 +7,15 @@ fact = tdres * nrep;
 y1 = psth/fact;
 y2 = psth_noref/fact;
 
-
 %http://www.mathworks.ch/ch/help/matlab/creating_plots/using-high-level-plotting-functions.html
 style1 = 'b-';
 style2 = 'g-';
-style3 = 'w-';
-style4 = 'm-';
-plot(x, y1, style1, x, y2, style2);
+%plot(x, y1, style1, x, y2, style2);
+stairs(x, y1, style1);
+hold on;
+stairs(x, y2, style2); 
+hold off;
+
 title(strcat(gentitle, ' : psth normal and psth without absolute refraction period'));
 
 noreflegend = 'minus no ref';

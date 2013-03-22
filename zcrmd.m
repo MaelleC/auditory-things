@@ -1,8 +1,11 @@
 %find rate modulation depth
 % rmd = (peak - baseline)/baseline
+fibertypestr = num2str(1);
+filsuff = strcat('f', fibertypestr);
+clickfile = strcat('zsavef/rmdsaveclick', filsuff);
 
 %zeclick
-load 'zsavef/rmdsaveclick'
+load 'zsavef/rmdsaveclickf3'
 
 zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
 zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
@@ -24,7 +27,7 @@ click_noref = (max(psth2ms_noref) - basenoref) / basenoref;
 
 
 %zepuretonestep
-load 'zsavef/rmdsavetonestep'
+load 'zsavef/rmdsavetonestepf3'
 
 zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
 zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
@@ -45,7 +48,7 @@ tonestep_ref = (max(psth2ms)- baseref) / baseref;
 tonestep_noref = (max(psth2ms_noref) - basenoref) / basenoref;
 
 %zenoisestep
-load 'zsavef/rmdsavenoisestep'
+load 'zsavef/rmdsavenoisestepf3'
 
 zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
 zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
@@ -66,7 +69,9 @@ noisestep_ref = (max(psth2ms)- baseref) / baseref;
 noisestep_noref = (max(psth2ms_noref) - basenoref) / basenoref;
 
 %zepuretone
-load 'zsavef/rmdsavetone'
+load 'zsavef/rmdsavetonef3'
+zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
 
 psth2ms = zcconvertbin(tdres, 2/1000, psth);
 psth2ms_noref = zcconvertbin(tdres, 2/1000, psth_noref);
@@ -79,5 +84,6 @@ basenoref = mean(psth_noref);
 tone_ref = (max(psth2ms)- baseref) / baseref;
 tone_noref = (max(psth2ms_noref) - basenoref) / basenoref;
 
+
 %1: click, 2: pure tone step, 3: noise step, 4: pure tone
-zgbar(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref)
+zgbar(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref, fibertype)

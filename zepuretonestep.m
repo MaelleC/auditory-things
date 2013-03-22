@@ -32,7 +32,7 @@
  
  vihc = vihc(1: length(synout));
  %save 'zsavef/savetonestep';
- %save 'zsavef/rmdsavetonestep';
+ %save 'zsavef/rmdsavetonestepf3';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

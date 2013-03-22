@@ -3,7 +3,7 @@
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
- pression = -6.32e-1;
+ pression = -6.32e2;
  cohc = 1;
  cihc = 1;
  fibertype = 3;
@@ -29,7 +29,7 @@
 
  vihc = vihc(1: length(synout));
  %save 'zsavef/savenoisestep';
- %save 'zsavef/rmdsavenoisestep';
+ %save 'zsavef/rmdsavenoisestepf3';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

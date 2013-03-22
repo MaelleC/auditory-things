@@ -14,8 +14,8 @@ begin = 1;
 end0 = factor;
 vec2 = [];
 
-while(~(end0 > length(vector)))
-	mean0 = mean(vector(begin : end0));
+while(floor(end0) <= length(vector))
+	mean0 = mean(vector(floor(begin) : floor(end0)));
 	vec2 = [vec2 mean0];
 	begin = begin + factor;
 	end0 = end0 + factor;
