@@ -2,7 +2,7 @@
 % rmd = (peak - baseline)/baseline
 fib = 2;
 fibertypestr = num2str(fib);
-pressionexp = 2;
+pressionexp = 0;
 pressionexpstr = num2str(pressionexp);% pression is -6.32ex, where x exponent
 fibsuff = strcat('f', fibertypestr);
 pressionsuff = strcat('p', pressionexpstr);
@@ -20,7 +20,7 @@ binbase = 10/1000;
 %zeclick
 load(clickfile);
 
-zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+%zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
 %zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
 
 psth2ms = zcconvertbin(tdres, binpeak, psth);
@@ -38,13 +38,13 @@ basenoref = psth10ms_noref(10);
 if(baseref == 0)
 click_ref = -1;
 else
-click_ref = (max(psth2ms)- baseref) / baseref;
+click_ref = (max(psth2ms)- baseref) / baseref
 end
 
 if(basenoref == 0)
 click_noref = -1;
 else
-click_noref = (max(psth2ms_noref) - basenoref) / basenoref;
+click_noref = (max(psth2ms_noref) - basenoref) / basenoref
 end
 
 %zepuretonestep
@@ -65,13 +65,13 @@ basenoref = psth10ms_noref(5);
 if(baseref == 0)
 tonestep_ref = -1;
 else
-tonestep_ref = (max(psth2ms)- baseref) / baseref;
+tonestep_ref = (max(psth2ms)- baseref) / baseref
 end
 
 if(basenoref == 0)
 tonestep_noref = -1;
 else
-tonestep_noref = (max(psth2ms_noref) - basenoref) / basenoref;
+tonestep_noref = (max(psth2ms_noref) - basenoref) / basenoref
 end
 
 %zenoisestep
@@ -92,13 +92,13 @@ basenoref = psth10ms_noref(5);
 if(baseref == 0)
 noisestep_ref = -1;
 else
-noisestep_ref = (max(psth2ms)- baseref) / baseref;
+noisestep_ref = (max(psth2ms)- baseref) / baseref
 end
 
 if(basenoref == 0)
 noisestep_noref = -1;
 else
-noisestep_noref = (max(psth2ms_noref) - basenoref) / basenoref;
+noisestep_noref = (max(psth2ms_noref) - basenoref) / basenoref
 end
 
 %zepuretone
@@ -115,15 +115,14 @@ basenoref = mean(psth_noref);
 if(baseref == 0)
 tone_ref = -1;
 else
-tone_ref = (max(psth2ms)- baseref) / baseref;
+tone_ref = (max(psth2ms)- baseref) / baseref
 end
 
 if(basenoref == 0)
 tone_noref = -1;
 else
-tone_noref = (max(psth2ms_noref) - basenoref) / basenoref;
+tone_noref = (max(psth2ms_noref) - basenoref) / basenoref
 end
-
 
 %1: click, 2: pure tone step, 3: noise step, 4: pure tone
 zgbar(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref, fib, pressionexp)
