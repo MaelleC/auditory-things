@@ -25,7 +25,6 @@
  %save 'zsavef/rmdsaveclick';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
- 
  zgpsthgraph(psth(1 :length(psth)/10), psth_noref(1 :length(psth)/10), reptime/10, nrep, tdres, gentitle);
  
 %

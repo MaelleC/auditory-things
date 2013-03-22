@@ -1,7 +1,7 @@
 %1ms sin amplitude 1, fm: 100Hz, f = 1e3Hz
  cf = 1e3;
- f = cf;
- nrep = 1000;
+ f = 1e3;
+ nrep = 10;
  tdres = 1/100e3;
  reptime = 0.01;
  pression = -6.32e-3; %50dB : ok
