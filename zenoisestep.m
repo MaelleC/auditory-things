@@ -4,16 +4,17 @@
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
- pression = -6.32e2;
+ pression = -6.32;
  cohc = 1;
  cihc = 1;
- fibertype = 1;
+ fibertype = 2;
  implnt = 0;
  
  t = 0:(ceil(reptime/tdres) - 1); 
  t = t*tdres;
  
- x = normrnd(0,1 * sqrt(tdres),1, length(t));
+ x = normrnd(0, 1, 1, length(t));
+ x = x / sqrt(tdres);
  
  %fm = 100;
  %m = sin(2*pi*t*fm);
@@ -31,7 +32,7 @@
  vihc = vihc(1 + 9*length(synout): 10*length(synout));
   %!! if save, clear before !
  %save 'zsavef/savenoisestep';
- %save 'zsavef/rmdsavenoisestepf1p2';
+ %save 'zsavef/rmdsavenoisestepf2p0';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
