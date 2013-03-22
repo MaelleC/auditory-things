@@ -5,7 +5,7 @@
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
- pression = -6.32;
+ pression = -6.32e-2;
  cohc = 1;
  cihc = 1;
  fibertype = 2;
@@ -26,7 +26,7 @@
  
  %!! if save, clear before !
  %save 'zsavef/saveclick';
- %save 'zsavef/rmdsaveclickf2p0';
+ %save 'zsavef/rmdsaveclickf2p-2';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth(1 :length(psth)/10), psth_noref(1 :length(psth)/10), reptime/10, nrep, tdres, gentitle);
