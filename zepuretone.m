@@ -1,14 +1,14 @@
 %1ms sin amplitude 1, fm: 100Hz, f = 1e3Hz
  cf = 1e3;
  f = 1e3;
- nrep = 1000;
+ nrep = 10000;
  tdres = 1/100e3;
  reptime = 0.01;
  %pression = -6.32e-3; %50dB : ok
- pression = -6.32e2;
+ pression = -6.32;
  cohc = 1;
  cihc = 1;
- fibertype = 3;
+ fibertype = 2;
  implnt = 0;
 
  t = 0:(reptime/tdres-1); 
@@ -28,7 +28,7 @@
  gentitle = 'pure tone';
  vihc = vihc(1: length(synout));
  %save 'zsavef/savetone';
- %save 'zsavef/rmdsavetonef3';
+ %save 'zsavef/rmdsavetonef2p0';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

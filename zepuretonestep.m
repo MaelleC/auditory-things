@@ -1,14 +1,14 @@
 %step, best effect with fibertype = 3
  cf = 1e3;
  fc = 1e4;
- nrep = 500;
+ nrep = 5000;
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
- pression = 6.32e2; 
+ pression = 6.32; 
  cohc = 1;
  cihc = 1;
- fibertype = 3;
+ fibertype = 2;
  implnt = 0;
  
  
@@ -32,7 +32,7 @@
  
  vihc = vihc(1: length(synout));
  %save 'zsavef/savetonestep';
- %save 'zsavef/rmdsavetonestepf3';
+ %save 'zsavef/rmdsavetonestepf2p0';
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
