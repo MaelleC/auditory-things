@@ -6,7 +6,7 @@ clear;
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
- pression = 6.32e-3; 
+ pression = -6.32e-3; 
  cohc = 1;
  cihc = 1;
  fibertype = 2;
