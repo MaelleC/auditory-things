@@ -1,9 +1,9 @@
 clear;
 %find rate modulation depth
 % rmd = (peak - baseline)/baseline
-fib = 3;
+fib = 2;
 fibertypestr = num2str(fib);
-pressionexp = 2;
+pressionexp = -3;
 pressionexpstr = num2str(pressionexp);% pression is -6.32ex, where x exponent
 fibsuff = strcat('f', fibertypestr);
 pressionsuff = strcat('p', pressionexpstr);
