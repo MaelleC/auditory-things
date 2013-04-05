@@ -30,8 +30,8 @@ psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 psth10ms = zcconvertbin(tdres, binbase, psth);
 psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
-%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, 2/1000, strcat(gentitle, ' 2ms bins'));
-%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, 10/1000, strcat(gentitle, ' 10ms bins'));
+%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
 
 baseref = psth10ms(10);
 basenoref = psth10ms_noref(10);
@@ -50,6 +50,7 @@ end
 
 %zepuretonestep
 load(puretonestepfile);
+ zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
 
 psth2ms = zcconvertbin(tdres, binpeak, psth);
 psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
@@ -57,8 +58,8 @@ psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 psth10ms = zcconvertbin(tdres, binbase, psth);
 psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
-%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, 2/1000, strcat(gentitle, ' 2ms bins'));
-%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, 10/1000, strcat(gentitle, ' 10ms bins'));
+zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
 
 baseref = psth10ms(5);
 basenoref = psth10ms_noref(5);
@@ -77,6 +78,7 @@ end
 
 %zenoisestep
 load(noisestepfile);
+ zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
 
 psth2ms = zcconvertbin(tdres, binpeak, psth);
 psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
@@ -84,8 +86,10 @@ psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 psth10ms = zcconvertbin(tdres, binbase, psth);
 psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
-%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, 2/1000, strcat(gentitle, ' 2ms bins'));
-%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, 10/1000, strcat(gentitle, ' 10ms bins'));
+zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
+
+
 
 baseref = psth10ms(5);
 basenoref = psth10ms_noref(5);
@@ -108,7 +112,7 @@ load(puretonefile);
 psth2ms = zcconvertbin(tdres, binpeak, psth);
 psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 
-%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, 2/1000, strcat(gentitle, ' 2ms bins'));
+%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
 
 baseref = mean(psth);
 basenoref = mean(psth_noref);
