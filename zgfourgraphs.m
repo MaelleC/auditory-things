@@ -11,7 +11,7 @@ figure;
  plot(i, m);
  title(strcat(gentitle, ' : stimulus'));
  xlabel('Time (sec)');
- ylabel('Pression (Pa)');
+ ylabel('Pressure (Pa)');
  
  b = (0:length(synout)-1);
  b = b * tdres;

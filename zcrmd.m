@@ -1,4 +1,7 @@
 clear;
+%four graphs :
+%zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+
 %find rate modulation depth
 % rmd = (peak - baseline)/baseline
 fib = 2;
@@ -58,8 +61,8 @@ psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 psth10ms = zcconvertbin(tdres, binbase, psth);
 psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
-zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
-zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
+%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
 
 baseref = psth10ms(5);
 basenoref = psth10ms_noref(5);
@@ -86,8 +89,8 @@ psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 psth10ms = zcconvertbin(tdres, binbase, psth);
 psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
-zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
-zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
+%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
 
 
 
