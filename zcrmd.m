@@ -1,21 +1,19 @@
 clear;
-%four graphs :
+%graphs
 %zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+%zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
 
 %find rate modulation depth
 % rmd = (peak - baseline)/baseline
 fib = 2;
-fibertypestr = num2str(fib);
-pressionexp = -3;
-pressionexpstr = num2str(pressionexp);% pression is -6.32ex, where x exponent
-fibsuff = strcat('f', fibertypestr);
-pressionsuff = strcat('p', pressionexpstr);
-filsuff = strcat(fibsuff, pressionsuff);
+pression_exp = -3;
 
-clickfile = strcat('zsavef/rmdsaveclick', filsuff);
-puretonestepfile = strcat('zsavef/rmdsavetonestep', filsuff);
-noisestepfile = strcat('zsavef/rmdsavenoisestep', filsuff);
-puretonefile = strcat('zsavef/rmdsavetone', filsuff);
+clickfile = zfilename('click', fib, pression_exp);
+puretonestepfile = zfilename('tonestep', fib, pression_exp);
+noisestepfile = zfilename('noisestep', fib, pression_exp);
+puretonefile = zfilename('tone', fib, pression_exp);
+
+showexpgraphs = 0;
 
 %must be divisible by 10e-5
 binpeak = 2/1000;
@@ -24,8 +22,10 @@ binbase = 10/1000;
 %zeclick
 load(clickfile);
 
-%zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
-%zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
+if showexpgraphs ~= 0
+	zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+	zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
+end
 
 psth2ms = zcconvertbin(tdres, binpeak, psth);
 psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
@@ -35,6 +35,7 @@ psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
 %zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
 %zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
+
 
 baseref = psth10ms(10);
 basenoref = psth10ms_noref(10);
@@ -53,7 +54,11 @@ end
 
 %zepuretonestep
 load(puretonestepfile);
- zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
+
+if showexpgraphs ~= 0
+	zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+	zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
+end
 
 psth2ms = zcconvertbin(tdres, binpeak, psth);
 psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
@@ -81,7 +86,11 @@ end
 
 %zenoisestep
 load(noisestepfile);
- zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
+
+if showexpgraphs ~= 0
+	zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+	zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
+end
 
 psth2ms = zcconvertbin(tdres, binpeak, psth);
 psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
@@ -112,8 +121,13 @@ end
 %zepuretone
 load(puretonefile);
 
-psth2ms = zcconvertbin(tdres, binpeak, psth);
-psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
+if showexpgraphs ~= 0
+	zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+	zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
+end
+
+%psth2ms = zcconvertbin(tdres, binpeak, psth);
+%psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 
 %zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
 
@@ -123,14 +137,16 @@ basenoref = mean(psth_noref);
 if(baseref == 0)
 tone_ref = -0.05;
 else
-tone_ref = (max(psth2ms)- baseref) / baseref;
+%tone_ref = (max(psth2ms)- baseref) / baseref;
+tone_ref = (max(psth)- baseref) / baseref;
 end
 
 if(basenoref == 0)
 tone_noref = -0.05;
 else
-tone_noref = (max(psth2ms_noref) - basenoref) / basenoref;
+%tone_noref = (max(psth2ms_noref) - basenoref) / basenoref;
+tone_noref = (max(psth_noref) - basenoref) / basenoref;
 end
 
 %1: click, 2: pure tone step, 3: noise step, 4: pure tone
-zgbar(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref, fib, pressionexp)
+zgbar(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref, fib, pression_exp)

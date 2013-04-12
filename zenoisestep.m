@@ -1,6 +1,6 @@
  clear;
  cf = 1e3;
- nrep = 5000;
+ nrep = 100;
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
@@ -25,11 +25,11 @@
  y = (1+M*m).*x;
  y = y*pression;
  
+  gentitle = 'noisestep';
+  
  [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
  
- gentitle = 'modnoise';
 
- vihc = vihc(1 + 9*length(synout): 10*length(synout));
   %!! if save, clear before !
  %save 'zsavef/savenoisestep';
  %save 'zsavef/rmdsavenoisestepf2p-3';

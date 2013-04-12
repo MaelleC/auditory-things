@@ -1,7 +1,7 @@
  clear;
  %10e-4 s click, 50db, rarefaction, 10 clicks per s, p21-22
  cf = 1e3; %540
- nrep = 5000;
+ nrep = 100;
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
@@ -17,16 +17,16 @@
  y = ones(1, round(clicklen/tdres));
  y = pression*y;
  
+  gentitle = 'click';
+ 
 [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
 
-
- gentitle = 'click';
- 
- vihc = vihc(1 + 9*length(synout): 10*length(synout));
  
  %!! if save, clear before !
  %save 'zsavef/saveclick';
  %save 'zsavef/rmdsaveclickf2p-3';
+ 
+ %save(zfilename('click', fibertype, pression_exp);)
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

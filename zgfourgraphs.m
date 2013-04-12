@@ -13,10 +13,10 @@ figure;
  xlabel('Time (sec)');
  ylabel('Pressure (Pa)');
  
- b = (0:length(synout)-1);
+ b = (0:length(vihc)-1);
  b = b * tdres;
  subplot(2,2,2);
- plot(b, vihc(1: length(synout)));
+ plot(b, vihc(1: length(vihc)));
  title(strcat(gentitle, ' : IHC potential'));
  xlabel('Time (sec)');
  ylabel('IHC potential (volt)');

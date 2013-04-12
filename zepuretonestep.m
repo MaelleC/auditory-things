@@ -2,7 +2,7 @@ clear;
 %step, best effect with fibertype = 3
  cf = 1e3;
  fc = 1e4;
- nrep = 5000;
+ nrep = 800;
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
@@ -27,11 +27,12 @@ clear;
  y = (1+M*m).*x;
  y = y*pression;
  
+  gentitle = 'tonestep';
+ 
  [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
  
- gentitle = 'pure tone step';
+
  
- vihc = vihc(1 + 9*length(synout): 10*length(synout));
  
   %!! if save, clear before !
  %save 'zsavef/savetonestep';

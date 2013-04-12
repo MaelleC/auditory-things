@@ -4,7 +4,7 @@ clear;
  f = 1e3;
  nrep = 10000;
  tdres = 1/100e3;
- reptime = 0.01;
+ reptime = 0.001;
  %pression = -6.32e-3; %50dB : ok
  pression = -6.32e-3;
  cohc = 1;
@@ -24,10 +24,11 @@ clear;
  y = (1+M*m).*x;
  y = y*pression;
  
- [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
+ gentitle = 'tone';
  
- gentitle = 'pure tone';
- vihc = vihc(1 + 9*length(synout): 10*length(synout));
+ [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+ 
+
  
   %!! if save, clear before !
  %save 'zsavef/savetone';
