@@ -6,7 +6,8 @@ clear;
  tdres = 1/100e3;
  reptime = 0.001;
  %pression = -6.32e-3; %50dB : ok
- pression = -6.32e-3;
+ pression_exp = -3;
+ pression = -6.32 * exp(pression_exp);
  cohc = 1;
  cihc = 1;
  fibertype = 2;
@@ -24,7 +25,7 @@ clear;
  y = (1+M*m).*x;
  y = y*pression;
  
- gentitle = 'tone';
+ gentitle = 'pure tone';
  
  [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
  
@@ -33,6 +34,8 @@ clear;
   %!! if save, clear before !
  %save 'zsavef/savetone';
  %save 'zsavef/rmdsavetonef2p-3';
+ 
+ %save(zfilename('tone', fibertype, pression_exp));
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

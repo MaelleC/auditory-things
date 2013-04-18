@@ -4,7 +4,8 @@
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
- pression = -6.32e-3;
+  pression_exp = -3;
+ pression = -6.32 * exp(pression_exp);
  cohc = 1;
  cihc = 1;
  fibertype = 2;
@@ -25,7 +26,7 @@
  y = (1+M*m).*x;
  y = y*pression;
  
-  gentitle = 'noisestep';
+  gentitle = 'noise step';
   
  [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
  
@@ -33,6 +34,7 @@
   %!! if save, clear before !
  %save 'zsavef/savenoisestep';
  %save 'zsavef/rmdsavenoisestepf2p-3';
+ %save(zfilename('noisestep', fibertype, pression_exp));
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

@@ -14,12 +14,15 @@ noisestepfile = zfilename('noisestep', fib, pression_exp);
 puretonefile = zfilename('tone', fib, pression_exp);
 
 showexpgraphs = 0;
+showintermgraph = 0;
 
 %must be divisible by 10e-5
 binpeak = 2/1000;
 binbase = 10/1000;
 
 %zeclick
+%----------
+
 load(clickfile);
 
 if showexpgraphs ~= 0
@@ -33,9 +36,10 @@ psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 psth10ms = zcconvertbin(tdres, binbase, psth);
 psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
-%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
-%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
-
+if showintermgraph ~= 0
+	zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+	zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
+end
 
 baseref = psth10ms(10);
 basenoref = psth10ms_noref(10);
@@ -53,6 +57,8 @@ click_noref = (max(psth2ms_noref) - basenoref) / basenoref;
 end
 
 %zepuretonestep
+%----------
+
 load(puretonestepfile);
 
 if showexpgraphs ~= 0
@@ -66,8 +72,10 @@ psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 psth10ms = zcconvertbin(tdres, binbase, psth);
 psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
-%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
-%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
+if showintermgraph ~= 0
+	zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+	zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
+end
 
 baseref = psth10ms(5);
 basenoref = psth10ms_noref(5);
@@ -85,6 +93,8 @@ tonestep_noref = (max(psth2ms_noref) - basenoref) / basenoref;
 end
 
 %zenoisestep
+%----------
+
 load(noisestepfile);
 
 if showexpgraphs ~= 0
@@ -98,10 +108,10 @@ psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 psth10ms = zcconvertbin(tdres, binbase, psth);
 psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 
-%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
-%zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
-
-
+if showintermgraph ~= 0
+	zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+	zgpsthgraph(psth10ms, psth10ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 10ms bins'));
+end
 
 baseref = psth10ms(5);
 basenoref = psth10ms_noref(5);
@@ -119,6 +129,8 @@ noisestep_noref = (max(psth2ms_noref) - basenoref) / basenoref;
 end
 
 %zepuretone
+%----------
+
 load(puretonefile);
 
 if showexpgraphs ~= 0
@@ -129,7 +141,9 @@ end
 %psth2ms = zcconvertbin(tdres, binpeak, psth);
 %psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 
-%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+if showintermgraph ~= 0
+	%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+end
 
 baseref = mean(psth);
 basenoref = mean(psth_noref);

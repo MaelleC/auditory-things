@@ -20,5 +20,3 @@ while(floor(end0) <= length(vector))
 	begin = begin + factor;
 	end0 = end0 + factor;
 end
-
-%1/100e3 bins to 2/1e3 (2ms)
