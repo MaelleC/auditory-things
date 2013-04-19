@@ -1,4 +1,4 @@
-function [psth_good] = zcomputePSTH(psth, nrep)
+function [psth_good] = zccomputePSTH(psth, nrep)
 
 %length gives us the index for the last, counted from 1
 

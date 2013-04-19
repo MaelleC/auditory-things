@@ -28,13 +28,13 @@
  
   gentitle = 'noise step';
   
- [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
+ [vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
  
 
   %!! if save, clear before !
  %save 'zsavef/savenoisestep';
  %save 'zsavef/rmdsavenoisestepf2p-3';
- %save(zfilename('noisestep', fibertype, pression_exp));
+ %save(zcfilename('noisestep', fibertype, pression_exp));
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

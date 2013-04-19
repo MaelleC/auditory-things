@@ -36,4 +36,4 @@ figure;
  plot(c, psth/fact);
  title(strcat(gentitle, ' : psth'));
  xlabel('Time (sec)');
- ylabel('Firing rate');
+ ylabel('Firing rate (Hz)');

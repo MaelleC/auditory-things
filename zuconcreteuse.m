@@ -1,4 +1,4 @@
-function [vihc, synout, psth, synout_noref, psth_noref] = zconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt)
+function [vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt)
 
 %does not work
 if (nargin<5)

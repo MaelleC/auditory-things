@@ -30,7 +30,7 @@ clear;
  
   gentitle = 'pure tone step';
  
- [vihc, synout, psth, synout_noref, psth_noref] = zusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
+ [vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
  
 
  
@@ -39,7 +39,7 @@ clear;
  %save 'zsavef/savetonestep';
  %save 'zsavef/rmdsavetonestepf2p-3';
  
- %save(zfilename('tonestep', fibertype, pression_exp));
+ %save(zcfilename('tonestep', fibertype, pression_exp));
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

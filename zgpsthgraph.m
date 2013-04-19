@@ -24,7 +24,7 @@ if(max(psth_noref > 0))
 end
 legend('normal', noreflegend);
 xlabel('Time (sec)');
-ylabel('Firing rate');
+ylabel('Firing rate (Hz)');
  
 
 %2 lines :

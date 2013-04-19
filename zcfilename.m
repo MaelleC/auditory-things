@@ -1,4 +1,4 @@
-function [filename] = zfilename(exp, fibertype, pressionexp) % pression is -6.32ex, where x exponent
+function [filename] = zcfilename(exp, fibertype, pressionexp) % pression is -6.32ex, where x exponent
 
 fibertypestr = num2str(fibertype);
 pressionexpstr = num2str(pressionexp);
