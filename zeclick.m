@@ -1,7 +1,7 @@
  clear;
  %10e-4 s click, 50db, rarefaction, 10 clicks per s, p21-22
  cf = 1e3; %540
- nrep = 500;
+ nrep = 400;
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok

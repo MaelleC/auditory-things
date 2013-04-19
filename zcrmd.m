@@ -8,10 +8,10 @@ clear;
 fib = 2;
 pression_exp = -3;
 
-clickfile = zfilename('click', fib, pression_exp);
-puretonestepfile = zfilename('tonestep', fib, pression_exp);
-noisestepfile = zfilename('noisestep', fib, pression_exp);
-puretonefile = zfilename('tone', fib, pression_exp);
+clickfile = zcfilename('click', fib, pression_exp);
+puretonestepfile = zcfilename('tonestep', fib, pression_exp);
+noisestepfile = zcfilename('noisestep', fib, pression_exp);
+puretonefile = zcfilename('tone', fib, pression_exp);
 
 showexpgraphs = 0;
 showintermgraph = 0;

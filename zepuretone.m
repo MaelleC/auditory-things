@@ -2,7 +2,7 @@ clear;
 %1ms sin amplitude 1, fm: 100Hz, f = 1e3Hz
  cf = 1e3;
  f = 1e3;
- nrep = 10000;
+ nrep = 1000;
  tdres = 1/100e3;
  reptime = 0.001;
  %pression = -6.32e-3; %50dB : ok
@@ -23,7 +23,14 @@ clear;
  M=0;%modulation
  
  y = (1+M*m).*x;
- y = y*pression;
+ %y = y*pression;
+ 
+ 
+ d0 = zcfourier(y, tdres, reptime, 0)
+ d1 = zcfourier(y, tdres, reptime, 1)
+  d_1 = zcfourier(y, tdres, reptime, -1)
+ d2 = zcfourier(y, tdres, reptime, 2)
+ d3 = zcfourier(y, tdres, reptime, 3)
  
  gentitle = 'pure tone';
  
