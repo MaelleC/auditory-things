@@ -1,8 +1,8 @@
 clear;
-%1ms sin amplitude 1, fm: 100Hz, f = 1e3Hz
+%1ms sin amplitude 1
  cf = 1e3;
  f = 1e3;
- nrep = 1000;
+ nrep = 1000; %1000 ok
  tdres = 1/100e3;
  reptime = 0.001;
  %pression = -6.32e-3; %50dB : ok
@@ -23,26 +23,19 @@ clear;
  M=0;%modulation
  
  y = (1+M*m).*x;
- %y = y*pression;
+ y = y*pression;
  
- 
- d0 = zcfourier(y, tdres, reptime, 0)
- d1 = zcfourier(y, tdres, reptime, 1)
-  d_1 = zcfourier(y, tdres, reptime, -1)
- d2 = zcfourier(y, tdres, reptime, 2)
- d3 = zcfourier(y, tdres, reptime, 3)
  
  gentitle = 'pure tone';
  
  [vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
- 
 
  
   %!! if save, clear before !
  %save 'zsavef/savetone';
  %save 'zsavef/rmdsavetonef2p-3';
  
- %save(zcfilename('tone', fibertype, pression_exp));
+ %save(zcfilename('zsavef/rmdsave', 'tone', fibertype, pression_exp));
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);

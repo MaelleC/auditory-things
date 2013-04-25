@@ -8,10 +8,10 @@ clear;
 fib = 2;
 pression_exp = -3;
 
-clickfile = zcfilename('click', fib, pression_exp);
-puretonestepfile = zcfilename('tonestep', fib, pression_exp);
-noisestepfile = zcfilename('noisestep', fib, pression_exp);
-puretonefile = zcfilename('tone', fib, pression_exp);
+clickfile = zcfilename('zsavef/rmdsave', 'click', fib, pression_exp);
+puretonestepfile = zcfilename('zsavef/rmdsave', 'tonestep', fib, pression_exp);
+noisestepfile = zcfilename('zsavef/rmdsave', 'noisestep', fib, pression_exp);
+puretonefile = zcfilename('zsavef/rmdsave', 'tone', fib, pression_exp);
 
 showexpgraphs = 0;
 showintermgraph = 0;
@@ -163,4 +163,4 @@ tone_noref = (max(psth_noref) - basenoref) / basenoref;
 end
 
 %1: click, 2: pure tone step, 3: noise step, 4: pure tone
-zgbar(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref, fib, pression_exp)
+zgrmdbar(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref, fib, pression_exp)

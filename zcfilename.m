@@ -1,13 +1,13 @@
-function [filename] = zcfilename(exp, fibertype, pressionexp) % pression is -6.32ex, where x exponent
+function [filename] = zcfilename(prefix, exp, fibertype, pressureexp) % pression is -6.32ex, where x exponent
 
 fibertypestr = num2str(fibertype);
-pressionexpstr = num2str(pressionexp);
+pressureexpstr = num2str(pressureexp);
 
 fibsuff = strcat('f', fibertypestr);
-pressionsuff = strcat('p', pressionexpstr);
+pressuresuff = strcat('p', pressureexpstr);
 
-filsuff = strcat(fibsuff, pressionsuff);
+filsuff = strcat(fibsuff, pressuresuff);
 
-filprein = strcat('zsavef/rmdsave', exp);
+filprein = strcat(prefix, exp);
 
 filename = strcat(filprein, filsuff);

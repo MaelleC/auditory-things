@@ -1,6 +1,6 @@
  clear;
  cf = 1e3;
- nrep = 100;
+ nrep = 800; %800 ok
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
@@ -34,7 +34,7 @@
   %!! if save, clear before !
  %save 'zsavef/savenoisestep';
  %save 'zsavef/rmdsavenoisestepf2p-3';
- %save(zcfilename('noisestep', fibertype, pression_exp));
+ %save(zcfilename('zsavef/rmdsave', 'noisestep', fibertype, pression_exp));
  
  zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
  zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
