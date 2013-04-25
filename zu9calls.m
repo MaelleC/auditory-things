@@ -118,8 +118,6 @@ while nr_exp <= 9
 	
 	save(zcfilename('zsavef/rmds', 'arrays', fibertype, pressure_exp), 'bargraph_rmd', 'bargraph_rmd_wmean', 'bargraph_rmd_all', 'bargraph_rmd_wmean_all');
 	
-	
-	
 	%iteration
 	
 	if (nr_exp == 3 || nr_exp == 6)

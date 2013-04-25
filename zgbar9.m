@@ -10,13 +10,13 @@ pressure_exp = low_pressure_exp;
 
 while nr_exp <= 9
 
-	load(zcfilename('zsavef/rmds', 'arrays', fibertype, pressure_exp))
+	load(zcfilename('zsavef/rmds', 'arrays', fibertype, pressure_exp));
 
 	subplot(3, 3, nr_exp);
 	
 	
-	zgbarrmd2(bargraph_rmd, bargraph_rmd_all, fibertype, pressure_exp)
-	%zgbarrmd2(bargraph_rmd_wmean, bargraph_rmd_wmean_all, fibertype, pressure_exp)
+	zgbarrmd2(bargraph_rmd, bargraph_rmd_all, fibertype, pressure_exp);
+	%zgbarrmd2(bargraph_rmd_wmean, bargraph_rmd_wmean_all, fibertype, pressure_exp);
 
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1
