@@ -8,7 +8,7 @@ cohc = 1;
 cihc = 1;
 implnt = 0;
 
-nr_use = 3;
+nr_use = 10;
 
 nr_exp = 1;
 fibertype = 1;
@@ -19,7 +19,7 @@ while nr_exp <= 9
 	%click
 	%-----
 	%10e-4 s click, 50db, rarefaction, 10 clicks per s, p21-22
-	nrep = 20;
+	nrep = 400;
 	reptime = 0.1;
 	pressure = -6.32 * exp(pressure_exp);
 
@@ -38,7 +38,7 @@ while nr_exp <= 9
 	
 	fc = 1e4;
 	
-	nrep = 20; 
+	nrep = 800; 
 	reptime = 0.1;
 	pressure = -6.32 * exp(pressure_exp);
  
@@ -60,7 +60,7 @@ while nr_exp <= 9
 	%noisestep
 	%---------
 	
-	nrep = 20;
+	nrep = 800;
 	reptime = 0.1;
 	pressure = -6.32 * exp(pressure_exp);
  
@@ -86,7 +86,7 @@ while nr_exp <= 9
 
 	f = 1e3;
 	
-	nrep = 20;
+	nrep = 1000;
 	reptime = 0.001;
 	pressure = -6.32 * exp(pressure_exp);
 
