@@ -25,7 +25,6 @@ max_clicks_noref = [];
 while(nr_exp < nr_use)
 	[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 	
-	
 	% meanrmd
 	baserefmean = mean(psth);
 	basenorefmean = mean(psth_noref);
@@ -41,7 +40,7 @@ while(nr_exp < nr_use)
 	
 	%normal rmd
 	% gives us 'clickbaseline' and 'clickbaseline_noref' for the corresponding fibertype
-	load(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0);
+	load(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0));
 	
 	if (strcmp('click', exp) || strcmp('tonestep', exp) || strcmp('noisestep', exp))
 		psth2ms = zcconvertbin(tdres, binpeak, psth);
@@ -108,17 +107,18 @@ fourier3 = [mean(fouriers3), var(fouriers3), std(fouriers3)];
 fourier0_noref = [mean(fouriers0_noref), var(fouriers0_noref), std(fouriers0_noref)];
 fourier1_noref = [mean(fouriers1_noref), var(fouriers1_noref), std(fouriers1_noref)];
 fourier2_noref = [mean(fouriers2_noref), var(fouriers2_noref), std(fouriers2_noref)];
-fourier3_noref = [mean(fouriers3_noref), var(fouriers3_noref), std(fouriers3s_noref)];
+fourier3_noref = [mean(fouriers3_noref), var(fouriers3_noref), std(fouriers3_noref)];
 
+save = 1;
+if save == 1
+	%save the maxima for clicks
+	if strcmp('click', exp)
+		save(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp), 'max_clicks', 'max_clicks_noref');
+	end
 
-%save the maxima for clicks
-if strcmp('click', exp)
-	save(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp), 'max_clicks', 'max_clicks_noref');
+	%store rmds and fouriers
+	save(zcfilename('zsavef/rmdsnexp', exp, fibertype, pressure_exp), 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref');
 end
-
-%store rmds and fouriers
-save(zcfilename('zsavef/rmdsnexp', exp, fibertype, pressure_exp), 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref');
-
 
 
 

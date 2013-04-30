@@ -27,7 +27,7 @@ while nr_exp <= 3
 		clickbaseline
 		clickbaseline_noref
 	else
-	
+	fibertype%
 	clickbaselines = [];
 	clickbaselines_noref = [];
 
@@ -35,7 +35,7 @@ while nr_exp <= 3
 	reptime = 10;
 	nrep = 1;
 	
-	while nr_exp_inner < 10 %TODO : make more repetitions : too high variability now
+	while nr_exp_inner < 50 %TODO : make more than 10 repetitions : too high variability now
 		[vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 		clickbaselines = [clickbaselines sum(psth)/reptime];
 		clickbaselines_noref = [clickbaselines_noref sum(psth_noref)/reptime];

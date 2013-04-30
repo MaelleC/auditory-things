@@ -19,7 +19,7 @@ while nr_exp <= 9
 	%click
 	%-----
 	%10e-4 s click, 50db, rarefaction, 10 clicks per s, p21-22
-	nrep = 400;
+	nrep = 400;%400 ok
 	reptime = 0.1;
 	pressure = -6.3245 * exp(pressure_exp);
 
@@ -27,7 +27,7 @@ while nr_exp <= 9
 
 
 	y = ones(1, round(clicklen/tdres));
-	y = [y zeros(1, reptime/tdres - length(y))];
+	y = [y zeros(1, round(reptime/tdres) - length(y))];
 	y = y*pressure;
 
 	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'click');
@@ -38,7 +38,7 @@ while nr_exp <= 9
 	
 	fc = 1e4;
 	
-	nrep = 800; 
+	nrep = 800; %800 ok
 	reptime = 0.1;
 	pressure = -6.32 * exp(pressure_exp);
  
@@ -60,7 +60,7 @@ while nr_exp <= 9
 	%noisestep
 	%---------
 	
-	nrep = 800;
+	nrep = 800;%800 ok
 	reptime = 0.1;
 	pressure = -6.32 * exp(pressure_exp);
  
@@ -86,7 +86,7 @@ while nr_exp <= 9
 
 	f = 1e3;
 	
-	nrep = 1000;
+	nrep = 1000;%1000 ok
 	reptime = 0.001;
 	pressure = -6.32 * exp(pressure_exp);
 
