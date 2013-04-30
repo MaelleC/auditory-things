@@ -163,4 +163,4 @@ tone_noref = (max(psth_noref) - basenoref) / basenoref;
 end
 
 %1: click, 2: pure tone step, 3: noise step, 4: pure tone
-zgrmdbar(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref, fib, pression_exp)
+zgbarrmd(click_ref, click_noref, tonestep_ref, tonestep_noref, noisestep_ref, noisestep_noref, tone_ref, tone_noref, fib, pression_exp)

@@ -1,6 +1,6 @@
 function [coeff] = zcfourierk(signal, deltaT, period, k)
 
-coeff1 = 1/(2 * pi * period);
+coeff1 = 1/period;
 
 if(rem(period, deltaT) ~= 0 )
 	error('deltaT must be a multiple of period');

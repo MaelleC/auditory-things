@@ -1,6 +1,6 @@
 low_pressure_exp = -3; %50db
-middle_pressure_exp = 0; %110db
-high_pressure_exp = 3; %170db
+middle_pressure_exp = -1; %90db
+high_pressure_exp = 1; %130db
 
 cf = 1e3;
 tdres = 1/100e3;
@@ -21,7 +21,7 @@ while nr_exp <= 9
 	%10e-4 s click, 50db, rarefaction, 10 clicks per s, p21-22
 	nrep = 400;
 	reptime = 0.1;
-	pressure = -6.32 * exp(pressure_exp);
+	pressure = -6.3245 * exp(pressure_exp);
 
 	clicklen = 1e-4;%in sec
 
@@ -30,7 +30,7 @@ while nr_exp <= 9
 	y = [y zeros(1, reptime/tdres - length(y))];
 	y = y*pressure;
 
-	[rmd1, rmd1_noref, rmd1_wmean, rmd1_wmean_noref] = zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'click');
+	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'click');
 
 
 	%tonestep
@@ -54,7 +54,7 @@ while nr_exp <= 9
 	y = (1+M*m).*x;
 	y = y*pressure;
 
-	[rmd2, rmd2_noref, rmd2_wmean, rmd2_wmean_noref] = zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tonestep');
+	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tonestep');
 	
 
 	%noisestep
@@ -79,7 +79,7 @@ while nr_exp <= 9
 	y = (1+M*m).*x;
 	y = y*pressure;
 	
-	[rmd3, rmd3_noref, rmd3_wmean, rmd3_wmean_noref] = zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'noisestep');
+	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'noisestep');
 
 	%tone
 	%----
@@ -103,20 +103,25 @@ while nr_exp <= 9
 	y = y*pressure;
 	
 	
-	[rmd4, rmd4_noref, rmd4_wmean, rmd4_wmean_noref] = zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tone');
+	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tone');
 	
 	
 	%save what is necessary
+
+	%TODO : organize differently the graphs, so that no need of saves here (but use of zcfilename('zsavef/rmdsnexp', exp, fibertype, pressure_exp), done in zcrmd_nexp)
+	% zcrmd_nexp returns no more anything
+	
+	%TODO (if storage here) : store also fourier things
+
+	%bargraph_rmd = [rmd1(1) rmd1_noref(1); rmd2(1) rmd2_noref(1); rmd3(1) rmd3_noref(1); rmd4(1) rmd4_noref(1);];
+	%bargraph_rmd_wmean  = [rmd1_wmean(1) rmd1_wmean_noref(1); rmd2_wmean(1) rmd2_wmean_noref(1); rmd3_wmean(1) rmd3_wmean_noref(1); rmd4_wmean(1) rmd4_wmean_noref(1);];
+	
+	%bargraph_rmd_all = [rmd1 rmd1_noref; rmd2 rmd2_noref; rmd3 rmd3_noref; rmd4 rmd4_noref;];
+	%bargraph_rmd_wmean_all  = [rmd1_wmean rmd1_wmean_noref; rmd2_wmean rmd2_wmean_noref; rmd3_wmean rmd3_wmean_noref; rmd4_wmean rmd4_wmean_noref;];
+	
+	%save(zcfilename('zsavef/rmds', 'arrays', fibertype, pressure_exp), 'bargraph_rmd', 'bargraph_rmd_wmean', 'bargraph_rmd_all', 'bargraph_rmd_wmean_all');
 	
 	
-	%TODO : 
-	bargraph_rmd = [rmd1(1) rmd1_noref(1); rmd2(1) rmd2_noref(1); rmd3(1) rmd3_noref(1); rmd4(1) rmd4_noref(1);];
-	bargraph_rmd_wmean  = [rmd1_wmean(1) rmd1_wmean_noref(1); rmd2_wmean(1) rmd2_wmean_noref(1); rmd3_wmean(1) rmd3_wmean_noref(1); rmd4_wmean(1) rmd4_wmean_noref(1);];
-	
-	bargraph_rmd_all = [rmd1 rmd1_noref; rmd2 rmd2_noref; rmd3 rmd3_noref; rmd4 rmd4_noref;];
-	bargraph_rmd_wmean_all  = [rmd1_wmean rmd1_wmean_noref; rmd2_wmean rmd2_wmean_noref; rmd3_wmean rmd3_wmean_noref; rmd4_wmean rmd4_wmean_noref;];
-	
-	save(zcfilename('zsavef/rmds', 'arrays', fibertype, pressure_exp), 'bargraph_rmd', 'bargraph_rmd_wmean', 'bargraph_rmd_all', 'bargraph_rmd_wmean_all');
 	
 	%iteration
 	
