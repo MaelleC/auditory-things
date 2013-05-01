@@ -95,7 +95,9 @@ while(nr_exp < nr_use)
 	
 end
 
+utiles = 0
 %inutiles
+if utiles == 1
 rmd = [mean(rmds), var(rmds), std(rmds)];
 rmd_noref = [mean(rmds_noref), var(rmds_noref), std(rmds_noref)];
 rmd_wmean = [mean(rmds_wmean), var(rmds_wmean), std(rmds_wmean)];
@@ -108,16 +110,17 @@ fourier0_noref = [mean(fouriers0_noref), var(fouriers0_noref), std(fouriers0_nor
 fourier1_noref = [mean(fouriers1_noref), var(fouriers1_noref), std(fouriers1_noref)];
 fourier2_noref = [mean(fouriers2_noref), var(fouriers2_noref), std(fouriers2_noref)];
 fourier3_noref = [mean(fouriers3_noref), var(fouriers3_noref), std(fouriers3_noref)];
-
-save = 1;
-if save == 1
+end
+nrep_nexp  = nrep;
+savethings = 1;
+if savethings == 1
 	%save the maxima for clicks
 	if strcmp('click', exp)
-		save(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp), 'max_clicks', 'max_clicks_noref');
+		save(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp), 'max_clicks', 'max_clicks_noref', 'nrep_nexp');
 	end
 
 	%store rmds and fouriers
-	save(zcfilename('zsavef/rmdsnexp', exp, fibertype, pressure_exp), 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref');
+	save(zcfilename('zsavef/rmdsnexp', exp, fibertype, pressure_exp), 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp');
 end
 
 
