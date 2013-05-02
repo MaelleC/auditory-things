@@ -10,11 +10,10 @@ implnt = 0;
 
 nr_use = 10;
 
-nr_exp = 1;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-while nr_exp <= 9
+for nr_exp=1:1:9
 	
 	%click
 	%-----
@@ -35,7 +34,6 @@ while nr_exp <= 9
 
 	%tonestep
 	%--------
-	
 	fc = 1e4;
 	
 	nrep = 800; %800 ok
@@ -59,7 +57,6 @@ while nr_exp <= 9
 
 	%noisestep
 	%---------
-	
 	nrep = 800;%800 ok
 	reptime = 0.1;
 	pressure = -6.32 * exp(pressure_exp);
@@ -83,7 +80,6 @@ while nr_exp <= 9
 
 	%tone
 	%----
-
 	f = 1e3;
 	
 	nrep = 1000;%1000 ok
@@ -106,25 +102,7 @@ while nr_exp <= 9
 	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tone');
 	
 	
-	%save what is necessary
-
-	%TODO : organize differently the graphs, so that no need of saves here (but use of zcfilename('zsavef/rmdsnexp', exp, fibertype, pressure_exp), done in zcrmd_nexp)
-	% zcrmd_nexp returns no more anything
-	
-	%TODO (if storage here) : store also fourier things
-
-	%bargraph_rmd = [rmd1(1) rmd1_noref(1); rmd2(1) rmd2_noref(1); rmd3(1) rmd3_noref(1); rmd4(1) rmd4_noref(1);];
-	%bargraph_rmd_wmean  = [rmd1_wmean(1) rmd1_wmean_noref(1); rmd2_wmean(1) rmd2_wmean_noref(1); rmd3_wmean(1) rmd3_wmean_noref(1); rmd4_wmean(1) rmd4_wmean_noref(1);];
-	
-	%bargraph_rmd_all = [rmd1 rmd1_noref; rmd2 rmd2_noref; rmd3 rmd3_noref; rmd4 rmd4_noref;];
-	%bargraph_rmd_wmean_all  = [rmd1_wmean rmd1_wmean_noref; rmd2_wmean rmd2_wmean_noref; rmd3_wmean rmd3_wmean_noref; rmd4_wmean rmd4_wmean_noref;];
-	
-	%save(zcfilename('zsavef/rmds', 'arrays', fibertype, pressure_exp), 'bargraph_rmd', 'bargraph_rmd_wmean', 'bargraph_rmd_all', 'bargraph_rmd_wmean_all');
-	
-	
-	
 	%iteration
-	
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1
 			fibertype = 2;
@@ -140,8 +118,6 @@ while nr_exp <= 9
 	else
 		pressure_exp = low_pressure_exp;
 	end
-	
-	nr_exp = nr_exp + 1;
 	
 end
 

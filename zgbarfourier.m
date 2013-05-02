@@ -1,26 +1,26 @@
-function [] = zgbarrmd(valuevars, valuevars_noref, fibertype, pressurexp, ismean)
+function [] = zgbarfourier(valuevars, valuevars_noref, fibertype, pressurexp, experiment, isabs)
 
-%valuevars, and noref = [rmd1, var1; rmd2, var2; rmd3, var3; rmd4, var4]
+%valuevars, and noref = [fourier0, var0; fourier1, var1; fourier2, var2; fourier3, var3]
 test = 0;
 
 %numbers : see XTickLabel here
-%[rmd1_ref rmd1_noref; rmd2_ref rmd2_noref; rmd3_ref rmd3_noref; rmd4_ref rmd4_noref;];
+%[fourier0_ref fourier0_noref; fourier1_ref fourier1_noref; fourier2_ref fourier2_noref; fourier3_ref fourier3_noref;];
 values = [valuevars(1, 1) valuevars_noref(1, 1); valuevars(2, 1) valuevars_noref(2, 1); valuevars(3, 1) valuevars_noref(3, 1); valuevars(4, 1) valuevars_noref(4, 1);];
 bar(values, 'hist');
-if ismean == 1
-	t = 'RMD (mean)';
-else
-	t = 'RMD ';
-end
 
 %or put the decibel value ?
-t = [t, ', fibertype ', num2str(fibertype), ', pressure 6.32e', num2str(pressurexp), ' Pa'];
+if isabs == 1
+	t = 'Fourier coeff. norm ';
+else
+	t = 'Fourier coeff. angle ';
+end
+t = [t, 'for ', experiment, ', fibertype ', num2str(fibertype), ', pressure 6.32e', num2str(pressurexp), ' Pa'];
 title(t);
-xlabel('Stimulus type');
-ylabel('RMD');
+xlabel('Coefficients');
+ylabel('Value');
 leg = legend('normal', 'noref');
 set(leg, 'Location', 'NorthEast');
-set(gca, 'XTickLabel', {'click', 'pure tone step', 'noise step', 'pure tone'});
+set(gca, 'XTickLabel', {'0', '1', '2', '3'});
 
 hold on ;
 x = [0.86, 1.14, 1.86, 2.14, 2.86, 3.14, 3.86, 4.14];

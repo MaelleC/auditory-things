@@ -4,11 +4,10 @@ low_pressure_exp = -3; %50db
 middle_pressure_exp = -1; %90db
 high_pressure_exp = 1; %130db
 
-nr_exp = 1;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-while nr_exp <= 9
+for nr_exp=1:1:9
 
 	% gives 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 
 	%'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 
@@ -25,16 +24,12 @@ while nr_exp <= 9
 	rmds = [];
 	rmds_noref = [];
 	
-	
-	elem = 1;
-	while elem <= length(max_clicks)
-		rmds = [rmds ((max_clicks(elem) - clickbaseline) / clickbaseline)]
-	
+	for elem=1:1:length(max_clicks)
+		rmds = [rmds ((max_clicks(elem) - clickbaseline) / clickbaseline)]	
 	end
-	elem = 1;
-	while elem <= length(max_clicks_noref)
+
+	for elem=1:1:length(max_clicks_noref)
 		rmds_noref = [rmds_noref ((max_clicks_noref(elem) - clickbaseline_noref) / clickbaseline_noref)]
-	
 	end
 	
 	
@@ -58,6 +53,4 @@ while nr_exp <= 9
 	else
 		pressure_exp = low_pressure_exp;
 	end
-	
-	nr_exp = nr_exp + 1;
 end

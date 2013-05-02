@@ -13,11 +13,10 @@ omega = 2 * pi/period;
 index = 0;
 buffer = 0;
 
-while (index < step_max)
+for index=0:1:(step_max - 1)
 	term = exp(complex(0, 1) * omega * k * index * deltaT);
 	term = term * signal((index + 1)) * deltaT; 
 	buffer = buffer + term;
-	index = index + 1;
 end
 
 coeff = coeff1 * buffer;

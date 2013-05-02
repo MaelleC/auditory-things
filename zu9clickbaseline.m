@@ -10,16 +10,11 @@ nrep = 1;
 y = [0];
 y = repmat(y, 1, round(reptime / tdres));
 	
-
-nr_exp = 1;
-nr_exp_inner = 1;
-fibertype = 1;
-
 test = 0;
 
 only_show = 1;
 
-while nr_exp <= 3
+for fibertype=1:1:3
 
 	if only_show == 1
 		load(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0));
@@ -27,22 +22,17 @@ while nr_exp <= 3
 		clickbaseline
 		clickbaseline_noref
 	else
-	fibertype%
 	clickbaselines = [];
 	clickbaselines_noref = [];
 
-	nr_exp_inner = 1;
 	reptime = 10;
 	nrep = 1;
-	
-	while nr_exp_inner < 50 %TODO : make more than 10 repetitions : too high variability now
+	for nr_exp_inner=1:1:50 
 		[vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 		clickbaselines = [clickbaselines sum(psth)/reptime];
-		clickbaselines_noref = [clickbaselines_noref sum(psth_noref)/reptime];
-		
-		%iteration
-		nr_exp_inner = nr_exp_inner + 1;
+		clickbaselines_noref = [clickbaselines_noref sum(psth_noref)/reptime];	
 	end
+	
 	clickbaseline = mean(clickbaselines);
 	clickbaseline_noref = mean(clickbaselines_noref);
 	
@@ -63,11 +53,5 @@ while nr_exp <= 3
 	save(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0), 'clickbaseline', 'clickbaseline_noref');
 	
 	end%only_show
-	
-	%iteration	
-	fibertype = fibertype + 1;
-	nr_exp = nr_exp + 1;
-	
-	
 	
 end

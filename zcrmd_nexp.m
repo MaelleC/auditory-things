@@ -1,10 +1,10 @@
 function [] = zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, exp)
 
+savethings = 1;
+
 %must be divisible by 10e-5
 binpeak = 2/1000;
 binbase = 10/1000;
-
-nr_exp = 0;
 
 rmds = [];
 rmds_noref = [];
@@ -22,7 +22,7 @@ fouriers3_noref = [];
 max_clicks = [];
 max_clicks_noref = [];
 
-while(nr_exp < nr_use)
+for nr_exp=0:1:(nr_use - 1)
 	[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 	
 	% meanrmd
@@ -91,28 +91,11 @@ while(nr_exp < nr_use)
 	fouriers2_noref = [fouriers2_noref zcfourier(psth_noref, tdres, reptime, 2)];
 	fouriers3_noref = [fouriers3_noref zcfourier(psth_noref, tdres, reptime, 3)];
 
-	nr_exp = nr_exp + 1;
 	
 end
 
-utiles = 0
-%inutiles
-if utiles == 1
-rmd = [mean(rmds), var(rmds), std(rmds)];
-rmd_noref = [mean(rmds_noref), var(rmds_noref), std(rmds_noref)];
-rmd_wmean = [mean(rmds_wmean), var(rmds_wmean), std(rmds_wmean)];
-rmd_wmean_noref = [mean(rmds_wmean_noref), var(rmds_wmean_noref), std(rmds_wmean_noref)];
-fourier0 = [mean(fouriers0), var(fouriers0), std(fouriers0)];
-fourier1 = [mean(fouriers1), var(fouriers1), std(fouriers1)];
-fourier2 = [mean(fouriers2), var(fouriers2), std(fouriers2)];
-fourier3 = [mean(fouriers3), var(fouriers3), std(fouriers3)];
-fourier0_noref = [mean(fouriers0_noref), var(fouriers0_noref), std(fouriers0_noref)];
-fourier1_noref = [mean(fouriers1_noref), var(fouriers1_noref), std(fouriers1_noref)];
-fourier2_noref = [mean(fouriers2_noref), var(fouriers2_noref), std(fouriers2_noref)];
-fourier3_noref = [mean(fouriers3_noref), var(fouriers3_noref), std(fouriers3_noref)];
-end
 nrep_nexp  = nrep;
-savethings = 1;
+
 if savethings == 1
 	%save the maxima for clicks
 	if strcmp('click', exp)
