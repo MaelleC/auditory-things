@@ -1,6 +1,10 @@
 function [vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt)
 
-if length(y) ~= reptime/tdres
+if length(y) ~= ceil(reptime/tdres)
+	reptime
+	tdres
+	reptime/tdres
+	length(y)
 	error('Length of stimulus does not match reptime ! ');
 elseif nrep < 11
 	error('nrep should be at least 11')
@@ -8,7 +12,7 @@ end
 
  stim = repmat(y, 1, nrep);
  
- test = 0;
+ test = 1;
  if test == 1
 	figure;
 	plot(stim);
