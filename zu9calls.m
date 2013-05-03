@@ -13,7 +13,9 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
+
 for nr_exp=1:1:9
+	
 	
 	%click
 	%-----
@@ -97,11 +99,9 @@ for nr_exp=1:1:9
  
 	y = (1+M*m).*x;
 	y = y*pressure;
-	
-	
+		
 	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tone');
-	
-	
+
 	%iteration
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1

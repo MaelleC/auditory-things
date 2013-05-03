@@ -42,6 +42,9 @@ for nr_exp=0:1:(nr_use - 1)
 	% gives us 'clickbaseline' and 'clickbaseline_noref' for the corresponding fibertype
 	load(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0));
 	
+	psth2ms = zcconvertbin(tdres, binpeak, psth);
+	psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
+	
 	if (strcmp('click', exp) || strcmp('tonestep', exp) || strcmp('noisestep', exp))
 		psth2ms = zcconvertbin(tdres, binpeak, psth);
 		psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
@@ -73,6 +76,18 @@ for nr_exp=0:1:(nr_use - 1)
 		error('Invalid experiment : put click, tonestep, noisestep or tone');
 	end
 	if(baseref ~= 0)
+		onermd = ((maxref - baseref) / baseref);
+		
+		if onermd < 0
+			onermd
+			((maxref - baseref) / baseref)
+			maxref
+			baseref
+			gentitle = 'click'
+			%zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+			%zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle);
+			%zgpsthgraph(psth2ms, psth2ms_noref, reptime, nrep, tdres, strcat(gentitle, ' 2ms bins'));
+		end
 		rmds = [rmds  ((maxref - baseref) / baseref)];
 	end
 
@@ -96,7 +111,7 @@ end
 
 nrep_nexp  = nrep;
 
-if savethings == 1
+if savethings == 0
 	%save the maxima for clicks
 	if strcmp('click', exp)
 		save(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp), 'max_clicks', 'max_clicks_noref', 'nrep_nexp');

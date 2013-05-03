@@ -8,6 +8,12 @@ end
 
  stim = repmat(y, 1, nrep);
  
+ test = 0;
+ if test == 1
+	figure;
+	plot(stim);
+ end
+ 
 [vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(stim, cf, 1, tdres, reptime*nrep, cohc, cihc, fibertype, implnt);
 
  real_length = length(synout)/nrep;

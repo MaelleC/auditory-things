@@ -1,7 +1,7 @@
  clear;
  %10e-4 s click, 50db, rarefaction, 10 clicks per s, p21-22
  cf = 1e3; %540
- nrep = 400; %400 ok
+ nrep = 20; %400 ok
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok
@@ -22,7 +22,6 @@
  gentitle = 'click';
  
 [vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
-
  
  %!! if save, clear before !
  %save 'zsavef/saveclick';

@@ -1,4 +1,4 @@
-exp = 'click'
+exp = 'click';
 
 low_pressure_exp = -3; %50db
 middle_pressure_exp = -1; %90db
@@ -25,11 +25,11 @@ for nr_exp=1:1:9
 	rmds_noref = [];
 	
 	for elem=1:1:length(max_clicks)
-		rmds = [rmds ((max_clicks(elem) - clickbaseline) / clickbaseline)]	
+		rmds = [rmds ((max_clicks(elem) - clickbaseline) / clickbaseline)];	
 	end
 
 	for elem=1:1:length(max_clicks_noref)
-		rmds_noref = [rmds_noref ((max_clicks_noref(elem) - clickbaseline_noref) / clickbaseline_noref)]
+		rmds_noref = [rmds_noref ((max_clicks_noref(elem) - clickbaseline_noref) / clickbaseline_noref)];
 	end
 	
 	

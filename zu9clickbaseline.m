@@ -29,8 +29,8 @@ for fibertype=1:1:3
 	nrep = 1;
 	for nr_exp_inner=1:1:50 
 		[vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
-		clickbaselines = [clickbaselines sum(psth)/reptime];
-		clickbaselines_noref = [clickbaselines_noref sum(psth_noref)/reptime];	
+		clickbaselines = [clickbaselines sum(psth)*tdres/reptime];
+		clickbaselines_noref = [clickbaselines_noref sum(psth_noref)*tdres/reptime];	
 	end
 	
 	clickbaseline = mean(clickbaselines);
