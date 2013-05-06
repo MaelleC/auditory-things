@@ -8,7 +8,7 @@ if(rem(old_psth_len, nrep) ~= 0 )
 	error('newsize must be a multiple of oldsize.');
 end
 
-good_length = old_psth_len / nrep;
+good_length = round(old_psth_len / nrep);
 
 
 remainder = 1;

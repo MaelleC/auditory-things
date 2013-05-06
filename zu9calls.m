@@ -13,10 +13,11 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
+onlyclick = 1;
+
 
 for nr_exp=1:1:9
-	
-	
+	nr_exp
 	%click
 	%-----
 	%10e-4 s click, 50db, rarefaction, 10 clicks per s, p21-22
@@ -31,8 +32,10 @@ for nr_exp=1:1:9
 	y = [y zeros(1, round(reptime/tdres) - length(y))];
 	y = y*pressure;
 
-	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'click');
+	%zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'click');%also in other experiments
+	zcrmd_nexprmd(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'click');
 
+if onlyclick == 0
 
 	%tonestep
 	%--------
@@ -54,7 +57,8 @@ for nr_exp=1:1:9
 	y = (1+M*m).*x;
 	y = y*pressure;
 
-	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tonestep');
+	
+	zcrmd_nexprmd(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tonestep');
 	
 
 	%noisestep
@@ -78,7 +82,7 @@ for nr_exp=1:1:9
 	y = (1+M*m).*x;
 	y = y*pressure;
 	
-	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'noisestep');
+	zcrmd_nexprmd(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'noisestep');
 
 	%tone
 	%----
@@ -100,8 +104,11 @@ for nr_exp=1:1:9
 	y = (1+M*m).*x;
 	y = y*pressure;
 		
-	zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tone');
-
+	%zcrmd_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tone');
+	zcrmd_nexprmd(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, 'tone');
+	
+end %onlyclick
+	
 	%iteration
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1

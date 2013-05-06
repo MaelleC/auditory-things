@@ -12,7 +12,7 @@ end
 
  stim = repmat(y, 1, nrep);
  
- test = 1;
+ test = 0;
  if test == 1
 	figure;
 	plot(stim);
