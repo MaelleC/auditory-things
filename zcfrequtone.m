@@ -16,7 +16,7 @@ nrepti = [ 200, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,  400, 1000
 
 %1400,  3500
 
-doonlygraph = 0
+doonlygraph = 1
 
 pressure_exp = -3;
 pressure = -6.32 * exp(pressure_exp);

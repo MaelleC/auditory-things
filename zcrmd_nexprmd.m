@@ -32,9 +32,6 @@ for nr_exp=0:1:(nr_use - 1)
 	
 	
 	%normal rmd
-	psth2ms = zcconvertbin(tdres, binpeak, psth);
-	psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
-	
 	if (strcmp('click', exp) || strcmp('tonestep', exp) || strcmp('noisestep', exp))
 		psth2ms = zcconvertbin(tdres, binpeak, psth);
 		psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);

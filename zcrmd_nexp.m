@@ -41,10 +41,7 @@ for nr_exp=0:1:(nr_use - 1)
 	%normal rmd
 	% gives us 'clickbaseline' and 'clickbaseline_noref' for the corresponding fibertype
 	load(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0));
-	
-	psth2ms = zcconvertbin(tdres, binpeak, psth);
-	psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
-	
+
 	if (strcmp('click', exp) || strcmp('tonestep', exp) || strcmp('noisestep', exp))
 		psth2ms = zcconvertbin(tdres, binpeak, psth);
 		psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);

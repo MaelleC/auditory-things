@@ -13,7 +13,7 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-doclick = 1;
+doclick = 0;
 dotonestep = 1;
 donoisestep = 0;%seems ok everywhere
 dotone = 1;
@@ -23,6 +23,7 @@ for nr_exp=1:1:9
 	nr_exp
 	
 	if doclick == 1
+		doclick
 		%click
 		%-----
 		%10e-4 s click, 50db, rarefaction, 10 clicks per s, p21-22
@@ -42,6 +43,7 @@ for nr_exp=1:1:9
 	end
 	
 	if dotonestep == 1
+		dotonestep
 		%tonestep
 		%--------
 		fc = 1e4;
@@ -67,6 +69,7 @@ for nr_exp=1:1:9
 	end
 	
 	if donoisestep == 1
+		donoisestep
 		%noisestep
 		%---------
 		nrep = 800;%800 ok
@@ -92,6 +95,7 @@ for nr_exp=1:1:9
 	end
 	
 	if dotone == 1
+		dotone
 		%tone
 		%----
 		f = 1e3;
