@@ -8,14 +8,14 @@ cohc = 1;
 cihc = 1;
 implnt = 0;
 
-nr_use = 1;
+nr_use = 10;
 
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-doclick = 0;
+doclick = 1;
 dotonestep = 1;
-donoisestep = 0;%seems ok everywhere
+donoisestep = 1;%seems ok everywhere
 dotone = 1;
 
 

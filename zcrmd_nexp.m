@@ -1,14 +1,15 @@
 function [] = zcrmd_nexprmd(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, experiment)
 
-savethings = 0;
+savethings = 1;
 
 %must be divisible by 10e-5
 binpeak = 2/1000;
 binbase = 10/1000;
 
-domeanrmd = 1;
-dormd = 1;
+domeanrmd = 0;
+dormd = 0;
 dofourier = 0;
+% !! call to fctn deactivated
 
 completethings = 1;
 
@@ -41,7 +42,7 @@ else
 end
 
 for nr_exp=0:1:(nr_use - 1)
-	[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+	%[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 	
 	% meanrmd
 	if domeanrmd == 1
@@ -124,7 +125,7 @@ if savethings == 1
 	if strcmp('click', experiment)
 		save(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp), 'max_clicks', 'max_clicks_noref', 'nrep_nexp');
 	end
-
+	length(rmds)
 	%store rmds and fouriers
 	save(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp), 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp');
 end
