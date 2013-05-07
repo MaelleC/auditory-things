@@ -46,29 +46,44 @@ if doonlygraph == 0
 		zcfrequ_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, f)
 	end
 else
-	fouriersg = [];
-	fouriersg_noref = [];
-	fouriersgerr = [];
-	fouriersgerr_noref = [];
-	for index=1:1:length(frequs)
-	
-		%gives us 'fouriers1', 'fouriers1_noref', 'nrep_nexp'
-		load(zcfilename('zsavef/frequ_', num2str(frequs(index)), fibertype, pressure_exp) );
+
+	for takeabs=0:1:1
+		fouriersg = [];
+		fouriersg_noref = [];
+		fouriersgerr = [];
+		fouriersgerr_noref = [];
+		for index=1:1:length(frequs)
 		
-		fouriersg = [fouriersg mean(fouriers1)];
-		fouriersg_noref = [fouriersg_noref mean(fouriers1_noref)];
-		fouriersgerr = [fouriersgerr var(fouriers1)];
-		fouriersgerr_noref = [fouriersgerr_noref var(fouriers1_noref)];
-		
+			%gives us 'fouriers1', 'fouriers1_noref', 'nrep_nexp'
+			load(zcfilename('zsavef/frequ_', num2str(frequs(index)), fibertype, pressure_exp) );
+			if takeabs == 1
+				fouriersg = [fouriersg mean(abs(fouriers1))];
+				fouriersg_noref = [fouriersg_noref mean(abs(fouriers1_noref))];
+				fouriersgerr = [fouriersgerr var(abs(fouriers1))];
+				fouriersgerr_noref = [fouriersgerr_noref var(abs(fouriers1_noref))];
+			else
+				fouriersg = [fouriersg mean(angle(fouriers1))];
+				fouriersg_noref = [fouriersg_noref mean(angle(fouriers1_noref))];
+				fouriersgerr = [fouriersgerr var(angle(fouriers1))];
+				fouriersgerr_noref = [fouriersgerr_noref var(angle(fouriers1_noref))];
+			end
+			
+			
+		end
+		figure
+		errorbar(frequs, fouriersg, fouriersgerr);
+		hold on;
+		errorbar(frequs, fouriersg_noref, fouriersgerr_noref, 'g');
+		hold off;
+		if takeabs == 1
+			title('Norm')
+		else
+			title('Angle')
+		end
+		legend('normal', 'no ref');
+		xlabel('Frequ Hz');
+		ylabel('Abs(fourier 1)');
 	end
-	figure
-	errorbar(frequs, fouriersg, fouriersgerr);
-	hold on;
-	errorbar(frequs, fouriersg_noref, fouriersgerr_noref, 'g');
-	hold off;
-	legend('normal', 'no ref');
-	xlabel('Frequ Hz');
-	ylabel('Abs(fourier 1)');
 	
 end
 
