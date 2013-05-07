@@ -6,10 +6,10 @@ savethings = 1;
 binpeak = 2/1000;
 binbase = 10/1000;
 
-domeanrmd = 0;
-dormd = 0;
+domeanrmd = 1;
+dormd = 1;
 dofourier = 0;
-% !! call to fctn deactivated
+%% !! call to fctn deactivated
 
 completethings = 1;
 
@@ -42,7 +42,7 @@ else
 end
 
 for nr_exp=0:1:(nr_use - 1)
-	%[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+	[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 	
 	% meanrmd
 	if domeanrmd == 1
@@ -94,12 +94,19 @@ for nr_exp=0:1:(nr_use - 1)
 		else
 			error('Invalid experiment : put click, tonestep, noisestep or tone');
 		end
+		
+		gentitle = experiment;
 		if(baseref ~= 0)
 			rmds = [rmds  ((maxref - baseref) / baseref)];
+		else
+			zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
 		end
 
 		if(basenoref ~= 0)
 			rmds_noref = [rmds_noref ((maxnoref - basenoref) / basenoref)];
+		else
+			gentitle = [gentitle ' no_ref'];
+			zgfourgraphs(y, vihc, psth_noref, synout_noref, reptime, nrep, tdres, gentitle);
 		end
 	
 	end
@@ -125,7 +132,13 @@ if savethings == 1
 	if strcmp('click', experiment)
 		save(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp), 'max_clicks', 'max_clicks_noref', 'nrep_nexp');
 	end
-	length(rmds)
+	
+	if 1 == 0
+		fibertype
+		pressure_exp
+		length(rmds)
+	end
+	
 	%store rmds and fouriers
 	save(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp), 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp');
 end

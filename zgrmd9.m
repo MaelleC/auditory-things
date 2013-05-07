@@ -1,6 +1,6 @@
 low_pressure_exp = -3; %50db
-middle_pressure_exp = 0; %110db
-high_pressure_exp = 3; %170db
+middle_pressure_exp = -1; %90db
+high_pressure_exp = 1; %130db
 
 
 use_rmdmean = 0;
@@ -29,10 +29,12 @@ for nr_exp=1:1:9
 		%gives 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp'
 		load(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp));
 		
-		experiment
-		fibertype
-		pressure_exp
-		length(rmds)
+		
+		if strcmp('tonestep', experiment)
+			fibertype
+			pressure_exp
+			length(rmds)
+		end
 		
 		if use_rmdmean == 1
 			valuevars = [ valuevars; mean(rmds_wmean) var(rmds_wmean)];

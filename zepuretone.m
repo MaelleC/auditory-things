@@ -2,7 +2,7 @@ clear;
 %1ms sin amplitude 1
  cf = 1e3;
  f = 1e3;
- nrep = 1000; %1000 ok
+ nrep = 10000; %10000 ok
  tdres = 1/100e3;
  reptime = 0.001;
  %pression = -6.32e-3; %50dB : ok

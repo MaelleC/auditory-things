@@ -1,6 +1,6 @@
 low_pressure_exp = -3; %50db
-middle_pressure_exp = 0; %110db
-high_pressure_exp = 3; %170db
+middle_pressure_exp = -1; %90db
+high_pressure_exp = 1; %130db
 
 
 %takeabs = 1; %if not 1, take angle

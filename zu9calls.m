@@ -98,7 +98,7 @@ for nr_exp=1:1:9
 		%----
 		f = 1e3;
 		
-		nrep = 1000;%1000 ok
+		nrep = 10000;%10000 ok
 		reptime = 0.001;
 		pressure = -6.32 * exp(pressure_exp);
 
@@ -134,7 +134,6 @@ for nr_exp=1:1:9
 	else
 		pressure_exp = low_pressure_exp;
 	end
-	
 end
 
 
