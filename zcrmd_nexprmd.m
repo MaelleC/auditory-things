@@ -32,8 +32,6 @@ for nr_exp=0:1:(nr_use - 1)
 	
 	
 	%normal rmd
-
-	
 	psth2ms = zcconvertbin(tdres, binpeak, psth);
 	psth2ms_noref = zcconvertbin(tdres, binpeak, psth_noref);
 	
@@ -81,9 +79,7 @@ for nr_exp=0:1:(nr_use - 1)
 	
 end
 
-%fourier : we have nrep_exp = 10 for all experiemnts
-
-nrep_nexp  = nrep_nexp + nrep;
+nrep_nexp  = nrep;
 
 if savethings == 1
 	%save the maxima for clicks
