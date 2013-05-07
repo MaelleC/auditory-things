@@ -18,16 +18,18 @@ for nr_exp=1:1:9
 	% gives 'max_clicks' and 'max_clicks_noref'
 	load(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp));
 	
-	% gives 'clickbaseline' and 'clickbaseline_noref'
+	% gives 'clickbaselines' and 'clickbaselines_noref'
 	load(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0) );
 	
 	rmds = [];
 	rmds_noref = [];
 	
+	clickbaseline = mean(clickbaselines);
 	for elem=1:1:length(max_clicks)
 		rmds = [rmds ((max_clicks(elem) - clickbaseline) / clickbaseline)];	
 	end
-
+	
+	clickbaseline_noref = mean(clickbaselines_noref);
 	for elem=1:1:length(max_clicks_noref)
 		rmds_noref = [rmds_noref ((max_clicks_noref(elem) - clickbaseline_noref) / clickbaseline_noref)];
 	end
