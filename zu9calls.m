@@ -13,13 +13,13 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-doclick = 1;
-dotonestep = 0;
+doclick = 0;
+dotonestep = 1;
 donoisestep = 0;%seems ok everywhere
-dotone = 1;
+dotone = 0;
 
 
-for nr_exp=1:1:3
+for nr_exp=1:1:2
 	nr_exp
 	
 	
