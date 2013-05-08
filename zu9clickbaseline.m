@@ -32,7 +32,7 @@ for fibertype=1:1:3
 		for nr_exp_inner=1:1:10
 			nrep = 400;
 			
-			%%really use zuconcreteuse ?
+			% !!! really use zuconcreteuse ?
 			[vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 			
 			clickbaselines = [clickbaselines mean(psth)];

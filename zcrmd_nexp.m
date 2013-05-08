@@ -92,7 +92,8 @@ for nr_exp=0:1:(nr_use - 1)
 			
 				baseref = psth10ms(5);
 				basenoref = psth10ms_noref(5);	
-				if 
+				
+				if strcmp('tonestep', experiment)
 					max_tonests = [max_tonests maxref];
 					max_tonests_noref = [max_tonests_noref maxnoref];
 					

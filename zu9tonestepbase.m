@@ -21,8 +21,6 @@ pressure_exp = low_pressure_exp;
 
 for nr_exp=1:1:9
 	
-	
-	
 	fibertype
 	pressure_exp
 	
@@ -35,7 +33,7 @@ for nr_exp=1:1:9
 	y = sin(2*pi*t*fc);	 
 	y = y*pression;
 	
-	nrep = 400;
+	nrep = 400;% !! changed from 800 !
 	
 	[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
 	
