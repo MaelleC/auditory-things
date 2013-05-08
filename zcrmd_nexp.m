@@ -98,15 +98,15 @@ for nr_exp=0:1:(nr_use - 1)
 		gentitle = experiment;
 		if(baseref ~= 0)
 			rmds = [rmds  ((maxref - baseref) / baseref)];
-		else
-			zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
+		%else
+			%zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
 		end
 
 		if(basenoref ~= 0)
 			rmds_noref = [rmds_noref ((maxnoref - basenoref) / basenoref)];
-		else
-			gentitle = [gentitle ' no_ref'];
-			zgfourgraphs(y, vihc, psth_noref, synout_noref, reptime, nrep, tdres, gentitle);
+		%else
+			%gentitle = [gentitle ' no_ref'];
+			%zgfourgraphs(y, vihc, psth_noref, synout_noref, reptime, nrep, tdres, gentitle);
 		end
 	
 	end

@@ -20,11 +20,16 @@ xlabel('Stimulus type');
 ylabel('RMD');
 leg = legend('normal', 'noref');
 set(leg, 'Location', 'NorthEast');
-set(gca, 'XTickLabel', {'click', 'pure tone step', 'noise step', 'pure tone'});
+set(gca, 'XTickLabel', {'click', 'pure tone st.', 'noise st.', 'pure tone'});
 
 hold on ;
 x = [0.86, 1.14, 1.86, 2.14, 2.86, 3.14, 3.86, 4.14];
 y = [valuevars(1, 1), valuevars_noref(1, 1), valuevars(2, 1), valuevars_noref(2, 1), valuevars(3, 1), valuevars_noref(3, 1), valuevars(4, 1), valuevars_noref(4, 1)];
 variance =  [valuevars(1, 2), valuevars_noref(1, 2), valuevars(2, 2), valuevars_noref(2, 2), valuevars(3, 2), valuevars_noref(3, 2), valuevars(4, 2), valuevars_noref(4, 2)];
-errorbar(x, y, variance, '.');
+
+variancelow = [];
+for index=1:1:length(y)
+	variancelow = [variancelow min([variance(index) y(index)])];
+end
+errorbar(x, y, variancelow, variance,  '.');
 hold off ;

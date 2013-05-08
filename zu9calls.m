@@ -14,13 +14,14 @@ fibertype = 1;
 pressure_exp = low_pressure_exp;
 
 doclick = 1;
-dotonestep = 1;
-donoisestep = 1;%seems ok everywhere
+dotonestep = 0;
+donoisestep = 0;%seems ok everywhere
 dotone = 1;
 
 
-for nr_exp=1:1:9
+for nr_exp=1:1:3
 	nr_exp
+	
 	
 	if doclick == 1
 		doclick
