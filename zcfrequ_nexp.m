@@ -14,5 +14,5 @@ end
 nrep_nexp  = nrep;
 
 if savethings == 1
-	save(zcfilename('zsavef/frequ_', num2str(frequ), fibertype, pressure_exp), 'fouriers1', 'fouriers1_noref', 'nrep_nexp');
+	save(zcfilename('zsavef/frequ_', num2str(round(frequ * 10000)), fibertype, pressure_exp), 'fouriers1', 'fouriers1_noref', 'nrep_nexp');
 end

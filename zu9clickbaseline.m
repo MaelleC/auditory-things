@@ -1,3 +1,5 @@
+experiment = 'click';
+
 cf = 1e3;
 tdres = 1/100e3;
 cohc = 1;
@@ -17,7 +19,7 @@ only_show = 1;
 for fibertype=1:1:3
 
 	if only_show == 1
-		load(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0));
+		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
 		fibertype
 		clickbaseline = mean(clickbaselines)
 		clickbaseline_noref = mean(clickbaselines_noref)
@@ -29,7 +31,10 @@ for fibertype=1:1:3
 		clickbaselines_noref = [];
 		for nr_exp_inner=1:1:10
 			nrep = 400;
+			
+			%%really use zuconcreteuse ?
 			[vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+			
 			clickbaselines = [clickbaselines mean(psth)];
 			clickbaselines_noref = [clickbaselines_noref mean(psth_noref)];
 		end
@@ -47,7 +52,7 @@ for fibertype=1:1:3
 		end
 		
 		%save what is necessary
-		save(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0), 'clickbaselines', 'clickbaselines_noref');
+		save(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0), 'clickbaselines', 'clickbaselines_noref');
 	
 	end
 	

@@ -19,6 +19,11 @@ if completethings == 1
 		%'max_clicks', 'max_clicks_noref', 'nrep_nexp'
 		load(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp));
 	end
+	
+	if strcmp('tonestep', experiment)
+		%'max_tonests', 'max_tonests_noref', 'nrep_nexp'
+		load(zcfilename('zsavef/rmdsnexp', '_maxtonestep', fibertype, pressure_exp));
+	end
 		
 	%'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp'
 	load(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp));
@@ -39,6 +44,9 @@ else
 
 	max_clicks = [];
 	max_clicks_noref = [];
+	
+	max_tonests = [];
+	max_tonests_noref[];
 end
 
 for nr_exp=0:1:(nr_use - 1)
@@ -84,6 +92,11 @@ for nr_exp=0:1:(nr_use - 1)
 			
 				baseref = psth10ms(5);
 				basenoref = psth10ms_noref(5);	
+				if 
+					max_tonests = [max_tonests maxref];
+					max_tonests_noref = [max_tonests_noref maxnoref];
+					
+				end
 			end
 			
 		elseif strcmp('tone', experiment) 
@@ -95,18 +108,12 @@ for nr_exp=0:1:(nr_use - 1)
 			error('Invalid experiment : put click, tonestep, noisestep or tone');
 		end
 		
-		gentitle = experiment;
 		if(baseref ~= 0)
 			rmds = [rmds  ((maxref - baseref) / baseref)];
-		%else
-			%zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
 		end
 
 		if(basenoref ~= 0)
 			rmds_noref = [rmds_noref ((maxnoref - basenoref) / basenoref)];
-		%else
-			%gentitle = [gentitle ' no_ref'];
-			%zgfourgraphs(y, vihc, psth_noref, synout_noref, reptime, nrep, tdres, gentitle);
 		end
 	
 	end
@@ -133,10 +140,9 @@ if savethings == 1
 		save(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp), 'max_clicks', 'max_clicks_noref', 'nrep_nexp');
 	end
 	
-	if 1 == 0
-		fibertype
-		pressure_exp
-		length(rmds)
+	%save the maxima for tonestep
+	if strcmp('tonestep', experiment)
+		save(zcfilename('zsavef/rmdsnexp', '_maxtonestep', fibertype, pressure_exp), 'max_tonests', 'max_tonests_noref', 'nrep_nexp');
 	end
 	
 	%store rmds and fouriers

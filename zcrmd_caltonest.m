@@ -1,4 +1,4 @@
-experiment = 'click';
+experiment = 'tonestep';
 
 low_pressure_exp = -3; %50db
 middle_pressure_exp = -1; %90db
@@ -15,29 +15,28 @@ for nr_exp=1:1:9
 	% we will update 'rmds' and 'rmds_noref' with new baseline values
 	load(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp));
 	
-	% gives 'max_clicks' and 'max_clicks_noref'
-	load(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp));
+	% gives 'tonestepbaselines', 'tonestepbaselines_noref'
+	load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
 	
-	% gives 'clickbaselines' and 'clickbaselines_noref'
-	load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
+	% gives 'max_tonests', 'max_tonests_noref', 'nrep_nexp'
+	load(zcfilename('zsavef/rmdsnexp', '_maxtonestep', fibertype, pressure_exp));
 	
 	rmds = [];
 	rmds_noref = [];
 	
-	clickbaseline = mean(clickbaselines);
-	for elem=1:1:length(max_clicks)
-		rmds = [rmds ((max_clicks(elem) - clickbaseline) / clickbaseline)];	
+	tonestepbaseline = mean(tonestepbaselines);
+	for elem=1:1:length(max_tonests)
+		rmds = [rmds ((max_tonests(elem) - tonestepbaseline) / tonestepbaseline)];	
 	end
 	
-	clickbaseline_noref = mean(clickbaselines_noref);
-	for elem=1:1:length(max_clicks_noref)
-		rmds_noref = [rmds_noref ((max_clicks_noref(elem) - clickbaseline_noref) / clickbaseline_noref)];
+	tonestepbaseline_noref = mean(tonestepbaselines_noref);
+	for elem=1:1:length(max_tonests_noref)
+		rmds_noref = [rmds_noref ((max_tonests_noref(elem) - tonestepbaseline_noref) / tonestepbaseline_noref)];
 	end
 	
 	
 	%store back rmds and fouriers
 	save(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp), 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref');
-	
 	
 	%iteration
 	if (nr_exp == 3 || nr_exp == 6)

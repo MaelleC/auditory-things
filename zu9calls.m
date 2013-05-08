@@ -48,7 +48,7 @@ for nr_exp=1:1:2
 		%--------
 		fc = 1e4;
 		
-		nrep = 800; %800 ok
+		nrep = 400; %800 ok
 		reptime = 0.1;
 		pressure = -6.32 * exp(pressure_exp);
 	 
