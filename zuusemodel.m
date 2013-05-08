@@ -12,6 +12,11 @@ end
 
  stim = repmat(y, 1, nrep);
  
+
+ %stim = stim(1:length(stim) - 1);
+ lenstim = length(stim) * tdres
+ newreptime = reptime*nrep
+ 
  test = 0;
  if test == 1
 	figure;

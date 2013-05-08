@@ -1,6 +1,7 @@
 %1ms sin amplitude 1
  cf = 1e3;
- nr_use = 10;
+ nr_use = 1;
+tdres = 1e-5;
  
 % 1 must be able to be divided by f in the space given for a float; 
 %16 ok, pas plus
@@ -14,10 +15,14 @@
 frequs = [  10,  200,  500,  800, 1000, 1250, 1400, 1700, 1800, 2000, 2300, 2500, 2800, 3000, 3125, 3400, 3800, 4000];
 nrepti = [ 200, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,  400, 1000, 1000, 1000, 1000, 1000, 1000, 1000];
 
+k = 10 * (1 : 100);
+reptimes = k * tdres;
+frequs = 1. ./ reptimes;
+
 % !! cf should follow ?
 % !! do differently for non exact frequencies
 
-doonlygraph = 1
+doonlygraph = 0
 
 pressure_exp = -3;
 pressure = -6.32 * exp(pressure_exp);
@@ -31,16 +36,18 @@ if doonlygraph == 0
 
 		%index = 10
 		f = frequs(index)
-		nrep = nrepti(index)
+		%nrep = nrepti(index)
+		nrep = 20
 		reptime = 1/f; 
-		tdres = 1e-5;
+		reptime = reptimes(index)
+
 
 		t = 0:(ceil(reptime/tdres)-1); 
 		t = t*tdres;
 		 
 		x = sin(2*pi*t*f);
 		
-		reptime = length(t) * tdres;
+		%reptime = length(t) * tdres;
 		 
 		y = x*pressure;
 		 

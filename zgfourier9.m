@@ -26,9 +26,9 @@ for takeabs=0:1:1
 
 		for nr_exp=1:1:9
 
-			%valuevars, and noref = [fourier0, var0; fourier1, var1; fourier2, var2; fourier3, var3]
-			valuevars = [];
-			valuevars_noref = [];
+			%valuestds, and noref = [fourier0, std0; fourier1, std1; fourier2, std2; fourier3, std3]
+			valuestds = [];
+			valuestds_noref = [];
 		
 			%gives 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp'
 			load(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp));
@@ -53,12 +53,12 @@ for takeabs=0:1:1
 				fouriers3_noref = angle(fouriers3_noref);
 			end
 			
-			valuevars = [mean(fouriers0) var(fouriers0); mean(fouriers1) var(fouriers1); mean(fouriers2) var(fouriers2); mean(fouriers3) var(fouriers3);];
-			valuevars_noref = [mean(fouriers0_noref) var(fouriers0_noref); mean(fouriers1_noref) var(fouriers1_noref); mean(fouriers2_noref) var(fouriers2_noref); mean(fouriers3_noref) var(fouriers3_noref);];
+			valuestds = [mean(fouriers0) std(fouriers0); mean(fouriers1) std(fouriers1); mean(fouriers2) std(fouriers2); mean(fouriers3) std(fouriers3);];
+			valuestds_noref = [mean(fouriers0_noref) std(fouriers0_noref); mean(fouriers1_noref) std(fouriers1_noref); mean(fouriers2_noref) std(fouriers2_noref); mean(fouriers3_noref) std(fouriers3_noref);];
 			
 			
 			subplot(3, 3, nr_exp);
-			zgbarfourier(valuevars, valuevars_noref, fibertype, pressure_exp, experiment, takeabs);
+			zgbarfourier(valuestds, valuestds_noref, fibertype, pressure_exp, experiment, takeabs);
 
 			if (nr_exp == 3 || nr_exp == 6)
 				if fibertype == 1

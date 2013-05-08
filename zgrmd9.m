@@ -37,11 +37,11 @@ for nr_exp=1:1:9
 		end
 		
 		if use_rmdmean == 1
-			valuevars = [ valuevars; mean(rmds_wmean) var(rmds_wmean)];
-			valuevars_noref = [ valuevars_noref; mean(rmds_wmean_noref) var(rmds_wmean_noref)];
+			valuevars = [ valuevars; mean(rmds_wmean) std(rmds_wmean)];
+			valuevars_noref = [ valuevars_noref; mean(rmds_wmean_noref) std(rmds_wmean_noref)];
 		else 
-			valuevars = [ valuevars; mean(rmds) var(rmds)];
-			valuevars_noref = [ valuevars_noref; mean(rmds_noref) var(rmds_noref)];
+			valuevars = [ valuevars; mean(rmds) std(rmds)];
+			valuevars_noref = [ valuevars_noref; mean(rmds_noref) std(rmds_noref)];
 		end
 	end
 	

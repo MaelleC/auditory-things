@@ -101,8 +101,25 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     tdres = tdrestmp[0];
 	
 	reptime = reptimetmp[0];
-	if (reptime<pxbins*tdres)  /* duration of stimulus = pxbins*tdres */
-		mexErrMsgTxt("reptime should be equal to or longer than the stimulus duration.\n");
+	if (reptime<pxbins*tdres-tdres/100.) { /* duration of stimulus = pxbins*tdres */// 
+    /*write the spike train to a temporary file, edit MD*/
+    /*
+    
+    fp = fopen( "catmodel_problem", "w" );
+    
+    fprintf( fp, "%f", reptime );
+ 		fprintf( fp, "  ");
+         fprintf( fp, "%d", pxbins );
+ 		fprintf( fp, "  ");
+         fprintf( fp, "%f", tdres );
+ 		fprintf( fp, "  ");
+ 	fprintf(fp, "\n");
+ 	fclose(fp);
+     */
+
+        
+        mexPrintf("reptime : %f, pxbins : %d, tdres : %f\n", reptime, pxbins, tdres);
+		mexErrMsgTxt("reptime should be equal to or longer than the stimulus duration.\n");}
 
     cohc = cohctmp[0]; /* impairment in the OHC  */
 	if ((cohc<0)|(cohc>1))
