@@ -11,41 +11,58 @@ cihc = 1;
 implnt = 0;
 fc = 1e4;
 
+nr_use = 10;
 
 reptime = 0.1;
 
-only_show = 1;
+only_show = 0;
 
-fibertype = 3;
+fibertype = 1;
 pressure_exp = low_pressure_exp;
 
 for nr_exp=1:1:9
-	
-	fibertype
-	pressure_exp
-	
-	tonestepbaselines = [];
-	tonestepbaselines_noref = [];
-	
-	t = 0:(round(reptime/tdres) - 1); 
-	
-	t = t*tdres;	 
-	y = sin(2*pi*t*fc);	 
-	y = y*pression;
-	
-	nrep = 400;% !! changed from 800 !
-	
-	[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y,cf,nrep,tdres,reptime, cohc, cihc, fibertype, implnt);
-	
-	%2000 -> 0.02 seconds : 
-	tonestepbaselines = [tonestepbaselines mean(psth(2000 : length(psth)))];
-	tonestepbaselines_noref = [tonestepbaselines_noref mean(psth_noref(2000 : length(psth_noref)))];
-	
-	gentitle = 'pure tone st.';	
-	zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle);
-	gentitle = [gentitle ' no_ref'];
-	zgfourgraphs(y, vihc, psth_noref, synout_noref, reptime, nrep, tdres, gentitle);
 
+	if only_show == 1
+	
+		fibertype
+		pressure_exp
+		
+		%'tonestepbaselines', 'tonestepbaselines_noref'
+		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
+		tonestepbaseline = mean(tonestepbaselines)
+		tonestepbaseline_noref = mean(tonestepbaselines_noref)
+		tonestepbaselinestd = std(tonestepbaselines)
+		tonestepbaselinestd_noref = std(tonestepbaselines_noref)
+	
+	else
+	
+		fibertype
+		pressure_exp
+		
+		tonestepbaselines = [];
+		tonestepbaselines_noref = [];
+		
+		t = 0:(ceil(reptime/tdres) - 1); 
+		
+		t = t*tdres;	 
+		y = sin(2*pi*t*fc);	
+		pressure = -6.32 * exp(pressure_exp);
+		y = y*pressure;
+		
+		nrep = 800;
+		
+		for index =1:1:nr_use
+			[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+			
+			%2000 -> 0.02 seconds : 
+			tonestepbaselines = [tonestepbaselines mean(psth(2000 : length(psth)))]
+			tonestepbaselines_noref = [tonestepbaselines_noref mean(psth_noref(2000 : length(psth_noref)))]
+		end
+		
+		%save what is necessary
+		save(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp), 'tonestepbaselines', 'tonestepbaselines_noref');
+		
+	end
 
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1
@@ -63,7 +80,6 @@ for nr_exp=1:1:9
 		pressure_exp = low_pressure_exp;
 	end
 	
-	%save what is necessary
-	save(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp), 'tonestepbaselines', 'tonestepbaselines_noref');
+	
 
 end

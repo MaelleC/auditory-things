@@ -1,10 +1,18 @@
 clear;
 %1ms sin amplitude 1
  cf = 1e3;
+ 
  f = 1e3;
+ %f = 700;
+ 
  nrep = 10000; %10000 ok
+ %nrep = 1;
+ 
  tdres = 1/100e3;
+ 
  reptime = 0.001;
+ %reptime = 1;
+ 
  %pression = -6.32e-3; %50dB : ok
  pression_exp = -3;
  pression = -6.32 * exp(pression_exp);
@@ -13,7 +21,7 @@ clear;
  fibertype = 2;
  implnt = 0;
 
- t = 0:(reptime/tdres-1); 
+ t = 0:(round(reptime/tdres)-1); 
  t = t*tdres;
  
  x = sin(2*pi*t*f);
@@ -28,7 +36,9 @@ clear;
  
  gentitle = 'pure tone';
  
- [vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+ [vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+ 
+ %[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 
  
   %!! if save, clear before !

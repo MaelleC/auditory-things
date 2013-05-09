@@ -2,7 +2,7 @@ clear;
 %step, best effect with fibertype = 3
  cf = 1e3;
  fc = 1e4;
- nrep = 400; %800 ok
+ nrep = 800; %800 ok
  tdres = 1/100e3;
  reptime = 0.1;
  %pression = -6.32e-3; %50dB : ok

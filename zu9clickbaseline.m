@@ -23,8 +23,8 @@ for fibertype=1:1:3
 		fibertype
 		clickbaseline = mean(clickbaselines)
 		clickbaseline_noref = mean(clickbaselines_noref)
-		clickbaselinevar = var(clickbaselines)
-		clickbaselinevar_noref = var(clickbaselines_noref)
+		clickbaselinestd = std(clickbaselines)
+		clickbaselinestd_noref = std(clickbaselines_noref)
 	else
 		fibertype
 		clickbaselines = [];
@@ -32,7 +32,7 @@ for fibertype=1:1:3
 		for nr_exp_inner=1:1:10
 			nrep = 400;
 			
-			% !!! really use zuconcreteuse ?
+			% !!! really use of zuconcreteuse ? (for only zeros, probably ok)
 			[vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 			
 			clickbaselines = [clickbaselines mean(psth)];

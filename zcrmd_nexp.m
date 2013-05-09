@@ -9,9 +9,8 @@ binbase = 10/1000;
 domeanrmd = 1;
 dormd = 1;
 dofourier = 0;
-%% !! call to fctn deactivated
 
-completethings = 1;
+completethings = 0;% !!!!! !!!!!!! put to 1 !!!!!!!
 
 if completethings == 1
 
@@ -29,10 +28,7 @@ if completethings == 1
 	load(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp));
 	
 else
-	rmds = [];
-	rmds_noref = [];
-	rmds_wmean = [];
-	rmds_wmean_noref = [];
+
 	fouriers0 = [];
 	fouriers1 = [];
 	fouriers2 = [];
@@ -41,7 +37,17 @@ else
 	fouriers1_noref = [];
 	fouriers2_noref = [];
 	fouriers3_noref = [];
+	
+	if dofourier == 0
+		%'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp'
+		load(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp));
+	end
 
+	rmds = [];
+	rmds_noref = [];
+	rmds_wmean = [];
+	rmds_wmean_noref = [];
+	
 	max_clicks = [];
 	max_clicks_noref = [];
 	
