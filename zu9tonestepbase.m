@@ -51,8 +51,10 @@ for nr_exp=1:1:9
 		
 		nrep = 800;
 		
+		stim = repmat(y, 1, nrep);
 		for index =1:1:nr_use
-			[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+
+			[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel_rep(stim, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 			
 			%2000 -> 0.02 seconds : 
 			tonestepbaselines = [tonestepbaselines mean(psth(2000 : length(psth)))]

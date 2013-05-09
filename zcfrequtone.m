@@ -1,6 +1,6 @@
 %1ms sin amplitude 1
  cf = 1e3;
- nr_use = 10;
+ nr_use = 1;
 tdres = 1e-5;
  
 % 1334, 2667 Hz  
@@ -31,10 +31,11 @@ if doonlygraph == 0
 		knum = k(index)
 		f = frequs(index)
 		
-		nrep = 1;
-		reptime = 1000 * reptimes(index);
-		%reptime = reptimes(index);
-		%reptime = 1;
+		%nrep = 1;
+		nrep = 1000;
+		
+		%reptime = 1000 * reptimes(index);
+		reptime = reptimes(index);
 
 		t = 0:(floor(reptime/tdres)-1); 
 		t = t*tdres;

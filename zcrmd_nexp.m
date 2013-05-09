@@ -10,7 +10,7 @@ domeanrmd = 1;
 dormd = 1;
 dofourier = 0;
 
-completethings = 0;% !!!!! !!!!!!! put to 1 !!!!!!!
+completethings = 0; %!!!! put back to 1 !!!!!
 
 if completethings == 1
 
@@ -52,11 +52,13 @@ else
 	max_clicks_noref = [];
 	
 	max_tonests = [];
-	max_tonests_noref[];
+	max_tonests_noref =[];
 end
 
+stim = repmat(y, 1, nrep);
+
 for nr_exp=0:1:(nr_use - 1)
-	[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+	[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel_rep(stim, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 	
 	% meanrmd
 	if domeanrmd == 1

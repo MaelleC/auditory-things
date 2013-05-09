@@ -13,8 +13,8 @@ end
  stim = repmat(y, 1, nrep);
  
 
- lenstim = length(stim) * tdres
- newreptime = reptime*nrep
+ %lenstim = length(stim) * tdres
+ %newreptime = reptime*nrep
  
  test = 0;
  if test == 1

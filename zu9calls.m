@@ -19,7 +19,7 @@ donoisestep = 0;%seems ok everywhere
 dotone = 0;
 
 
-for nr_exp=1:1:2
+for nr_exp=1:1:9
 	nr_exp
 	
 	
