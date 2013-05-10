@@ -6,11 +6,11 @@ savethings = 1;
 binpeak = 2/1000;
 binbase = 10/1000;
 
-domeanrmd = 1;
+domeanrmd = 0;
 dormd = 1;
 dofourier = 0;
 
-completethings = 0; %!!!! put back to 1 !!!!!
+completethings = 1;
 
 if completethings == 1
 
@@ -87,25 +87,33 @@ for nr_exp=0:1:(nr_use - 1)
 			
 			if strcmp('click', experiment) 
 				% gives us 'clickbaselines', 'clickbaselines_noref' for the corresponding fibertype
-				load(zcfilename('zsavef/rmds', 'clickbase', fibertype, 0));
+				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
 				
 				baseref = mean(clickbaselines);
 				basenoref = mean(clickbaselines_noref);
 				
 				max_clicks = [max_clicks maxref];
 				max_clicks_noref = [max_clicks_noref maxnoref];
+			
+			elseif strcmp('tonestep', experiment)
+
+				%'tonestepbaselines', 'tonestepbaselines_noref'
+				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
+					
+				baseref = mean(tonestepbaselines);
+				basenoref = mean(tonestepbaselines_noref);
+
+				max_tonests = [max_tonests maxref];
+				max_tonests_noref = [max_tonests_noref maxnoref];
+					
 			else
+				
 				psth10ms = zcconvertbin(tdres, binbase, psth);
 				psth10ms_noref = zcconvertbin(tdres, binbase, psth_noref);
 			
 				baseref = psth10ms(5);
-				basenoref = psth10ms_noref(5);	
+				basenoref = psth10ms_noref(5);		
 				
-				if strcmp('tonestep', experiment)
-					max_tonests = [max_tonests maxref];
-					max_tonests_noref = [max_tonests_noref maxnoref];
-					
-				end
 			end
 			
 		elseif strcmp('tone', experiment) 

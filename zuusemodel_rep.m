@@ -3,8 +3,8 @@ function [vihc, synout, psth, synout_noref, psth_noref] = zuusemodel_rep(stim, c
 if rem(length(stim), ceil(reptime/tdres)) ~= 0
 	reptime
 	tdres
-	reptime/tdres
-	length(y)
+	repovertdres = reptime/tdres
+	lenofy = length(y)
 	error('Length of stimulus does not match a multiple of reptime ! ');
 elseif rem(length(stim), nrep) ~= 0
 	error('Length of stimulus is not a multiple of  nrep! ');

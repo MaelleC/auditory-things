@@ -1,6 +1,6 @@
 %1ms sin amplitude 1
- cf = 1e3;
- nr_use = 1;
+cf = 1e3;
+nr_use = 10;
 tdres = 1e-5;
  
 % 1334, 2667 Hz  
@@ -35,14 +35,16 @@ if doonlygraph == 0
 		nrep = 1000;
 		
 		%reptime = 1000 * reptimes(index);
-		reptime = reptimes(index);
+		reptime = reptimes(index)
 
-		t = 0:(floor(reptime/tdres)-1); 
+		t = 0:(knum-1); 
 		t = t*tdres;
 		 
 		x = sin(2*pi*t*f);
 		 
 		y = x*pressure;
+		
+		leny = length(y)
 		
 		zcfrequ_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, knum)
 	end
@@ -84,6 +86,17 @@ else
 		
 		figure
 		errorbar(frequs, fouriersg, fouriersgerr);
+		hold on;
+		errorbar(frequs, fouriersg_noref, fouriersgerr_noref, 'g');
+		hold off;
+		title(graphf)
+		legend('normal', 'no ref');
+		xlabel('Frequ Hz');
+		ylabel([graphf ' fourier 1']);
+		
+		figure
+		errorbar(frequs, fouriersg ./ fouriersg_noref, fouriersgerr); %!!!! put back the next line !!! 
+		%errorbar(frequs, fouriersg, fouriersgerr);
 		hold on;
 		errorbar(frequs, fouriersg_noref, fouriersgerr_noref, 'g');
 		hold off;

@@ -15,7 +15,7 @@ nr_use = 10;
 
 reptime = 0.1;
 
-only_show = 0;
+only_show = 1;
 
 fibertype = 1;
 pressure_exp = low_pressure_exp;

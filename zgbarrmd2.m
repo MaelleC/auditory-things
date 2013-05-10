@@ -1,4 +1,4 @@
-function [] = zgbarrmd(valuevars, valuevars_noref, fibertype, pressurexp, ismean)
+function [] = zgbarrmd(valuevars, valuevars_noref, fibertype, pressurexp, ismean, scfact)
 
 %valuevars, and noref = [rmd1, var1; rmd2, var2; rmd3, var3; rmd4, var4]
 test = 0;
@@ -20,7 +20,21 @@ xlabel('Stimulus type');
 ylabel('RMD');
 leg = legend('normal', 'noref');
 set(leg, 'Location', 'NorthEast');
-set(gca, 'XTickLabel', {'click', 'pure tone st.', 'noise st.', 'pure tone'});
+
+thetext = [' /' num2str(scfact)];
+%set(gca, 'XTickLabel', {['click' thetext], ['pure tone st.' thetext], 'noise st.', 'pure tone'});
+set(gca, 'XTickLabel', {['c.' thetext], ['p.t.st.' thetext], 'n.st.', 'p.t.'});
+
+
+% * 9/8
+if 1 == 0
+decalage = 1;
+
+text(0.6, values(1, 1) + decalage, thetext);
+text(1.1, values(1, 2) + decalage, thetext);
+text(1.6, values(2, 1) + decalage, thetext);
+text(2.05, values(2, 2) + decalage, thetext);
+end
 
 hold on ;
 x = [0.86, 1.14, 1.86, 2.14, 2.86, 3.14, 3.86, 4.14];

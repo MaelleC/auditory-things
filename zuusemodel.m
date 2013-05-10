@@ -1,6 +1,6 @@
 function [vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt)
 
-if length(y) ~= ceil(reptime/tdres)
+if length(y) ~= round(reptime/tdres)
 	reptime
 	tdres
 	reptime/tdres
