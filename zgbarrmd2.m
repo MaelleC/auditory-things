@@ -14,7 +14,7 @@ else
 end
 
 %or put the decibel value ?
-t = [t, ', fibertype ', num2str(fibertype), ', pressure 6.32e', num2str(pressurexp), ' Pa'];
+t = [t, ', fb ', num2str(fibertype), ', press. 6.32e', num2str(pressurexp), ' Pa'];
 title(t);
 xlabel('Stimulus type');
 ylabel('RMD');
