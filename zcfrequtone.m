@@ -94,9 +94,9 @@ else
 		xlabel('Frequ Hz');
 		ylabel([graphf ' fourier 1']);
 		
+		if 0 == 1
 		figure
-		errorbar(frequs, fouriersg ./ fouriersg_noref, fouriersgerr); %!!!! put back the next line !!! 
-		%errorbar(frequs, fouriersg, fouriersgerr);
+		errorbar(frequs, fouriersg ./ fouriersg_noref, fouriersgerr);  
 		hold on;
 		errorbar(frequs, fouriersg_noref, fouriersgerr_noref, 'g');
 		hold off;
@@ -104,6 +104,7 @@ else
 		legend('normal', 'no ref');
 		xlabel('Frequ Hz');
 		ylabel([graphf ' fourier 1']);
+		end
 		
 		if 0 == 1
 		figure
