@@ -81,7 +81,6 @@ else
 				fact = 1/sqrt(length(fouriers1_noref));
 				fouriers1gerr_noref = [fouriers1gerr_noref std(abs(fouriers1_noref))*fact];
 				
-				if 1 == 0 % put that away when 2, 3 ok
 				fouriers2g = [fouriers2g mean(abs(fouriers2))];
 				fouriers2g_noref = [fouriers2g_noref mean(abs(fouriers2_noref))];
 				fact = 1/sqrt(length(fouriers2));
@@ -95,7 +94,6 @@ else
 				fouriers3gerr = [fouriers3gerr std(abs(fouriers3))*fact];
 				fact = 1/sqrt(length(fouriers3_noref));
 				fouriers3gerr_noref = [fouriers3gerr_noref std(abs(fouriers3_noref))*fact];
-				end
 				
 			else
 				fouriers1g = [fouriers1g mean(angle(fouriers1))];
@@ -164,21 +162,24 @@ else
 		ylabel([graphf ' fourier 3']);
 		
 		
-		if takeabs == 1
+		if takeabs == 1 %%ask for error propagation 
 			figure
-			errorbar(frequs, fouriers1g ./ fouriers1g_noref, fouriers1gerr);  
+			%errorbar(frequs, fouriers1g ./ fouriers1g_noref, fouriers1gerr .* fouriers1gerr_noref);  
+			plot(frequs, fouriers1g ./ fouriers1g_noref)
 			title([graphf 'fourier1 / fourier1 noref'])
 			xlabel('Frequ Hz');
 			ylabel([graphf ' fourier 1 / fourier1 noref']);
 			
 			figure
-			errorbar(frequs, fouriers2g ./ fouriers2g_noref, fouriers2gerr);  
+			%errorbar(frequs, fouriers2g ./ fouriers2g_noref, fouriers2gerr .* fouriers2gerr_noref); 
+			plot(frequs, fouriers2g ./ fouriers2g_noref)
 			title([graphf 'fourier2 / fourier2 noref'])
 			xlabel('Frequ Hz');
 			ylabel([graphf ' fourier 2 / fourier 2 noref']);
 			
 			figure
-			errorbar(frequs, fouriers3g ./ fouriers3g_noref, fouriers3gerr);  
+			%errorbar(frequs, fouriers3g ./ fouriers3g_noref, fouriers3gerr.* fouriers3gerr_noref); 
+			plot(frequs, fouriers3g ./ fouriers3g_noref)
 			title([graphf 'fourier3 / fourier3 noref'])
 			xlabel('Frequ Hz');
 			ylabel([graphf ' fourier 3 / fourier3 noref']);

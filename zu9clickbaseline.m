@@ -1,4 +1,4 @@
-experiment = 'click';
+experiment = 'click'; % ~30'
 
 cf = 1e3;
 tdres = 1/100e3;
@@ -14,7 +14,7 @@ y = repmat(y, 1, round(reptime / tdres));
 	
 test = 0;
 
-only_show = 1;
+only_show = 0;
 completethings = 1;
 
 %complete all , so that tonestepbaselinestdper tonestepbaselinestdper_noref < = 0.01
@@ -27,9 +27,11 @@ for fibertype=1:1:3
 		
 		%'clickbaselines', 'clickbaselines_noref'
 		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
-
+		
 		clickbaseline = mean(clickbaselines)
+		lenclickbaseline = length(clickbaselines)
 		clickbaseline_noref = mean(clickbaselines_noref)
+		lenclickbaseline_noref = length(clickbaselines_noref)
 		clickbaselinestd = std(clickbaselines)/sqrt(length(clickbaselines));
 		clickbaselinestd_noref = std(clickbaselines_noref)/sqrt(length(clickbaselines_noref));
 		clickbaselinestdper = clickbaselinestd/clickbaseline

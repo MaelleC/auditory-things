@@ -1,3 +1,5 @@
+%3h
+
 low_pressure_exp = -3; %50db
 middle_pressure_exp = -1; %90db
 high_pressure_exp = 1; %130db
@@ -34,7 +36,9 @@ for nr_exp=1:1:9
 		%'tonestepbaselines', 'tonestepbaselines_noref'
 		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
 		tonestepbaseline = mean(tonestepbaselines)
+		lentonestepbaseline = length(tonestepbaselines)
 		tonestepbaseline_noref = mean(tonestepbaselines_noref)
+		lentonestepbaseline_noref = length(tonestepbaselines_noref)
 		tonestepbaselinestd = std(tonestepbaselines)/sqrt(length(tonestepbaselines));
 		tonestepbaselinestd_noref = std(tonestepbaselines_noref)/sqrt(length(tonestepbaselines_noref));
 		tonestepbaselinestdper = tonestepbaselinestd/tonestepbaseline
@@ -69,8 +73,8 @@ for nr_exp=1:1:9
 			[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel_rep(stim, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 			
 			%2000 -> 0.02 seconds : 
-			tonestepbaselines = [tonestepbaselines mean(psth(2000 : length(psth)))]
-			tonestepbaselines_noref = [tonestepbaselines_noref mean(psth_noref(2000 : length(psth_noref)))]
+			tonestepbaselines = [tonestepbaselines mean(psth(2000 : length(psth)))];
+			tonestepbaselines_noref = [tonestepbaselines_noref mean(psth_noref(2000 : length(psth_noref)))];
 		end
 		
 		%save what is necessary
