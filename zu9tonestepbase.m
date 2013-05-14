@@ -25,7 +25,6 @@ completethings = 1;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-
 for nr_exp=1:1:9
 
 	if only_show == 1
