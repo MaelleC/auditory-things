@@ -14,7 +14,7 @@ frequs = 1. ./ reptimes;
 %figure
 %plot(frequs, k, '.')
 
-doonlygraph = 0
+doonlygraph = 1
 
 pressure_exp = -3;
 pressure = -6.32 * exp(pressure_exp);
@@ -141,7 +141,6 @@ else
 		xlabel('Frequ Hz');
 		ylabel([graphf ' fourier 1']);
 		
-		if 1 == 0
 		%fouriers2
 		figure
 		errorbar(frequs, fouriers2g, fouriers2gerr);
@@ -163,7 +162,7 @@ else
 		legend('normal', 'no ref');
 		xlabel('Frequ Hz');
 		ylabel([graphf ' fourier 3']);
-		end
+		
 		
 		if takeabs == 1
 			figure
@@ -172,7 +171,6 @@ else
 			xlabel('Frequ Hz');
 			ylabel([graphf ' fourier 1 / fourier1 noref']);
 			
-			if 1 == 0 % put that away when 2, 3 ok
 			figure
 			errorbar(frequs, fouriers2g ./ fouriers2g_noref, fouriers2gerr);  
 			title([graphf 'fourier2 / fourier2 noref'])
@@ -184,7 +182,7 @@ else
 			title([graphf 'fourier3 / fourier3 noref'])
 			xlabel('Frequ Hz');
 			ylabel([graphf ' fourier 3 / fourier3 noref']);
-			end
+			
 		end
 		
 	%end

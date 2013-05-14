@@ -7,12 +7,6 @@ completethings = 1
 if completethings == 1
 	% 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp'
 	load(zcfilename('zsavef/frequ_k', num2str(knum), fibertype, pressure_exp));
-	
-	% !!! put that away after !!!!
-	fouriers2 = [];
-	fouriers2_noref = [];
-	fouriers3 = [];
-	fouriers3_noref = [];
 
 else
 	fouriers1 = [];
