@@ -14,21 +14,38 @@ y = repmat(y, 1, round(reptime / tdres));
 	
 test = 0;
 
-only_show = 1;
+only_show = 0;
+completethings = 1;
+
+%complete all , so that tonestepbaselinestdper tonestepbaselinestdper_noref < = 0.01
+%then, zcrmd_calclick
 
 for fibertype=1:1:3
 
 	if only_show == 1
-		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
 		fibertype
+		
+		%'clickbaselines', 'clickbaselines_noref'
+		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
+
 		clickbaseline = mean(clickbaselines)
 		clickbaseline_noref = mean(clickbaselines_noref)
-		clickbaselinestd = std(clickbaselines)
-		clickbaselinestd_noref = std(clickbaselines_noref)
+		clickbaselinestd = std(clickbaselines)/sqrt(length(clickbaselines));
+		clickbaselinestd_noref = std(clickbaselines_noref)/sqrt(length(clickbaselines_noref));
+		clickbaselinestdper = clickbaselinestd/clickbaseline
+		clickbaselinestdper_noref = clickbaselinestd_noref/clickbaseline_noref
 	else
 		fibertype
-		clickbaselines = [];
-		clickbaselines_noref = [];
+		
+		if completethings == 1
+			%'clickbaselines', 'clickbaselines_noref'
+			load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
+		
+		else
+			clickbaselines = [];
+			clickbaselines_noref = [];
+		end
+		
 		for nr_exp_inner=1:1:10
 			nrep = 400;
 			

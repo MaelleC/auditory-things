@@ -15,10 +15,14 @@ nr_use = 10;
 
 reptime = 0.1;
 
-only_show = 1;
+only_show = 0;
+completethings = 1;
+%complete all , so that tonestepbaselinestdper tonestepbaselinestdper_noref < = 0.01
+%then, zcrmd_caltonest
 
 fibertype = 1;
 pressure_exp = low_pressure_exp;
+
 
 for nr_exp=1:1:9
 
@@ -31,16 +35,24 @@ for nr_exp=1:1:9
 		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
 		tonestepbaseline = mean(tonestepbaselines)
 		tonestepbaseline_noref = mean(tonestepbaselines_noref)
-		tonestepbaselinestd = std(tonestepbaselines)
-		tonestepbaselinestd_noref = std(tonestepbaselines_noref)
+		tonestepbaselinestd = std(tonestepbaselines)/sqrt(length(tonestepbaselines));
+		tonestepbaselinestd_noref = std(tonestepbaselines_noref)/sqrt(length(tonestepbaselines_noref));
+		tonestepbaselinestdper = tonestepbaselinestd/tonestepbaseline
+		tonestepbaselinestdper_noref = tonestepbaselinestd_noref/tonestepbaseline_noref
 	
 	else
 	
 		fibertype
 		pressure_exp
 		
-		tonestepbaselines = [];
-		tonestepbaselines_noref = [];
+		if completethings == 1
+			%'tonestepbaselines', 'tonestepbaselines_noref'
+			load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
+		
+		else
+			tonestepbaselines = [];
+			tonestepbaselines_noref = [];
+		end
 		
 		t = 0:(ceil(reptime/tdres) - 1); 
 		
