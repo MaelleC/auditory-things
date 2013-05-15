@@ -17,7 +17,7 @@ nr_use = 10;
 
 reptime = 0.1;
 
-only_show = 0;
+only_show = 1;
 completethings = 1;
 %complete all , so that tonestepbaselinestdper tonestepbaselinestdper_noref < = 0.01
 %then, zcrmd_caltonest
