@@ -28,12 +28,12 @@ for fibertype=1:1:3
 		%'clickbaselines', 'clickbaselines_noref'
 		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
 		
-		clickbaseline = mean(clickbaselines)
+		clickbaseline = mean(clickbaselines);
 		lenclickbaseline = length(clickbaselines)
-		clickbaseline_noref = mean(clickbaselines_noref)
-		lenclickbaseline_noref = length(clickbaselines_noref)
-		clickbaselinestd = std(clickbaselines)/sqrt(length(clickbaselines));
-		clickbaselinestd_noref = std(clickbaselines_noref)/sqrt(length(clickbaselines_noref));
+		clickbaseline_noref = mean(clickbaselines_noref);
+		lenclickbaseline_noref = length(clickbaselines_noref);
+		clickbaselinestd = zcstdofmean(clickbaselines);
+		clickbaselinestd_noref = zcstdofmean(clickbaselines_noref);
 		clickbaselinestdper = clickbaselinestd/clickbaseline
 		clickbaselinestdper_noref = clickbaselinestd_noref/clickbaseline_noref
 	else

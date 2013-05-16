@@ -34,12 +34,12 @@ for nr_exp=1:1:9
 		
 		%'tonestepbaselines', 'tonestepbaselines_noref'
 		load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
-		tonestepbaseline = mean(tonestepbaselines)
+		tonestepbaseline = mean(tonestepbaselines);
 		lentonestepbaseline = length(tonestepbaselines)
-		tonestepbaseline_noref = mean(tonestepbaselines_noref)
-		lentonestepbaseline_noref = length(tonestepbaselines_noref)
-		tonestepbaselinestd = std(tonestepbaselines)/sqrt(length(tonestepbaselines));
-		tonestepbaselinestd_noref = std(tonestepbaselines_noref)/sqrt(length(tonestepbaselines_noref));
+		tonestepbaseline_noref = mean(tonestepbaselines_noref);
+		lentonestepbaseline_noref = length(tonestepbaselines_noref);
+		tonestepbaselinestd = zcstdofmean(tonestepbaselines);
+		tonestepbaselinestd_noref = zcstdofmean(tonestepbaselines_noref);
 		tonestepbaselinestdper = tonestepbaselinestd/tonestepbaseline
 		tonestepbaselinestdper_noref = tonestepbaselinestd_noref/tonestepbaseline_noref
 	
