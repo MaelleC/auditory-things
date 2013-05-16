@@ -55,51 +55,34 @@ for nr_exp=1:1:9
 			valuevars_noref = [ valuevars_noref; mean(rmds_wmean_noref)/scfact std(rmds_wmean_noref)*factor_noref/scfact];
 		else
 			
-			if strcmp('tonestep', experiment) && 1== 0
-				%stdnormal = ?;
-				%stdnoref = ?;
+			if strcmp('click', experiment)		
+				% gives 'max_clicks' and 'max_clicks_noref'
+				load(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp));
+				
+				% gives 'clickbaselines' and 'clickbaselines_noref'
+				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
+				
+				stdnormal = zcerr(max_clicks, clickbaselines, rmds);
+				stdnoref = zcerr(max_clicks_noref, clickbaselines_noref, rmds_noref);
 			
-			elseif strcmp('tonestep', experiment) && 1 == 0
+			elseif strcmp('tonestep', experiment)
 				%'max_tonests', 'max_tonests_noref', 'nrep_nexp'
 				load(zcfilename('zsavef/rmdsnexp', '_maxtonestep', fibertype, pressure_exp));
 				
 				%'tonestepbaselines', 'tonestepbaselines_noref'
 				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
 				
-				%http://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas
-				%f = A - B, 	\sigma_f^2 = \sigma_A^2 + \sigma_B^2 - 2\,\text{cov}_{AB}
-				
-				%f = A/B, 	\left(\frac{\sigma_f}{f}\right)^2 \approx \left(\frac{\sigma_A}{A}\right)^2 + \left(\frac{\sigma_B}{B}\right)^2 - 2\frac{\sigma_A\sigma_B}{AB}\rho_{AB}
-				
-				%f = a - b
-				sigmaA1 = zcstdofmean(max_tonests);
-				sigmaB1 = zcstdofmean(tonestepbaselines);
-				covA1B1 = 0; % !! how to do the covariance of two means ? 
-				%http://www.talkstats.com/showthread.php/19836-Covariance-Matrix-of-Sample-Means
-				%cov(max_tonests, tonestepbaselines)
-				varianceOfSub = sigmaA1^2 + sigmaB1^2 - 2* covA1B1;
-				
-				%f = a/b
-				sigmaA2 = sqrt(varianceOfSub);
-				sigmaB2 = zcstdofmean(tonestepbaselines);
-				A2 = mean(max_tonest) - mean(tonestepbaselines);
-				B2 = mean(tonestepbaselines);
-				corrA2B2 = 0; %
-				F = mean(rmds);
-				varianceOfDiv = F^2 *( (sigmaA2 /A2)^2 + (sigmaB2/ B2)^2 - 2* sigmaA2 * sigmaB2 /(A2 * B2)* corrA2B2);
-				
-				%stdnormal = ?;
-				%stdnoref = ?;
+				stdnormal = zcerr(max_tonests, tonestepbaselines, rmds);
+				stdnoref = zcerr(max_tonests_noref, tonestepbaselines_noref, rmds_noref);
 				
 			else
 				stdnormal = zcstdofmean(rmds);
 				stdnoref = zcstdofmean(rmds_noref);
 			end
-			stdnormalshow = stdnormal * factor;
-			stdnorefshow = stdnoref * factor_noref;
+
 			
-			valuevars = [ valuevars; mean(rmds)/scfact stdnormalshow];
-			valuevars_noref = [ valuevars_noref; mean(rmds_noref)/scfact stdnorefshow];
+			valuevars = [ valuevars; mean(rmds)/scfact stdnormal/scfact];
+			valuevars_noref = [ valuevars_noref; mean(rmds_noref)/scfact stdnoref/scfact];
 			
 		end
 	end

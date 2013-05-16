@@ -20,7 +20,7 @@ completethings = 1;
 %complete all , so that tonestepbaselinestdper tonestepbaselinestdper_noref < = 0.01
 %then, zcrmd_calclick
 
-for fibertype=1:1:3
+for fibertype=1:1:2% !!! put back 3
 
 	if only_show == 1
 		fibertype
