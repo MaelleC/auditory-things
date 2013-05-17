@@ -62,8 +62,8 @@ for nr_exp=1:1:9
 				% gives 'clickbaselines' and 'clickbaselines_noref'
 				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
 				
-				stdnormal = zcerr(max_clicks, clickbaselines, rmds);
-				stdnoref = zcerr(max_clicks_noref, clickbaselines_noref, rmds_noref);
+				stdnormal = zcerr(max_clicks, clickbaselines);
+				stdnoref = zcerr(max_clicks_noref, clickbaselines_noref);
 			
 			elseif strcmp('tonestep', experiment)
 				%'max_tonests', 'max_tonests_noref', 'nrep_nexp'
@@ -72,8 +72,8 @@ for nr_exp=1:1:9
 				%'tonestepbaselines', 'tonestepbaselines_noref'
 				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
 				
-				stdnormal = zcerr(max_tonests, tonestepbaselines, rmds);
-				stdnoref = zcerr(max_tonests_noref, tonestepbaselines_noref, rmds_noref);
+				stdnormal = zcerr(max_tonests, tonestepbaseline);
+				stdnoref = zcerr(max_tonests_noref, tonestepbaselines_noref);
 				
 			else
 				stdnormal = zcstdofmean(rmds);
