@@ -15,7 +15,7 @@ frequs = 1. ./ reptimes;
 %figure
 %plot(frequs, k, '.')
 
-doonlygraph = 1
+doonlygraph = 0
 
 pressure_exp = -3;
 pressure = -6.32 * exp(pressure_exp);
@@ -55,8 +55,8 @@ if doonlygraph == 0
 	end
 else
 	
-	%for takeabs=0:1:1
-		takeabs = 1 %%% change that
+	for takeabs=0:1:1
+		%takeabs = 1 %%% change that
 	
 		fouriers0g = [];
 		fouriers0g_noref = [];
@@ -222,7 +222,7 @@ else
 			
 		end
 		
-	%end
+	end
 	
 end
 
