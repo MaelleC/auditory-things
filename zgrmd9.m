@@ -72,7 +72,7 @@ for nr_exp=1:1:9
 				%'tonestepbaselines', 'tonestepbaselines_noref'
 				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
 				
-				stdnormal = zcerr(max_tonests, tonestepbaseline);
+				stdnormal = zcerr(max_tonests, tonestepbaselines);
 				stdnoref = zcerr(max_tonests_noref, tonestepbaselines_noref);
 				
 			else

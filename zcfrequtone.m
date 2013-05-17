@@ -29,7 +29,15 @@ if doonlygraph == 0
 	
 		index
 		knum = k(index)
+		
 		f = frequs(index)
+		
+		
+		%% !!!! false
+		if knum == 100
+			index = length(frequs) + 1;
+		
+		end
 		
 		%nrep = 1;
 		nrep = 1000;
@@ -97,7 +105,7 @@ else
 				
 			else
 				fouriers1g = [fouriers1g mean(angle(fouriers1))];
-				fouriers1g_noref = [fourier1sg_noref mean(angle(fouriers1_noref))];
+				fouriers1g_noref = [fouriers1g_noref mean(angle(fouriers1_noref))];
 				fact = 1/sqrt(length(fouriers1));
 				fouriers1gerr = [fouriers1gerr std(angle(fouriers1))*fact];
 				fact = 1/sqrt(length(fouriers1_noref));
