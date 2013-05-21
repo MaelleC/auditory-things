@@ -1,35 +1,38 @@
-function [errorProp] = zcerr(maxthings, baseline)
+function [stdProp] = zcerr(maxthings, baselines)
 
-%correct this function
-
+%see :
 %http://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas
 
-%f = a - b
-sigmaA1 = std(maxthings);
-sigmaB1 = zcstdofmean(baseline);
-covA1B1 = [];
-%http://www.talkstats.com/showthread.php/19836-Covariance-Matrix-of-Sample-Means
+%f1 = a1 - b1
+A1 = maxthings;
+B1 = mean(baselines);
+F1 = A1 - B1;
+sigmaB1 = zcstdofmean(baselines);
+varA1 = []; % varA1 = sigmaA1^2
 
-
-for indexm=1:1:length(maxthings)
-	covpart = 0;
-	for indexb=1:1:length(baseline)
-		covpart = covpart + (maxthings(indexm) - mean(maxthings))*(baseline(indexb) - mean(baseline));
-	end
-	covpart = covpart /length(baseline); %ok this division ? (will be float ?)
-	covA1B1 = [covA1B1 covpart];
+for index=1:1:length(A1)
+	varA1 = [varA1 (A1(index) - mean(A1))^2]; %correct that 
 end
 
-varianceOfSub = sigmaA1^2 + sigmaB1^2 - 2*covA1B1;
+varF1 = varA1 + sigmaB1^2;
 
-%f = a/b
-sigmaA2 = sqrt(varianceOfSub);
-sigmaB2 = zcstdofmean(baseline);
-A2 = maxthings - mean(baseline);
-B2 = mean(baseline);
-covA2B2 = 0;%since, B2 is only one number that is its own expectation
+%f2 = a2/b2
+A2 = F1;
+B2 = mean(baselines);
+F2 = F1/B2;
+varA2 = varF1;
+sigmaB2 = zcstdofmean(baselines);
+stdOverB2Sq = (sigmaB2/B2)^2;
+stdOverA2Sq = [];
 
-F = A2/B2;
-varianceOfDiv = F^2 .*( (sigmaA2 ./A2)^2 + (sigmaB2/ B2)^2 - 2 * covA2B2 ./(A2 * B2));
+for index=1:1:length(A2)
+	stdOverA2Sq = [stdOverA2Sq varA2(index)/(A2(index))^2];
+end
 
-errorProp = sqrt(mean(varianceOfDiv));
+sigmaF2 = [];
+for index=1:1:length(F2)
+	sigmaF2 = [sigmaF2 sqrt(stdOverA2Sq(index) + stdOverB2Sq) * abs(F2(index))];
+end
+
+
+stdProp = sqrt(sum(sigmaF2.^2)) / sqrt(length(F2));%std of mean

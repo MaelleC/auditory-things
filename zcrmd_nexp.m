@@ -27,6 +27,21 @@ if completethings == 1
 	%'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp'
 	load(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp));
 	
+	
+	if strcmp('click', experiment) && 1 == 0
+		experiment
+		fibertype
+		pressure_exp
+		length(rmds)
+	end
+	
+	if strcmp('tonestep', experiment)  && 1 == 0
+		experiment
+		fibertype
+		pressure_exp
+		length(rmds)
+	end
+	
 else
 
 	fouriers0 = [];

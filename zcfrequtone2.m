@@ -15,7 +15,7 @@ frequs = 1. ./ reptimes;
 %figure
 %plot(frequs, k, '.')
 
-doonlygraph = 0
+doonlygraph = 1
 
 pressure_exp = -3;
 pressure = -6.32 * exp(pressure_exp);
@@ -57,173 +57,104 @@ else
 	
 	for takeabs=0:1:1
 		%takeabs = 1 %%% change that
-	
-		fouriers0g = [];
-		fouriers0g_noref = [];
-		fouriers0gerr = [];
-		fouriers0gerr_noref = [];
-	
-		fouriers1g = [];
-		fouriers1g_noref = [];
-		fouriers1gerr = [];
-		fouriers1gerr_noref = [];
 		
-		fouriers2g = [];
-		fouriers2g_noref = [];
-		fouriers2gerr = [];
-		fouriers2gerr_noref = [];
-		
-		fouriers3g = [];
-		fouriers3g_noref = [];
-		fouriers3gerr = [];
-		fouriers3gerr_noref = [];
-		
-		for index=1:1:length(frequs)
-			knum = k(index);
-			%gives us  'fouriers0', 'fouriers0_noref' 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp'
-			load(zcfilename('zsavef/frequ_kmod', num2str(knum), fibertype, pressure_exp) );
-			if takeabs == 1
+		for calcs=0:1:3
 			
-				fouriers0g = [fouriers0g mean(abs(fouriers0))];
-				fouriers0g_noref = [fouriers0g_noref mean(abs(fouriers0_noref))];
-				fact = 1/sqrt(length(fouriers0));
-				fouriers0gerr = [fouriers0gerr std(abs(fouriers0))*fact];
-				fact = 1/sqrt(length(fouriers0_noref));
-				fouriers0gerr_noref = [fouriers0gerr_noref std(abs(fouriers0_noref))*fact];
-				
-				fouriers1g = [fouriers1g mean(abs(fouriers1))];
-				fouriers1g_noref = [fouriers1g_noref mean(abs(fouriers1_noref))];
-				fact = 1/sqrt(length(fouriers1));
-				fouriers1gerr = [fouriers1gerr std(abs(fouriers1))*fact];
-				fact = 1/sqrt(length(fouriers1_noref));
-				fouriers1gerr_noref = [fouriers1gerr_noref std(abs(fouriers1_noref))*fact];
-				
-				fouriers2g = [fouriers2g mean(abs(fouriers2))];
-				fouriers2g_noref = [fouriers2g_noref mean(abs(fouriers2_noref))];
-				fact = 1/sqrt(length(fouriers2));
-				fouriers2gerr = [fouriers2gerr std(abs(fouriers2))*fact];
-				fact = 1/sqrt(length(fouriers2_noref));
-				fouriers2gerr_noref = [fouriers2gerr_noref std(abs(fouriers2_noref))*fact];
-				
-				fouriers3g = [fouriers3g mean(abs(fouriers3))];
-				fouriers3g_noref = [fouriers3g_noref mean(abs(fouriers3_noref))];
-				fact = 1/sqrt(length(fouriers3));
-				fouriers3gerr = [fouriers3gerr std(abs(fouriers3))*fact];
-				fact = 1/sqrt(length(fouriers3_noref));
-				fouriers3gerr_noref = [fouriers3gerr_noref std(abs(fouriers3_noref))*fact];
-				
-			else
+			normal = [];
+			noref = [];
+			normalerr = [];
+			noreferr = [];
 			
-				fouriers0g = [fouriers0g mean(angle(fouriers0))];
-				fouriers0g_noref = [fouriers0g_noref mean(angle(fouriers0_noref))];
-				fact = 1/sqrt(length(fouriers0));
-				fouriers0gerr = [fouriers0gerr std(angle(fouriers0))*fact];
-				fact = 1/sqrt(length(fouriers0_noref));
-				fouriers0gerr_noref = [fouriers0gerr_noref std(angle(fouriers0_noref))*fact];
+			diverr = [];
+			
+			for index=1:1:length(frequs)
+			
+				knum = k(index);
 				
-				fouriers1g = [fouriers1g mean(angle(fouriers1))];
-				fouriers1g_noref = [fouriers1g_noref mean(angle(fouriers1_noref))];
-				fact = 1/sqrt(length(fouriers1));
-				fouriers1gerr = [fouriers1gerr std(angle(fouriers1))*fact];
-				fact = 1/sqrt(length(fouriers1_noref));
-				fouriers1gerr_noref = [fouriers1gerr_noref std(angle(fouriers1_noref))*fact];
+				%gives us  'fouriers0', 'fouriers0_noref' 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp'
+				load(zcfilename('zsavef/frequ_kmod', num2str(knum), fibertype, pressure_exp) );
 				
-				fouriers2g = [fouriers2g mean(angle(fouriers2))];
-				fouriers2g_noref = [fouriers2g_noref mean(angle(fouriers2_noref))];
-				fact = 1/sqrt(length(fouriers2));
-				fouriers2gerr = [fouriers2gerr std(angle(fouriers2))*fact];
-				fact = 1/sqrt(length(fouriers2_noref));
-				fouriers2gerr_noref = [fouriers2gerr_noref std(angle(fouriers2_noref))*fact];
+				if calcs == 0
+					normalIt = fouriers0;
+					norefIt = fouriers0_noref;
+					
+					corrStr = ' fourier0';
+				elseif calcs == 1
+					normalIt = fouriers1;
+					norefIt = fouriers1_noref;
+					
+					corrStr = ' fourier1';
+				elseif calcs == 2
+					normalIt = fouriers2;
+					norefIt = fouriers2_noref;
+					
+					corrStr = ' fourier2';
+				else
+					normalIt = fouriers3;
+					norefIt = fouriers3_noref;
+					
+					corrStr = ' fourier3';
+				end
+
 				
-				fouriers3g = [fouriers3g mean(angle(fouriers3))];
-				fouriers3g_noref = [fouriers3g_noref mean(angle(fouriers3_noref))];
-				fact = 1/sqrt(length(fouriers3));
-				fouriers3gerr = [fouriers3gerr std(angle(fouriers3))*fact];
-				fact = 1/sqrt(length(fouriers3_noref));
-				fouriers3gerr_noref = [fouriers3gerr_noref std(angle(fouriers3_noref))*fact];
+				if takeabs == 1
+				
+					normal = [normal mean(abs(normalIt))];
+					noref = [noref mean(abs(norefIt))];
+					fact = 1/sqrt(length(normalIt));
+					normalerr = [normalerr std(abs(normalIt))*fact];
+					fact = 1/sqrt(length(norefIt));
+					noreferr = [noreferr std(abs(norefIt))*fact];
+					
+					diverr = [diverr zcerr(abs(normalIt), abs(norefIt))];
+					
+					graphf = 'Norm';
+				
+				else
+				
+					normal = [normal mean(angle(normalIt))];
+					noref = [noref mean(angle(norefIt))];
+					fact = 1/sqrt(length(normalIt));
+					normalerr = [normalerr std(angle(normalIt))*fact];
+					fact = 1/sqrt(length(norefIt));
+					noreferr = [noreferr std(angle(norefIt))*fact];
+					
+					diverr = [diverr zcerr(angle(normalIt), angle(norefIt))];
+					
+					graphf = 'Angle';
+				
+				end
+				
+				
+				
+				
 			end
-			
-			
-		end
 		
-		if takeabs == 1
-			graphf = 'Norm ';	
-		else
-			graphf = 'Angle ';
-		end
-		
-		
-		%fouriers0
-		figure
-		errorbar(frequs, fouriers0g, fouriers0gerr);
-		hold on;
-		errorbar(frequs, fouriers0g_noref, fouriers0gerr_noref, 'g');
-		hold off;
-		title([graphf 'fourier0'])
-		legend('normal', 'no ref');
-		xlabel('Frequ Hz');
-		ylabel([graphf ' fourier 0']);
-		
-		%fouriers1
-		figure
-		errorbar(frequs, fouriers1g, fouriers1gerr);
-		hold on;
-		errorbar(frequs, fouriers1g_noref, fouriers1gerr_noref, 'g');
-		hold off;
-		title([graphf 'fourier1'])
-		legend('normal', 'no ref');
-		xlabel('Frequ Hz');
-		ylabel([graphf ' fourier 1']);
-		
-		%fouriers2
-		figure
-		errorbar(frequs, fouriers2g, fouriers2gerr);
-		hold on;
-		errorbar(frequs, fouriers2g_noref, fouriers2gerr_noref, 'g');
-		hold off;
-		title([graphf 'fourier2'])
-		legend('normal', 'no ref');
-		xlabel('Frequ Hz');
-		ylabel([graphf ' fourier 2']);
-		
-		%fouriers3
-		figure
-		errorbar(frequs, fouriers3g, fouriers3gerr);
-		hold on;
-		errorbar(frequs, fouriers3g_noref, fouriers3gerr_noref, 'g');
-		hold off;
-		title([graphf 'fourier3'])
-		legend('normal', 'no ref');
-		xlabel('Frequ Hz');
-		ylabel([graphf ' fourier 3']);
-		
-		
-		if takeabs == 1 %%ask for error propagation 
-			figure
-			%errorbar(frequs, fouriers1g ./ fouriers1g_noref, fouriers1gerr .* fouriers1gerr_noref);  
-			plot(frequs, fouriers1g ./ fouriers1g_noref)
-			title([graphf 'fourier1 / fourier1 noref'])
-			xlabel('Frequ Hz');
-			ylabel([graphf ' fourier 1 / fourier1 noref']);
 			
 			figure
-			%errorbar(frequs, fouriers2g ./ fouriers2g_noref, fouriers2gerr .* fouriers2gerr_noref); 
-			plot(frequs, fouriers2g ./ fouriers2g_noref)
-			title([graphf 'fourier2 / fourier2 noref'])
+			errorbar(frequs, normal, normalerr);
+			hold on;
+			errorbar(frequs, noref, noreferr, 'g');
+			hold off;
+			title([graphf corrStr])
+			legend('normal', 'no ref');
 			xlabel('Frequ Hz');
-			ylabel([graphf ' fourier 2 / fourier 2 noref']);
+			ylabel([graphf corrStr]);
 			
-			figure
-			%errorbar(frequs, fouriers3g ./ fouriers3g_noref, fouriers3gerr.* fouriers3gerr_noref); 
-			plot(frequs, fouriers3g ./ fouriers3g_noref)
-			title([graphf 'fourier3 / fourier3 noref'])
-			xlabel('Frequ Hz');
-			ylabel([graphf ' fourier 3 / fourier3 noref']);
+			%if  calcs ~=0 % && takeabs == 1 
 			
-		end
+				figure
+				errorbar(frequs, normal ./ noref, diverr);  
+				%plot(frequs, normal ./ noref)
+				title([graphf corrStr '/' corrStr ' noref'])
+				xlabel('Frequ Hz');
+				ylabel([graphf corrStr '/' corrStr ' noref']);
+				
+			%end
+			
 		
+		end
 	end
-	
 end
 
 %gentitle = 'pure tone';
