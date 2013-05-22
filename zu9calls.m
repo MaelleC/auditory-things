@@ -14,7 +14,7 @@ fibertype = 1;
 pressure_exp = low_pressure_exp;
 
 doclick = 1;
-dotonestep = 1;
+dotonestep = 0; %!! change that !!
 donoisestep = 0;%seems ok everywhere
 dotone = 0;
 
@@ -23,7 +23,7 @@ for nr_exp=1:1:2% !! change that !
 	nr_exp
 	
 	
-	if doclick == 1
+	if doclick == 1 && nr_exp ~=2 %% !!!!! change that !
 		doclick
 		%click
 		%-----

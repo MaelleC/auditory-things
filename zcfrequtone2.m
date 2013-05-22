@@ -141,7 +141,7 @@ else
 			xlabel('Frequ Hz');
 			ylabel([graphf corrStr]);
 			
-			%if  calcs ~=0 % && takeabs == 1 
+			if  takeabs == 1  %calcs ~=0 % && takeabs == 1 
 			
 				figure
 				errorbar(frequs, normal ./ noref, diverr);  
@@ -150,7 +150,7 @@ else
 				xlabel('Frequ Hz');
 				ylabel([graphf corrStr '/' corrStr ' noref']);
 				
-			%end
+			end
 			
 		
 		end
