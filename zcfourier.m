@@ -1,5 +1,5 @@
-function [coeff] = zcfourierk(signal, deltaT, period, k)
-
+function [coeff] = zcfourier(signal, deltaT, period, k)
+tdres = 1e-5;
 coeff1 = 1/period;
 
 if(rem(period, deltaT) ~= 0 )

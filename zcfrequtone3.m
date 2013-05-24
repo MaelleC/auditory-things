@@ -1,5 +1,4 @@
-%45'
-%not ok - use zcfrequtone3
+
 cf = 1e4;
 nr_use = 10;
 tdres = 1e-5;
@@ -7,13 +6,7 @@ tdres = 1e-5;
 % 1334, 2667 Hz  
 %frequs = [ 10, 200, 500, 800, 1000, 1250, 2000, 2500, 3125, 4000]; these are ok, other have glitches
 
-k = [25:100,  103, (100 + 10 * (1: 19)), 320, (50 * (7 : 20))];
-lenk = length(k)
-%k = 10 * (1 : 100);
-reptimes = k * tdres;
-frequs = 1. ./ reptimes;
-%figure
-%plot(frequs, k, '.')
+frequs = [50 *(1 : 80)];
 
 doonlygraph = 1
 
@@ -24,20 +17,19 @@ cihc = 1;
 fibertype = 2;
 implnt = 0;
 
+nrep = 1;
+reptime = 2; %% after : will need perhaps bigger for little frequencies
+
 if doonlygraph == 0
 	for index=1:1:length(frequs)
-		%we go from high frequences to low frequences
 	
 		index
-		knum = k(index)
 		
 		fm = frequs(index)
-			
-		nrep = 1000;
-		reptime = reptimes(index)
+		
 		index
 
-		t = 0:(knum-1); 
+		t = 0:(round(reptime/tdres)-1); 
 		t = t*tdres;
 		 
 		x = sin(2*pi*t*cf);
@@ -49,9 +41,10 @@ if doonlygraph == 0
 		 
 		y = y*pressure;
 		
-		leny = length(y)
+		%figure
+		%plot(y);
 		
-		zcfrequ_nexp2(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, knum)
+		zcfrequ_nexp3(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, fm);
 	end
 else
 	for takeabs=0:1:1
@@ -67,11 +60,11 @@ else
 			diverr = [];
 			
 			for index=1:1:length(frequs)
-			
-				knum = k(index);
+				frequ = frequs(index);
+				
 				
 				%gives us  'fouriers0', 'fouriers0_noref' 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp'
-				load(zcfilename('zsavef/frequ_kmod', num2str(knum), fibertype, pressure_exp) );
+				load(zcfilename('zsavef/frequ3_', num2str(frequ), fibertype, pressure_exp) );
 				
 				if calcs == 0
 					normalIt = fouriers0;

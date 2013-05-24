@@ -2,9 +2,6 @@ low_pressure_exp = -3; %50db
 middle_pressure_exp = -1; %90db
 high_pressure_exp = 1; %130db
 
-
-use_rmdmean = 0;
-
 figure
 fibertype = 1;
 pressure_exp = low_pressure_exp;
@@ -37,54 +34,57 @@ for nr_exp=1:1:9
 		%gives 'rmds', 'rmds_noref', 'rmds_wmean', 'rmds_wmean_noref', 'fouriers0', 'fouriers1', 'fouriers2', 'fouriers3', 'fouriers0_noref', 'fouriers1_noref', 'fouriers2_noref', 'fouriers3_noref', 'nrep_nexp'
 		load(zcfilename('zsavef/rmdsnexp', experiment, fibertype, pressure_exp));
 		
+		%% scaling for beautyful graph
 		if strcmp('tonestep', experiment) || strcmp('click', experiment)
 			scfact = thescfact;
 		else
 			scfact = 1;
 		end
-		
-		
-		if strcmp('tonestep', experiment) && 1==0
-			fibertype
-			pressure_exp
-			lenofrmds = length(rmds)
-		end
-		
-		if use_rmdmean == 1
-			valuevars = [ valuevars; mean(rmds_wmean)/scfact std(rmds_wmean)*factor/scfact];
-			valuevars_noref = [ valuevars_noref; mean(rmds_wmean_noref)/scfact std(rmds_wmean_noref)*factor_noref/scfact];
-		else
 			
-			if strcmp('click', experiment)		
+		if strcmp('click', experiment) || strcmp('tonestep', experiment)
+		
+			if strcmp('click', experiment)
 				% gives 'max_clicks' and 'max_clicks_noref'
 				load(zcfilename('zsavef/rmdsnexp', '_maxclicks', fibertype, pressure_exp));
 				
 				% gives 'clickbaselines' and 'clickbaselines_noref'
 				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, 0));
 				
-				stdnormal = zcerr(max_clicks, clickbaselines);
-				stdnoref = zcerr(max_clicks_noref, clickbaselines_noref);
+				theMax = max_clicks;
+				baseline = clickbaselines;
+				
+				theMax_noref = max_clicks_noref;
+				baseline_noref = clickbaselines_noref;
+			else
 			
-			elseif strcmp('tonestep', experiment)
 				%'max_tonests', 'max_tonests_noref', 'nrep_nexp'
 				load(zcfilename('zsavef/rmdsnexp', '_maxtonestep', fibertype, pressure_exp));
 				
 				%'tonestepbaselines', 'tonestepbaselines_noref'
 				load(zcfilename('zsavef/rmdsbase', experiment, fibertype, pressure_exp));
 				
-				stdnormal = zcerr(max_tonests, tonestepbaselines);
-				stdnoref = zcerr(max_tonests_noref, tonestepbaselines_noref);
+				theMax = max_tonests;
+				baseline = tonestepbaselines;
 				
-			else
-				stdnormal = zcstdofmean(rmds);
-				stdnoref = zcstdofmean(rmds_noref);
+				theMax_noref = max_tonests_noref;
+				baseline_noref = tonestepbaselines_noref;
+			
 			end
-
+			
+			rmd = mean(theMax)/ mean(baseline) - 1;
+			rmd_noref = mean(theMax_noref)/ mean(baseline_noref) - 1;
+			
+			valuevars = [ valuevars; rmd/scfact zcerr2(theMax, baseline)/scfact];
+			valuevars_noref = [ valuevars_noref; rmd_noref/scfact zcerr2(theMax_noref, baseline_noref)/scfact];
+		
+		else
+			stdnormal = zcstdofmean(rmds);
+			stdnoref = zcstdofmean(rmds_noref);
 			
 			valuevars = [ valuevars; mean(rmds)/scfact stdnormal/scfact];
 			valuevars_noref = [ valuevars_noref; mean(rmds_noref)/scfact stdnoref/scfact];
 			
-		end
+		end	
 	end
 	
 	
