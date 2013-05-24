@@ -15,7 +15,7 @@ frequs = 1. ./ reptimes;
 %figure
 %plot(frequs, k, '.')
 
-doonlygraph = 1
+doonlygraph = 0
 
 pressure_exp = -3;
 pressure = -6.32 * exp(pressure_exp);
@@ -54,9 +54,8 @@ if doonlygraph == 0
 		zcfrequ_nexp2(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, knum)
 	end
 else
-	
 	for takeabs=0:1:1
-		%takeabs = 1 %%% change that
+		%takeabs = 0 %%% change that
 		
 		for calcs=0:1:3
 			
@@ -141,16 +140,21 @@ else
 			xlabel('Frequ Hz');
 			ylabel([graphf corrStr]);
 			
-			if  takeabs == 1  %calcs ~=0 % && takeabs == 1 
+			%if  takeabs == 1  %calcs ~=0 % && takeabs == 1 
 			
 				figure
 				errorbar(frequs, normal ./ noref, diverr);  
-				%plot(frequs, normal ./ noref)
 				title([graphf corrStr '/' corrStr ' noref'])
 				xlabel('Frequ Hz');
 				ylabel([graphf corrStr '/' corrStr ' noref']);
 				
-			end
+				figure
+				plot(frequs, normal ./ noref)
+				title([graphf corrStr '/' corrStr ' noref'])
+				xlabel('Frequ Hz');
+				ylabel([graphf corrStr '/' corrStr ' noref']);
+				
+			%end
 			
 		
 		end
