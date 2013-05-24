@@ -89,7 +89,7 @@ for nr_exp=1:1:9
 	
 	
 	subplot(3, 3, nr_exp);
-	zgbarrmd2(valuevars, valuevars_noref, fibertype, pressure_exp, use_rmdmean, thescfact);
+	zgbarrmd2(valuevars, valuevars_noref, fibertype, pressure_exp, 0, thescfact);
 
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1

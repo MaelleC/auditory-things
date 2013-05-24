@@ -13,8 +13,8 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-doclick = 1;
-dotonestep = 0; %!! change that !!
+doclick = 0;
+dotonestep = 1;
 donoisestep = 0;%seems ok everywhere
 dotone = 0;
 
