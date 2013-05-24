@@ -1,4 +1,4 @@
-
+%45'
 cf = 1e4;
 nr_use = 10;
 tdres = 1e-5;
@@ -8,7 +8,7 @@ tdres = 1e-5;
 
 frequs = [50 *(1 : 80)];
 
-doonlygraph = 1
+doonlygraph = 0
 
 pressure_exp = -3;
 pressure = -6.32 * exp(pressure_exp);

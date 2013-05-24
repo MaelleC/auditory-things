@@ -38,6 +38,7 @@ for nr_exp=0:1:(nr_use - 1)
 end
 
 nrep_nexp  = nrep;
+fourierslen = length(fouriers0)
 
 if savethings == 1
 	save(zcfilename('zsavef/frequ3_', num2str(frequ), fibertype, pressure_exp), 'fouriers0', 'fouriers0_noref', 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp');
