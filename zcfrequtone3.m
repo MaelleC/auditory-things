@@ -8,7 +8,7 @@ tdres = 1e-5;
 
 frequs = [50 *(1 : 80)];
 
-doonlygraph = 0
+doonlygraph = 1
 
 pressure_exp = -3;
 pressure = -6.32 * exp(pressure_exp);
@@ -133,19 +133,25 @@ else
 			xlabel('Frequ Hz');
 			ylabel([graphf corrStr]);
 			
+			
 			%if  takeabs == 1  %calcs ~=0 % && takeabs == 1 
 			
 				figure
-				errorbar(frequs, normal ./ noref, diverr);  
+				plot(frequs, normal ./ noref);
+				hold on;
+				errorbar(frequs, normal ./ noref, diverr, '.g');  
+				hold off;
 				title([graphf corrStr '/' corrStr ' noref'])
 				xlabel('Frequ Hz');
 				ylabel([graphf corrStr '/' corrStr ' noref']);
 				
+				if 1 == 0
 				figure
 				plot(frequs, normal ./ noref)
 				title([graphf corrStr '/' corrStr ' noref'])
 				xlabel('Frequ Hz');
 				ylabel([graphf corrStr '/' corrStr ' noref']);
+				end
 				
 			%end
 			
