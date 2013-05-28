@@ -2,7 +2,7 @@ function [] = zcfrequ_nexp(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, i
 
 savethings = 1;
 
-completethings = 1
+completethings = 0
 
 if completethings == 1
 	% 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp'

@@ -1,4 +1,4 @@
-%40' for 1 rep
+%2'40 /element with 400 nrep, and 1 nr_use
 carrierfrequ = 1e4;
 cf = 1e3;
 nr_use = 1;
@@ -9,9 +9,9 @@ tdres = 1e-5;
 
 frequs = [50 *(1 : 80)];
 
-doonlygraph = 1
+doonlygraph = 0
 
-pressure_exp = -7; % !! change that !!
+pressure_exp = -7;
 pressure = -6.32 * exp(pressure_exp);
 cohc = 1;
 cihc = 1;

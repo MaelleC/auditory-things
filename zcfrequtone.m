@@ -6,6 +6,7 @@ tdres = 1e-5;
 % 1334, 2667 Hz  
 %frequs = [ 10, 200, 500, 800, 1000, 1250, 2000, 2500, 3125, 4000]; these are ok, other have glitches
 
+if 1 == 0
 k = [25:100,  103, (100 + 10 * (1: 19)), 320, (50 * (7 : 20))];
 lenk = length(k)
 %k = 10 * (1 : 100);
@@ -13,6 +14,7 @@ reptimes = k * tdres;
 frequs = 1. ./ reptimes;
 %figure
 %plot(frequs, k, '.')
+end
 
 doonlygraph = 1
 
