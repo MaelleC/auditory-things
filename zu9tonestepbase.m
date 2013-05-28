@@ -1,8 +1,11 @@
 %3h
+low_pressure_exp = -7; %49db
+middle_pressure_exp = -3; %84db
+high_pressure_exp = 1; %120db
 
-low_pressure_exp = -3; %50db
-middle_pressure_exp = -1; %90db
-high_pressure_exp = 1; %130db
+%low_pressure_exp = -3; %84db
+%middle_pressure_exp = -1; %100db
+%high_pressure_exp = 1; %120db
 
 experiment = 'tonestep';
 
@@ -25,7 +28,7 @@ completethings = 1;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-for nr_exp=1:1:9
+for nr_exp=1:1:2 %% change that !!
 
 	if only_show == 1
 	
@@ -66,10 +69,9 @@ for nr_exp=1:1:9
 		
 		nrep = 800;
 		
-		stim = repmat(y, 1, nrep);
 		for index =1:1:nr_use
 
-			[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel_rep(stim, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
+			[vihc, synout, psth, synout_noref, psth_noref] = zuusemodel(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 			
 			%2000 -> 0.02 seconds : 
 			tonestepbaselines = [tonestepbaselines mean(psth(2000 : length(psth)))];
@@ -81,6 +83,7 @@ for nr_exp=1:1:9
 		
 	end
 
+	if 1 == 0
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1
 			fibertype = 2;
@@ -96,7 +99,27 @@ for nr_exp=1:1:9
 	else
 		pressure_exp = low_pressure_exp;
 	end
+	end
 	
+	
+	%iteration
+	if (nr_exp == 3 || nr_exp == 6)
+		if pressure_exp == low_pressure_exp
+			pressure_exp = middle_pressure_exp;
+		elseif pressure_exp == middle_pressure_exp
+			pressure_exp = high_pressure_exp;
+		else
+			pressure_exp = low_pressure_exp;
+		end
+	end
+	
+	if fibertype == 1
+		fibertype = 2;
+	elseif fibertype == 2
+		fibertype = 3;
+	else 
+		fibertype = 1
+	end
 	
 
 end

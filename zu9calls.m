@@ -17,19 +17,18 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-doclick = 1;
-dotonestep = 1;
-donoisestep = 1;%seems ok everywhere
-dotone = 1;
+doclick = 0;
+dotonestep = 0;
+donoisestep = 0;%seems ok everywhere
+dotone = 0;
 
 
-for nr_exp=1:1:3% !! change that !
+for nr_exp=1:1:9%% !! change that !
 	nr_exp
 	pressure_exp
 	fibertype
 	
-	
-	if doclick == 1 && nr_exp ~=2 %% !!!!! change that !
+	if doclick == 1
 		doclick
 		%click
 		%-----
@@ -54,7 +53,7 @@ for nr_exp=1:1:3% !! change that !
 		%--------
 		fc = 1e4;
 		
-		nrep = 800; %800 ok
+		nrep = 800; %800 ok % must be 800, to be coherent with the baseline
 		reptime = 0.1;
 		pressure = -6.32 * exp(pressure_exp);
 	 
