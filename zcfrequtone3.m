@@ -1,5 +1,6 @@
-%45'
-cf = 1e4;
+%40' for 1 rep
+carrierfrequ = 1e4;
+cf = 1e3;
 nr_use = 1;
 tdres = 1e-5;
  
@@ -10,11 +11,11 @@ frequs = [50 *(1 : 80)];
 
 doonlygraph = 1
 
-pressure_exp = -3;
+pressure_exp = -7; % !! change that !!
 pressure = -6.32 * exp(pressure_exp);
 cohc = 1;
 cihc = 1;
-fibertype = 2;
+fibertype = 3; % !! try with 3
 implnt = 0;
 
 nrep = 100;
@@ -32,7 +33,7 @@ if doonlygraph == 0
 		t = 0:(round(reptime/tdres)-1); 
 		t = t*tdres;
 		 
-		x = sin(2*pi*t*cf);
+		x = sin(2*pi*t*carrierfrequ);
 		
 		m = sin(2*pi*t*fm);
 		M=1;%modulation

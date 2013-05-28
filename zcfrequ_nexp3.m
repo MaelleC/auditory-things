@@ -2,7 +2,7 @@ function [] = zcfrequ_nexp3(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, 
 
 savethings = 1
 
-completethings = 0 % !!!! 
+completethings = 1
 
 if completethings == 1
 	% 'fouriers0', 'fouriers0_noref' 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp'
@@ -26,9 +26,10 @@ for nr_exp=0:1:(nr_use - 1)
 	%reptime is a natural number > 1 s
 	
 	if rem(frequ, 250) == 0
-	figure
-	plot(psth((1e5 + 1): length(psth)));
-	title(num2str(frequ));
+		figure
+		plot(psth((1e5 + 1): length(psth)));
+		title(num2str(frequ));
+		sum(psth)
 	end
 	
 	freptime = reptime -1;
