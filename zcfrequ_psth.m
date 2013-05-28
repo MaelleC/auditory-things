@@ -1,6 +1,8 @@
 carrierfrequ = 1e4;
 cf = 1e3;
-nr_use = 1;
+
+%if 10 : 35'
+nr_use = 10;
 tdres = 1e-5;
  
 % 1334, 2667 Hz  

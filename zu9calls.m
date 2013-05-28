@@ -17,7 +17,7 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-doclick = 0;
+doclick = 1;
 dotonestep = 1;% do être fait avec completethings = 0;
 donoisestep = 1;% do être fait avec completethings = 0;
 dotone = 1;% do être fait avec completethings = 0;
