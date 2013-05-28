@@ -1,6 +1,10 @@
-low_pressure_exp = -3; %50db
-middle_pressure_exp = -1; %90db
-high_pressure_exp = 1; %130db
+low_pressure_exp = -7; %49db
+middle_pressure_exp = -3; %84db
+high_pressure_exp = 1; %120db
+
+%low_pressure_exp = -3; %84db
+%middle_pressure_exp = -1; %100db
+%high_pressure_exp = 1; %120db
 
 figure
 fibertype = 1;

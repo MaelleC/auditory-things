@@ -1,6 +1,6 @@
 %45'
 cf = 1e4;
-nr_use = 10;
+nr_use = 1;
 tdres = 1e-5;
  
 % 1334, 2667 Hz  
@@ -17,7 +17,7 @@ cihc = 1;
 fibertype = 2;
 implnt = 0;
 
-nrep = 1;
+nrep = 100;
 reptime = 2; %% after : will need perhaps bigger for little frequencies
 
 if doonlygraph == 0
@@ -41,8 +41,10 @@ if doonlygraph == 0
 		 
 		y = y*pressure;
 		
-		%figure
-		%plot(y);
+		if rem(index, 10) == 0 && 1== 0
+		figure
+		plot(y);
+		end
 		
 		zcfrequ_nexp3(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, fm);
 	end
@@ -64,7 +66,7 @@ else
 				
 				
 				%gives us  'fouriers0', 'fouriers0_noref' 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp'
-				load(zcfilename('zsavef/frequ3_', num2str(frequ), fibertype, pressure_exp) );
+				load(zcfilename('zsavef/frequ3_rep', num2str(frequ), fibertype, pressure_exp) );
 				
 				if calcs == 0
 					normalIt = fouriers0;

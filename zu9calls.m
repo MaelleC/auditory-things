@@ -1,6 +1,10 @@
-low_pressure_exp = -3; %50db
-middle_pressure_exp = -1; %90db
-high_pressure_exp = 1; %130db
+low_pressure_exp = -7; %49db
+middle_pressure_exp = -3; %84db
+high_pressure_exp = 1; %120db
+
+%low_pressure_exp = -3; %84db
+%middle_pressure_exp = -1; %100db
+%high_pressure_exp = 1; %120db
 
 cf = 1e3;
 tdres = 1/100e3;
@@ -13,14 +17,16 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-doclick = 0;
+doclick = 1;
 dotonestep = 1;
-donoisestep = 0;%seems ok everywhere
-dotone = 0;
+donoisestep = 1;%seems ok everywhere
+dotone = 1;
 
 
-for nr_exp=1:1:2% !! change that !
+for nr_exp=1:1:3% !! change that !
 	nr_exp
+	pressure_exp
+	fibertype
 	
 	
 	if doclick == 1 && nr_exp ~=2 %% !!!!! change that !
@@ -119,7 +125,8 @@ for nr_exp=1:1:2% !! change that !
 	end
 
 	
-	%iteration
+	%%iteration
+	if 1 == 0
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1
 			fibertype = 2;
@@ -134,6 +141,26 @@ for nr_exp=1:1:2% !! change that !
 		pressure_exp = high_pressure_exp;
 	else
 		pressure_exp = low_pressure_exp;
+	end
+	end
+	
+	%iteration
+	if (nr_exp == 3 || nr_exp == 6)
+		if pressure_exp == low_pressure_exp
+			pressure_exp = middle_pressure_exp;
+		elseif pressure_exp == middle_pressure_exp
+			pressure_exp = high_pressure_exp;
+		else
+			pressure_exp = low_pressure_exp;
+		end
+	end
+	
+	if fibertype == 1
+		fibertype = 2;
+	elseif fibertype == 2
+		fibertype = 3;
+	else 
+		fibertype = 1
 	end
 end
 

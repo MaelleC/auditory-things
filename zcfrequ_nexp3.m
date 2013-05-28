@@ -2,11 +2,11 @@ function [] = zcfrequ_nexp3(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, 
 
 savethings = 1
 
-completethings = 1
+completethings = 0 % !!!! 
 
 if completethings == 1
 	% 'fouriers0', 'fouriers0_noref' 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp'
-	load(zcfilename('zsavef/frequ3_', num2str(frequ), fibertype, pressure_exp));
+	load(zcfilename('zsavef/frequ3_rep', num2str(frequ), fibertype, pressure_exp));
 
 else
 	fouriers0 = [];
@@ -25,6 +25,12 @@ for nr_exp=0:1:(nr_use - 1)
 	
 	%reptime is a natural number > 1 s
 	
+	if rem(frequ, 250) == 0
+	figure
+	plot(psth((1e5 + 1): length(psth)));
+	title(num2str(frequ));
+	end
+	
 	freptime = reptime -1;
 	
 	fouriers0 = [fouriers0 zcfourier(psth((1e5 + 1): length(psth)), tdres, freptime, 0)];
@@ -41,5 +47,5 @@ nrep_nexp  = nrep;
 fourierslen = length(fouriers0)
 
 if savethings == 1
-	save(zcfilename('zsavef/frequ3_', num2str(frequ), fibertype, pressure_exp), 'fouriers0', 'fouriers0_noref', 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp');
+	save(zcfilename('zsavef/frequ3_rep', num2str(frequ), fibertype, pressure_exp), 'fouriers0', 'fouriers0_noref', 'fouriers1', 'fouriers1_noref', 'fouriers2', 'fouriers2_noref', 'fouriers3', 'fouriers3_noref', 'nrep_nexp');
 end

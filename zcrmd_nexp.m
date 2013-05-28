@@ -8,9 +8,9 @@ binbase = 10/1000;
 
 domeanrmd = 0;
 dormd = 1;
-dofourier = 0;
+dofourier = 1;
 
-completethings = 1;
+completethings = 0; %%! change that
 
 if completethings == 1
 

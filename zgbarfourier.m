@@ -14,7 +14,7 @@ if isabs == 1
 else
 	t = 'Fourier coeff. angle ';
 end
-t = [t, 'for ', experiment, ', fibertype ', num2str(fibertype), ', pressure 6.32e', num2str(pressurexp), ' Pa'];
+t = [t, 'for ', experiment, ', fibertype ', num2str(fibertype), ', pressure 6.32 exp(', num2str(pressurexp), ') Pa'];
 title(t);
 xlabel('Coefficients');
 ylabel('Value');
