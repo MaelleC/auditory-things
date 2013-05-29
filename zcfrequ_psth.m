@@ -29,8 +29,6 @@ if doonlygraph == 0
 		index
 		
 		fm = frequs(index)
-		
-		index
 
 		t = 0:(round(reptime/tdres)-1); 
 		t = t*tdres;
