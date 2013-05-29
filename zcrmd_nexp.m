@@ -10,7 +10,7 @@ domeanrmd = 0;
 dormd = 1;
 dofourier = 1;
 
-completethings = 0; % !!! change that !!
+completethings = 1;
 
 if completethings == 1
 

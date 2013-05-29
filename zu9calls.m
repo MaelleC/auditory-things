@@ -17,13 +17,14 @@ nr_use = 10;
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
-doclick = 1;
-dotonestep = 1;% do être fait avec completethings = 0;
-donoisestep = 1;% do être fait avec completethings = 0;
-dotone = 1;% do être fait avec completethings = 0;
+%pour fourier : faire tous les 4 premiers
+doclick = 1;%f2,p-7
+dotonestep = 1;%f1,p-7 f1,p-3 f2,p-7
+donoisestep = 1;% f1,p-7
+dotone = 0;%ok
 
 
-for nr_exp=1:1:3%% !! change that !
+for nr_exp=1:1:4%% !! change that !
 	nr_exp
 	pressure_exp
 	fibertype

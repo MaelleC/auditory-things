@@ -62,6 +62,8 @@ else
 			filename = 'zsavef/frequ_psth'
 			%gives us  'bpsth', 'bpsth_noref' 'repstot'
 			load(zcfilename(filename, num2str(frequ), fibertype, pressure_exp));
+			
+			reptots
 			gentitle = ['pure tone ' num2str(frequ)];
 			
 			zgpsthgraph(bpsth, bpsth_noref, (reptime - 1), repstot, tdres, gentitle);
