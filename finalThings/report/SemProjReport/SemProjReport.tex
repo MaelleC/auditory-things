@@ -1,21 +1,33 @@
+%%%%% this line is 80 chars wide, please don't make longer lines %%%%%%%%%%%%%%%
 \documentclass[nocopyrightspace,11pt,authoryear,preprint]{sigplanconf}
+
+%\usepackage[francais]{babel}
+
+%\usepackage[utf8]{inputenc}  
+%\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
 
 \begin{document}
 
 \title{Representation of auditory signals by neuronal spike trains}
 \subtitle{Bachelor project report} 
 
-\authorinfo{Maelle Colussi}
+\authorinfo{Ma\"elle Colussi}
            {Computational Neuroscience Laboratory (LCN) - EPFL}
-					 {Professor in charge : Prof. Wulfram Gerstner, Assistant in charge : Moritz Deger}
+					 {Professor in charge : Prof. Wulfram Gerstner, 
+					Assistant in charge : Moritz Deger}
 
 \maketitle
 
 \section{Introduction}
 \input{introduction}
 
-\section{Method}
-\input{method}
+\section{The Auditory System}
+\input{auditsys}
+
+\section{Model}
+\input{model}
 
 \section{Results}
 \input{results}
@@ -24,5 +36,6 @@
 \bibliography{bibliography}
 
 %https://en.wikipedia.org/wiki/BibTeX
+%\cite{AuditoryNeuroscience} 
 
 \end{document}

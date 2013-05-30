@@ -1,39 +1,9 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Avissar et~al.(2013)Avissar, Wittig, Saunders, and
-  Parsons]{AvissarPapier}
-M.~Avissar, J.~H. Wittig, Jr, J.~C. Saunders, and T.~D. Parsons.
-\newblock {R}efractoriness {E}nhances {T}emporal {C}oding by {A}uditory {N}erve
-  {F}ibers.
-\newblock \emph{The Journal of Neuroscience 33(18)}, pages 7681--7690, 2013.
-
-\bibitem[Deger et~al.(2010)Deger, Helias, Cardanobile, Atay, and Rotter]{Deger}
-M.~Deger, M.~Helias, S.~Cardanobile, F.~M. Atay, and S.~Rotter.
-\newblock {N}onequilibrium dynamics of stochastic point process with
-  refractoriness.
-\newblock \emph{Physical Review E 82}, 2010.
-
-\bibitem[Eggermont(2001)]{Eggermont}
-J.~J. Eggermont.
-\newblock {B}etween sound and perception: reviewing the search for a neural
-  code.
-\newblock \emph{Hearing Research 157}, pages 1–--42, 2001.
-
-\bibitem[Kiang(1965)]{KiangBook}
-N.~Y.-S. Kiang.
-\newblock \emph{{D}ischarge {P}atterns of {S}ingle {F}ibers in the {C}at's
-  {A}uditory {N}erve}.
-\newblock Number~35 in M.I.T. Research Monograph. The MIT Press, 1965.
-
-\bibitem[Langner(1992)]{Langner}
-G.~Langner.
-\newblock {P}eriodicity coding in the auditory system.
-\newblock \emph{Hearing Research 60}, pages 115–--142, 1992.
 
 \bibitem[Schnupp et~al.(2011)Schnupp, Nelken, and King]{AuditoryNeuroscience}
 J.~Schnupp, I.~Nelken, and A.~King.
