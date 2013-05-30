@@ -1,0 +1,41 @@
+//Moritz l'a donné en papier, mais pas en numérique
+
+
+
+Refractoriness enhances temporal coding by auditory nerve fibers.
+
+*Refractoriness enhances temporal coding by auditory nerve fibers.*
+
+J Neurosci. 2013 May 1;33(18):7681-90
+
+Authors: Avissar M, Wittig JH, Saunders JC, Parsons TD
+
+Abstract
+A universal property of spiking neurons is refractoriness, a transient
+decrease in discharge probability immediately following an action
+potential (spike). The refractory period lasts only one to a few
+milliseconds, but has the potential to affect temporal coding of
+acoustic stimuli by auditory neurons, which are capable of
+submillisecond spike-time precision. Here this possibility was
+investigated systematically by recording spike times from chicken
+auditory nerve fibers in vivo while stimulating with repeated pure tones
+at characteristic frequency. Refractory periods were tightly
+distributed, with a mean of 1.58 ms. A statistical model was developed
+to recapitulate each fiber's responses and then used to predict the
+effect of removing the refractory period on a cell-by-cell basis for two
+largely independent facets of temporal coding: faithful entrainment of
+interspike intervals to the stimulus frequency and precise
+synchronization of spike times to the stimulus phase. The ratio of the
+refractory period to the stimulus period predicted the impact of
+refractoriness on entrainment and synchronization. For ratios less than
+~0.9, refractoriness enhanced entrainment and this enhancement was often
+accompanied by an increase in spike-time precision. At higher ratios,
+little or no change in entrainment or synchronization was observed.
+Given the tight distribution of refractory periods, the ability of
+refractoriness to improve temporal coding is restricted to neurons
+responding to low-frequency stimuli. Enhanced encoding of low
+frequencies likely affects sound localization and pitch perception in
+the auditory system, as well as perception in nonauditory sensory
+modalities, because all spiking neurons exhibit refractoriness.
+
+PMID: 23637161 [PubMed - in process]
