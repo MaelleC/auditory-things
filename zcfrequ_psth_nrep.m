@@ -4,7 +4,7 @@ savethings = 1
 
 completethings = 1
 
-filename = 'zsavef/frequ_psth'
+filename = 'zsavef/frequ_psth';
 
 if completethings == 1
 	% 'bpsth', 'bpsth_noref', 'repstot'
