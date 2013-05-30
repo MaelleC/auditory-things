@@ -19,10 +19,9 @@ end
 for nr_exp=0:1:(nr_use - 1)
 	[vihc, synout, psth, synout_noref, psth_noref] = zuconcreteuse(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt);
 	
-	%reptime is a natural number > 1 s
+	%reptime is a natural number > 1 s	
 	
-	%if rem(frequ, 250) == 0
-	if nr_exp == 0 && 1 == 0
+	if nr_exp == 0 && rem(frequ, 500) == 0 && 1 == 0
 		figure
 		plot(psth((1e5 + 1): length(psth)));
 		title([num2str(frequ) ' ' num2str(sum(psth))]);
@@ -31,7 +30,7 @@ for nr_exp=0:1:(nr_use - 1)
 		title(['stim ' num2str(frequ)]);
 		
 	end
-	%end
+	
 	bpsth = bpsth + psth((1e5 + 1): length(psth));
 	bpsth_noref = bpsth_noref + psth_noref((1e5 + 1): length(psth_noref));
 	

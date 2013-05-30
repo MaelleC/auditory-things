@@ -58,7 +58,7 @@ else
 				noref = [];
 				
 				for index=1:1:length(frequs)
-					frequ = frequs(index)
+					frequ = frequs(index);
 					
 					filename = 'zsavef/frequ_psth';
 					%gives us  'bpsth', 'bpsth_noref' 'repstot'
