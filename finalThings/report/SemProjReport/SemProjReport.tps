@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=675
-NormalPos.bottom=460
+NormalPos.right=1362
+NormalPos.bottom=478
 Class=LaTeXView
-Document=auditsys.tex
+Document=introduction.tex
 
 [Frame0_View0,0]
-TopLine=9
-Cursor=1297
+TopLine=3
+Cursor=1532
 
 [Frame1]
 Flags=0
@@ -29,14 +29,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=675
-NormalPos.bottom=460
+NormalPos.right=1362
+NormalPos.bottom=478
 Class=LaTeXView
-Document=introduction.tex
+Document=model.tex
 
 [Frame1_View0,0]
 TopLine=0
-Cursor=745
+Cursor=161
 
 [Frame2]
 Flags=0
@@ -47,8 +47,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=675
-NormalPos.bottom=460
+NormalPos.right=1362
+NormalPos.bottom=478
 Class=LaTeXView
 Document=results.tex
 
@@ -65,14 +65,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=675
-NormalPos.bottom=460
+NormalPos.right=1362
+NormalPos.bottom=478
 Class=LaTeXView
-Document=SemProjReport.tex
+Document=auditsys.tex
 
 [Frame3_View0,0]
-TopLine=6
-Cursor=325
+TopLine=0
+Cursor=391
 
 [Frame4]
 Flags=0
@@ -83,16 +83,52 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=675
-NormalPos.bottom=460
+NormalPos.right=1362
+NormalPos.bottom=478
+Class=LaTeXView
+Document=conclusion.tex
+
+[Frame4_View0,0]
+TopLine=0
+Cursor=0
+
+[Frame5]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1362
+NormalPos.bottom=478
+Class=LaTeXView
+Document=SemProjReport.tex
+
+[Frame5_View0,0]
+TopLine=0
+Cursor=791
+
+[Frame6]
+Flags=0
+ShowCmd=1
+MinPos.x=-1
+MinPos.y=-1
+MaxPos.x=-1
+MaxPos.y=-1
+NormalPos.left=4
+NormalPos.top=26
+NormalPos.right=1362
+NormalPos.bottom=478
 Class=BibTeXView
 Document=bibliography.bib
 
-[Frame4_View0,0]
-TopLine=54
-Cursor=2394
+[Frame6_View0,0]
+TopLine=15
+Cursor=431
 
 [SessionInfo]
-FrameCount=5
+FrameCount=7
 ActiveFrame=0
 
