@@ -16,11 +16,15 @@ and makes vibrate the liquid we find in it.
 The cochlea forms an interface between this mechanical vibration 
 and the neural signal that will go through the auditory nerve 
 (VII nerve on \autoref{fig:ear}).
-%\begin{figure*}[placement specifier] %* for 2 columns prob
-%... figure contents ...
-%
-%\end{figure}
-%http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+
+%put that one page before the page it should appear on :
+%http://www.andrewjpage.com/?archives/48-Figure-spanning-2-columns-in-Latex.html
+\begin{figure*}[ht]
+	\centering
+  \includegraphics[width=0.75\textwidth]{images/corti2-aud65-level.jpg}
+	\caption{Organ of Corti (\cite{AuditoryNeuroscience} p.65 )}
+	\label{fig:corti}
+\end{figure*}
 
 %\includegraphics[width=0.45\textwidth]{images/ear-aud52-level.jpg}
 
@@ -47,14 +51,6 @@ as you can see on \autoref{fig:ucochlea}.
 	\label{fig:ucochlea}
 \end{figure}
 
-%put that one page before the page it should appear on :
-%http://www.andrewjpage.com/?archives/48-Figure-spanning-2-columns-in-Latex.html
-\begin{figure*}[ht]
-	\centering
-  \includegraphics[width=0.75\textwidth]{images/corti2-aud65-level.jpg}
-	\caption{Organ of Corti (\cite{AuditoryNeuroscience} p.65 )}
-	\label{fig:corti}
-\end{figure*}
 
 A vibration that comes will try to propagate through the basilar membrane from 
 the upper compartment to the other. When doing that, it will not make all 
@@ -71,9 +67,21 @@ the characteristic frequency becomes lower.
 Throughout the cochlear tube, we have the organ of Corti, which is the interface
 about which an allusion was made above in the text. We will use \autoref{fig:corti} to illustrate our purpose.
 
-%\includegraphics[width=0.45\textwidth]{images/corti2-aud65-level.jpg} %do a better one : perhaps two parts ?
+%\includegraphics[width=0.45\textwidth]{images/corti2-aud65-level.jpg} %put before, so that then it is at right place
 
+\begin{figure}[h]
+	\centering
+  \includegraphics[width=0.45\textwidth]{images/hctransd-aud66-level.jpg}
+	\caption{Transduction (\cite{AuditoryNeuroscience} p.66 )}
+	\label{fig:transd}
+\end{figure}
 
+\begin{figure*}[ht]
+	\centering
+  \includegraphics[width=0.75\textwidth]{images/www-bme-rochester-edu-schematicDiagram-level.jpg}
+	\caption{Schema of the model (\cite{Model1} their fig. 2)}
+	\label{fig:modelsch}
+\end{figure*}
 
 The upper compartment of the cochlea is in fact in two parts separated by a membrane.
 The scala media, where we find the organ of Corti, has a higher 
@@ -90,11 +98,7 @@ This has as consequence that some glutamate is leaked in synapses %glutamate che
 between the IHC and the auditory nerve fibers, what excites these fibers 
 and make them perhaps have some spikes.
 
-%\includegraphics[width=0.45\textwidth]{images/hctransd-aud66-level.jpg}
+%\includegraphics[width=0.45\textwidth]{images/hctransd-aud66-level.jpg}%put before, so that then it is at right place
 
-\begin{figure}[h]
-	\centering
-  \includegraphics[width=0.45\textwidth]{images/hctransd-aud66-level.jpg}
-	\caption{Transduction (\cite{AuditoryNeuroscience} p.66 )}
-	\label{fig:transd}
-\end{figure}
+
+

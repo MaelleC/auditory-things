@@ -1,9 +1,27 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Avissar et~al.(2013)Avissar, Wittig, Saunders, and
+  Parsons]{AvissarPapier}
+M.~Avissar, J.~H. Wittig, Jr, J.~C. Saunders, and T.~D. Parsons.
+\newblock {R}efractoriness {E}nhances {T}emporal {C}oding by {A}uditory {N}erve
+  {F}ibers.
+\newblock \emph{The Journal of Neuroscience 33}, 18:\penalty0 7681--7690, 2013.
+
+\bibitem[Berry and Meister(1998)]{BerryMeister}
+M.~J. Berry and M.~Meister.
+\newblock {R}efractoriness and {N}eural {P}recision.
+\newblock \emph{The Journal of Neuroscience 18}, pages 2200--2211, 1998.
+
+\bibitem[Deger et~al.(2010)Deger, Helias, Cardanobile, Atay, and Rotter]{Deger}
+M.~Deger, M.~Helias, S.~Cardanobile, F.~M. Atay, and S.~Rotter.
+\newblock {N}onequilibrium dynamics of stochastic point process with
+  refractoriness.
+\newblock \emph{Physical Review E 82}, 2010.
 
 \bibitem[Schnupp et~al.(2011)Schnupp, Nelken, and King]{AuditoryNeuroscience}
 J.~Schnupp, I.~Nelken, and A.~King.
