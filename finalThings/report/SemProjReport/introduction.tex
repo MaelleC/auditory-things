@@ -1,12 +1,41 @@
 %%%%% this line is 80 chars wide, please don't make longer lines %%%%%%%%%%%%%%%
 The neuronal representation of sound is the result of the encoding of acoustic 
-signals done through the auditory system. The spike trains resulting from this 
-encoding are influenced, among other factors, by the refractory period of the 
-auditory nerve fibers. This project studied the effects of this neural property 
-on the resulting encoded spike trains.
+signals done through the peripheral auditory system. 
+The spike trains resulting from this encoding are influenced, 
+among other factors, by the refractory period of the 
+auditory nerve fibers. 
+We learn, for example, in \cite{AvissarPapier} that for the encoding of pure tones, 
+the time-spike precision depends in part on the ratio of  
+the refractory period to the stimulus period. 
+We also know from the research of Berry and Meister described 
+in \cite{BerryMeister} that the refractoriness of neurons may make their signals 
+more reliable for temporal precision. 
+Then, in \cite{Deger}, processes with refractoriness were studied 
+and predictions 
+were made for Fourier coefficients of response when the stimulus is a pure tone.%%
 
-For this aim, it has used a model of the auditory system 
-\cite{Model1, Model2, Model3} , in which the refractory period can be modified. 
+This project has for purpose to go further in the study the effects of 
+the refractoriness on the spike-trains resulting from encoding in the peripheral 
+auditory system.  
+First, it will study this effect on an ad-hoc computation made on spike trains,  
+the rate-modulation depth, for four kinds of stimuli.
+Then, it will see if their Fourier coefficients match the predictions
+of \cite{Deger}, for a modulated pure tone stimulus. 
+Since we have phase-locking for a modulated pure tone stimulus 
+as we have in the non-modulated one, we expect the same kind of effect of refractory 
+period on the response.
+
+
+
+%we have better entrainment of spike trains and often also better precision 
+%in time encoding. 
+%%%
+
+%This project studied the effects of this neural property 
+%on the resulting encoded spike trains. 
+
+For this aim, a model of the peripheral auditory system was used
+\cite{Model1, Model2, Model3}, in which the refractory period can be modified. 
 Virtual experiments were run on the two versions of the model and the resulting 
 spike trains were compared to see the influence of the refractory period. 
 Before going any deeper on the model, we should remind us some things 
