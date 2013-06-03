@@ -14,11 +14,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=model.tex
+Document=auditsys.tex
 
 [Frame0_View0,0]
-TopLine=24
-Cursor=2419
+TopLine=12
+Cursor=994
 
 [Frame1]
 Flags=0
@@ -32,11 +32,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=auditsys.tex
+Document=model.tex
 
 [Frame1_View0,0]
-TopLine=63
-Cursor=3857
+TopLine=84
+Cursor=5381
 
 [Frame2]
 Flags=0
@@ -50,11 +50,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=SemProjReport.tex
+Document=results.tex
 
 [Frame2_View0,0]
-TopLine=24
-Cursor=1112
+TopLine=0
+Cursor=116
 
 [Frame3]
 Flags=0
@@ -86,11 +86,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=results.tex
+Document=SemProjReport.tex
 
 [Frame4_View0,0]
-TopLine=0
-Cursor=116
+TopLine=24
+Cursor=1112
 
 [Frame5]
 Flags=0
@@ -125,7 +125,7 @@ Class=BibTeXView
 Document=bibliography.bib
 
 [Frame6_View0,0]
-TopLine=24
+TopLine=5
 Cursor=929
 
 [SessionInfo]

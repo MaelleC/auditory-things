@@ -1,6 +1,18 @@
-function [] = zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle)
+function [] = zgstim_psth(y, psth, psth_noref, reptime, nrep, tdres, gentitle)
 
 figure;
+
+subplot(2, 1, 1)
+
+ i = (0:length(psth)-1);
+ i = i * tdres;
+ m = [y zeros(1, length(i) - length(y))];
+ plot(i, m, 'k');
+ title(strcat(gentitle, ' : stimulus'));
+ xlabel('Time (sec)');
+ ylabel('Pressure (Pa)');
+
+subplot(2, 1, 2)
 x = (0:length(psth)-1);
 x = x * reptime/ (length(psth)-1);
 fact = tdres * nrep;
@@ -28,17 +40,3 @@ end
 legend('normal', noreflegend);
 xlabel('Time (sec)');
 ylabel('Firing rate (Hz)');
- 
-
-%2 lines :
-
-%p1:
-%plot(x, y1 ); 
-%hold on;
-%plot(x, y2); 
-%hold off;
-
-%p2:
-%plot(x, y1, x, y2);
-%http://www.mathworks.ch/ch/help/matlab/ref/colorspec.html
-
