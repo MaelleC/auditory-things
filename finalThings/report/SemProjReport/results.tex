@@ -2,6 +2,13 @@
 
 \subsection{Rate modulation depth}
 
+\begin{figure*}[ht]
+	\centering
+  \includegraphics[width=0.75\textwidth]{images/rmds9.jpg}
+	\caption{RMD values for different SR fibers and intensities}
+	\label{fig:rmds}
+\end{figure*}
+
 For the first part of the project, an ad-hoc calculation called rate 
 modulation depth (RMD) was used to see difference between encoding 
 of acoustic signal with and without absolute refractory period (ARP).
@@ -23,7 +30,11 @@ The noise for the noise step was composed of random normal variables divided
 by the square root of the bin size (gaussian white noise).
 The pure tone of the pure tone step was of 10kHz frequency.
 
-We computed then RMD like that : $(max - baseline) / baseline$, where max was 
+We computed then RMD like that : 
+
+$(max - baseline) / baseline$,
+
+where max was 
 the maximum of the periodogram of the encoded sounds when converted in 2 ms bins.
 The meaning of the baseline depended on the stimulus. 
 For the clicks it corresponded to the response of a 0 Pa pressure signal, 
@@ -49,12 +60,6 @@ period is bigger than the normal case, and it is the opposite for pure tones.
 
 %\includegraphics[width=0.45\textwidth]{images/rmds9.jpg}
 
-\begin{figure*}[ht]
-	\centering
-  \includegraphics[width=0.75\textwidth]{images/rmds9.jpg}
-	\caption{RMD values for different SR fibers and intensities}
-	\label{fig:rmds}
-\end{figure*}
 
 We probably can explain the first fact because first, we are in presence of a highly 
 non-linear system and, 
@@ -71,7 +76,7 @@ corresponds to what can % ....... ?
 
 In \cite{Deger}, predictions are done for norm and angle of Fourier coefficients of 
 response of processes with refractory period.
-In fact, the mathematical link between $1/d$, d being the absolute refractory period
+In fact, the mathematical link between $1/d$, $d$ being the absolute refractory period
 and the modulation frequency f is of first importance according to the predictions.
 
 %.......?
