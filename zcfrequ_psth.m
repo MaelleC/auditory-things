@@ -2,7 +2,7 @@ carrierfrequ = 1e4;
 cf = 1e3;
 
 %if 10 : 35'
-nr_use = 10;
+nr_use = 1;
 tdres = 1e-5;
  
 % 1334, 2667 Hz  
@@ -20,7 +20,7 @@ cihc = 1;
 fibertype = 2; 
 implnt = 0;
 
-nrep = 1; % must be one, since we use zuconcreteuse
+nrep = 100; %50 : 20 '
 reptime = 2;
 
 if doonlygraph == 0
