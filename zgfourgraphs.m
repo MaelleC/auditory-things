@@ -1,9 +1,17 @@
 function [] = zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle)
 
+ifprint = 1
+
 nbCol = 2;
 nbLig = 2;
 
-color = 'k';
+
+if ifprint == 1
+	color = 'k';
+else
+	color = 'b';
+end
+
 
 figure;
  %a = (0:length(y)-1);

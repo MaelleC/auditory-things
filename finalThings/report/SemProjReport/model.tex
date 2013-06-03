@@ -1,10 +1,8 @@
 %%%%% this line is 80 chars wide, please don't make longer lines %%%%%%%%%%%%%%%
-%mettre image, mais p-ê dans appendice
-%montrer images 4 graphs en colonne
 Let us speak now about the model of the peripheral auditory system from 
 \cite{Model1, Model2, Model3}, used to run experiments in this project. 
 
-I will not go into the details of the model, but I will speak more about the use of it. 
+We will not go into the details of the model, but we will speak more about the use of it. 
 You can see in \autoref{fig:modelsch} the schematic of the model.
 
 
@@ -47,7 +45,7 @@ we "test" with the stimulus, distinguished by their spontaneus rate (SR) :
 low, medium or high (low : $<$ 1 spike/s, medium : $<$ 18 spike/s, high: 20-50 spike/s, 
 according to \cite{AuditoryNeuroscience}). %82
 Finally, \texttt{implnt} is used to indicate the precision we want in the simulation 
-for some calculations in the model.
+for the power-law functions in the model.
 
 As an example of what kind of result the model can give,
 in \autoref{fig:g4tonestep} you can see some graphs that represents the steps of a 
@@ -66,7 +64,7 @@ was chosen.
 
 
 The first graph is a representation of one period of the stimulus, 
-sampled at 100'000 Hz (so with bins of 10ms), at 84dB.
+sampled at 100'000 Hz (so with bins of 0.01 ms size), at 84dB SPL.
 What was given to the model as \texttt{pin} was this period of 100 ms repeated 800
 times. The frequency of the pure tone is so high here (10 Hz) that we cannot see its sinusoid.
 On the second graph, you can see the IHC potential from the first function
@@ -78,7 +76,7 @@ The fourth graph represents the periodogram for the entire stimulus,
 computed with help of the PSTH given by the second function of the model.
 
 For the project, the code of the model has been modified to put to zero 
-the absolute refractory period of nerve fibers. 
+the absolute refractory period (ARP) of nerve fibers. 
 This transformation was done in the spike generator 
 part of the model (see in \autoref{fig:modelsch} the last step on the right).
 After that, the spike trains with and without this refractory period could be compared.
@@ -97,9 +95,11 @@ which is not modulated.
 	\label{fig:psthcomp}
 \end{figure} 
 
-On the first graph, you can see one period of the stimulus, a 1 kHz pure tone, at 84dB.
+On the first graph, you can see one period of the stimulus, 
+a 1 kHz pure tone, at 84dB SPL.
 The second graphs shows you the periodogram with and without absolute refractory period.
-We can see phase-locking for the two periodograms, as expected for a pure tone.
+We can see phase-locking for the two periodograms, so we see that the phase caracteristics 
+of nerve seems not to change when the refractory period changes.
 The simulation was done here with a medium SR nerve fiber, 
 with 1 kHz characteristic frequency and 100 ms bin size.
 We will see now the results of the project.

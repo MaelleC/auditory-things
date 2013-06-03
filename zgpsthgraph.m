@@ -1,5 +1,7 @@
 function [] = zgpsthgraph(psth, psth_noref, reptime, nrep, tdres, gentitle)
 
+ifprint = 1
+
 figure;
 x = (0:length(psth)-1);
 x = x * reptime/ (length(psth)-1);
@@ -8,11 +10,15 @@ y1 = psth/fact;
 y2 = psth_noref/fact;
 
 %http://www.mathworks.ch/ch/help/matlab/creating_plots/using-high-level-plotting-functions.html
-style1 = 'k-';
-style2 = 'g-';
 
-%style1 = 'b-';
-%style2 = 'g-';
+if ifprint == 1
+	style1 = 'k-';
+	style2 = 'g-';
+else
+	style1 = 'b-';
+	style2 = 'g-';
+end
+
 %plot(x, y1, style1, x, y2, style2);
 stairs(x, y1, style1);
 hold on;

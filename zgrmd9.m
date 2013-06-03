@@ -10,19 +10,21 @@ figure
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
+scfacts = [10,30,80, 5,10,20, 1,4,4];
+
 for nr_exp=1:1:9
+	if nr_exp == 3
+		showLeg = 1;
+	else
+		showLeg = 0;
+	end
+	
 
 	%valuevars, and noref = [rmd1, var1; rmd2, var2; rmd3, var3; rmd4, var4]
 	valuevars = [];
 	valuevars_noref = [];
 	
-	if fibertype == 1
-		thescfact = 20;
-	elseif fibertype == 2
-		thescfact = 10;
-	else
-		thescfact = 3;
-	end
+	thescfact = scfacts(nr_exp);
 	
 	for ndiff_exp=1:1:4
 		if ndiff_exp == 1
@@ -98,7 +100,7 @@ for nr_exp=1:1:9
 	
 	
 	subplot(3, 3, nr_exp);
-	zgbarrmd2(valuevars, valuevars_noref, fibertype, pressure_exp, 0, thescfact);
+	zgbarrmd2(valuevars, valuevars_noref, fibertype, pressure_exp, 0, thescfact, showLeg);
 
 	if (nr_exp == 3 || nr_exp == 6)
 		if fibertype == 1

@@ -1,13 +1,21 @@
 function [] = zgstim_psth(y, psth, psth_noref, reptime, nrep, tdres, gentitle)
 
+ifprint = 1
+
 figure;
 
 subplot(2, 1, 1)
 
+if ifprint == 1
+	color = 'k';
+else
+	color = 'b';
+end
+
  i = (0:length(psth)-1);
  i = i * tdres;
  m = [y zeros(1, length(i) - length(y))];
- plot(i, m, 'k');
+ plot(i, m, color);
  title(strcat(gentitle, ' : stimulus'));
  xlabel('Time (sec)');
  ylabel('Pressure (Pa)');
@@ -20,11 +28,14 @@ y1 = psth/fact;
 y2 = psth_noref/fact;
 
 %http://www.mathworks.ch/ch/help/matlab/creating_plots/using-high-level-plotting-functions.html
-style1 = 'k-';
-style2 = 'g-';
+if ifprint == 1
+	style1 = 'k-';
+	style2 = 'g-';
+else
+	style1 = 'b-';
+	style2 = 'g-';
+end
 
-%style1 = 'b-';
-%style2 = 'g-';
 %plot(x, y1, style1, x, y2, style2);
 stairs(x, y1, style1);
 hold on;

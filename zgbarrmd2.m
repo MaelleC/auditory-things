@@ -1,4 +1,4 @@
-function [] = zgbarrmd(valuevars, valuevars_noref, fibertype, pressurexp, ismean, scfact)
+function [] = zgbarrmd(valuevars, valuevars_noref, fibertype, pressurexp, ismean, scfact, showLeg)
 
 %valuevars, and noref = [rmd1, var1; rmd2, var2; rmd3, var3; rmd4, var4]
 test = 0;
@@ -14,14 +14,44 @@ else
 end
 
 %or put the decibel value ?
-t = [t, ', fb ', num2str(fibertype), ', press. 6.32 exp(', num2str(pressurexp), ') Pa'];
+%low_pressure_exp = -7; %49db
+%middle_pressure_exp = -3; %84db
+%high_pressure_exp = 1; %120db
+
+if pressurexp == -7
+	decibel = 49;
+elseif pressurexp == -3
+	decibel = 84;
+elseif pressurexp == 1
+	decibel = 120;
+else
+	error('Unexpected pressurexp');
+end
+
+if fibertype == 1
+	sr = 'low';
+elseif fibertype == 2
+	sr = 'medium';
+else
+	sr = 'high';
+end
+t = [t, ', ', sr, ' SR, ', num2str(decibel), 'dB'];
+
+%t = [t, ', fb ', num2str(fibertype), ', press. 6.32 exp(', num2str(pressurexp), ') Pa'];
 title(t);
 xlabel('Stimulus type');
 ylabel('RMD');
-leg = legend('normal', 'noref');
-set(leg, 'Location', 'NorthEast');
+if showLeg == 1
+	leg = legend('normal', 'noref');
+	set(leg, 'Location', 'NorthEast');
+end
 
-thetext = [' /' num2str(scfact)];
+if round(num2str(scfact)) == 1
+	thetext = '';
+else
+	thetext = [' /' num2str(scfact)];
+end
+
 %set(gca, 'XTickLabel', {['click' thetext], ['pure tone st.' thetext], 'noise st.', 'pure tone'});
 set(gca, 'XTickLabel', {['c.' thetext], ['p.t.st.' thetext], 'n.st.', 'p.t.'});
 
