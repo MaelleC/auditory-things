@@ -1,9 +1,10 @@
 %%%%% this line is 80 chars wide, please don't make longer lines %%%%%%%%%%%%%%%
-Let us speak now about the model of the peripheral auditory system from 
-\cite{Model1, Model2, Model3}, used to run experiments in this project. 
+Let us now intriduce the model of the peripheral auditory system
+\cite{Model1, Model2, Model3}, which was used to run experiments in this project. 
 
-We will not go into the details of the model, but we will speak more about the use of it. 
+We will not go into the details of the model, but from the use of it. 
 You can see in \autoref{fig:modelsch} the schematic of the model.
+It is a complicated cascade of linear and non-linears filters.
 
 
 %\includegraphics[width=0.45\textwidth]{images/www-bme-rochester-edu-schematicDiagram-level.jpg} %put in auditsys
@@ -21,16 +22,16 @@ like specified in the "catmodel.m" file of the model.
 Let us go deeper into what each parameter and return value of these functions means.
 
 The first function, \texttt{catmodel\_IHC}, takes as parameters 
-a stimulus vector (\texttt{pin}, in Pa), sampled at some sampling rate 
+a sound pressure stimulus vector (\texttt{pin}, in Pa), sampled at some sampling rate 
 that is the inverse of the bin size specified in \texttt{tdres}, and 
 the characteristic frequency (\texttt{CF}, in Hz) 
 of the IHC and for which we want to know the potential 
 (\texttt{vihc}, in Volt) when stimulated. 
-This last thing (\texttt{vihc}) is what is returned by the function. 
+This latterg (\texttt{vihc}) is what is returned by the function. 
 \texttt{reptime} is the time for one repetition of the stimulus, 
 and \texttt{nrep} is the number of repetions we want to be run. 
-\texttt{cohc} and \texttt{cihc} represents the damages on respectively 
-the outer hair cells and inner hair cells in the simulation.
+The parameters \texttt{cohc} and \texttt{cihc} represents the damages on respectively 
+the outer hair cells and inner hair cells in the simulation (not used in this project).
 \texttt{vihc} will contain the IHC potential for every repetition 
 after the function has been run.
 
@@ -42,8 +43,9 @@ The PSTH will be computed according to the specified number of repetitions (\tex
 The synapse output of the IHC (\texttt{synout}) is also returned by the function.
 The \texttt{fibertype} parameter is used to tell the model which nerve fiber type
 we "test" with the stimulus, distinguished by their spontaneus rate (SR) : 
-low, medium or high (low : $<$ 1 spike/s, medium : $<$ 18 spike/s, high: 20-50 spike/s, 
-according to \cite{AuditoryNeuroscience}). %82
+low, medium or high. 
+%(low : $<$ 1 spike/s, medium : $<$ 18 spike/s, high: 20-50 spike/s, 
+%according to \cite{AuditoryNeuroscience}). %82
 Finally, \texttt{implnt} is used to indicate the precision we want in the simulation 
 for the power-law functions in the model.
 
@@ -64,15 +66,15 @@ was chosen.
 
 The first graph is a representation of one period of the stimulus, 
 sampled at 100'000 Hz (so with bins of 0.01 ms size), at 84dB SPL.
-What was given to the model as \texttt{pin} was this period of 100 ms repeated 800
-times. The frequency of the pure tone is so high here (10 Hz) that we cannot see its sinusoid.
+The stimulus, as given to the model as \texttt{pin}, was this period of 100 ms repeated 800
+times : a pure tone step. 
+The frequency of the pure tone is so high here (10 kHz) that we cannot see its sinusoid.
 On the second graph, you can see the IHC potential from the first function
-in response of the last period of the stimulus 
+in response of the last repetition of the stimulus 
 (with dependencies on the preceding periods included).
-The third graph shows you a part of the synapse output given by \texttt{catmodel\_Synapse}, 
+The third graph shows a part of the synapse output given by \texttt{catmodel\_Synapse}, 
 for the same period as for the potential of IHC.
-The fourth graph represents the periodogram for the entire stimulus, 
-computed with help of the PSTH given by the second function of the model.
+The fourth graph represents the peristimulus time histogram (PSTH).
 
 For the project, the code of the model has been modified to put to zero 
 the absolute refractory period (ARP) of nerve fibers. 
@@ -94,23 +96,17 @@ which is not modulated.
 	\label{fig:psthcomp}
 \end{figure} 
 
-On the first graph, you can see one period of the stimulus, 
+In \autoref{fig:psthcomp}, first graph, you can see one period of the stimulus, 
 a 1 kHz pure tone, at 84dB SPL.
-The second graphs shows you the periodogram with and without absolute refractory period.
-We can see phase-locking for the two periodograms, so we see that the phase caracteristics 
-of nerve seems not to change when the refractory period changes.
-The simulation was done here with a medium SR nerve fiber, 
+The second graphs shows the periodogram with and without absolute refractory period.
+We can see phase-locking for the two periodograms : spikes occur preferentially 
+for a specific phase of the stimulus cycle. We see that here the phase caracteristics 
+ seems not to change when the refractory period changes.
+This simulation was done with a medium SR nerve fiber, 
 with 1 kHz characteristic frequency and 100 ms bin size.
-We will see now the results of the project.
+We will see now describe the results of the project.
 
 %\begin{lstlisting}[caption={},captionpos=b]{}
 %\end{lstlisting}
 
 %\texttt{tdres} 
-
- 
-
-
-
-
-

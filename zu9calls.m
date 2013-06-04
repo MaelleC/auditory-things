@@ -12,19 +12,21 @@ cohc = 1;
 cihc = 1;
 implnt = 0;
 
-nr_use = 10;
+nr_use = 10;% change that !!
 
 fibertype = 1;
 pressure_exp = low_pressure_exp;
 
 %pour fourier : faire tous les 4 premiers
-doclick = 0;%f2,p-7
-dotonestep = 0;%f1,p-7 f1,p-3 f2,p-7
+doclick = 1;%f2,p-7
+dotonestep = 1;%f1,p-7 f1,p-3 f2,p-7
 donoisestep = 0;% f1,p-7
 dotone = 0;%ok
 
 
 for nr_exp=1:1:1% !! change that !
+
+fibertype = 2; % !!! change that !
 	nr_exp
 	pressure_exp
 	fibertype

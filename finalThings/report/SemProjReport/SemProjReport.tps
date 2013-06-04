@@ -14,11 +14,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=conclusion.tex
+Document=SemProjReport.tex
 
 [Frame0_View0,0]
-TopLine=0
-Cursor=0
+TopLine=12
+Cursor=541
 
 [Frame1]
 Flags=0
@@ -32,11 +32,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=results.tex
+Document=auditsys.tex
 
 [Frame1_View0,0]
-TopLine=113
-Cursor=6922
+TopLine=12
+Cursor=3609
 
 [Frame2]
 Flags=0
@@ -50,11 +50,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=model.tex
+Document=introduction.tex
 
 [Frame2_View0,0]
-TopLine=51
-Cursor=1183
+TopLine=4
+Cursor=1266
 
 [Frame3]
 Flags=0
@@ -68,11 +68,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=auditsys.tex
+Document=results.tex
 
 [Frame3_View0,0]
-TopLine=66
-Cursor=1621
+TopLine=0
+Cursor=3806
 
 [Frame4]
 Flags=0
@@ -86,11 +86,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=introduction.tex
+Document=model.tex
 
 [Frame4_View0,0]
-TopLine=3
-Cursor=1115
+TopLine=81
+Cursor=3097
 
 [Frame5]
 Flags=0
@@ -104,11 +104,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=SemProjReport.tex
+Document=conclusion.tex
 
 [Frame5_View0,0]
-TopLine=9
-Cursor=559
+TopLine=0
+Cursor=130
 
 [Frame6]
 Flags=0
