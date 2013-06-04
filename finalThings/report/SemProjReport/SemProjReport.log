@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.1.11)  4 JUN 2013 15:59
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.1.11)  4 JUN 2013 18:31
 entering extended mode
 **SemProjReport.tex
 
@@ -336,12 +336,12 @@ Underfull \vbox (badness 1412) has occurred while \output is active []
 mages/corti2-aud65-level.jpg> <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThi
 ngs/report/SemProjReport/images/cochlea-aud55-level.jpg> <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProje
 ct/auditory-things/finalThings/report/SemProjReport/images/hctransd-aud66-level.jpg>]
-Overfull \hbox (6.08656pt too wide) in paragraph at lines 15--16
+Overfull \hbox (6.08656pt too wide) in paragraph at lines 16--17
 []\OT1/cmtt/m/n/10.95 vihc = catmodel[]IHC(pin, CF, nrep, tdres,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 []\OT1/cmtt/m/n/10.95 [synout, psth] = catmodel[]Synapse(vihc,
  []
 
@@ -349,10 +349,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<images/g4-tonestep-column2.jpg, id=100, 380.42125pt x 694.595pt>
-File: images/g4-tonestep-column2.jpg Graphic file (type jpg)
- <use images/g4-tonestep-column2.jpg>
-Package pdftex.def Info: images/g4-tonestep-column2.jpg used on input line 62.
+<images/g4-tonestep-column3.jpg, id=102, 380.42125pt x 694.595pt>
+File: images/g4-tonestep-column3.jpg Graphic file (type jpg)
+ <use images/g4-tonestep-column3.jpg>
+Package pdftex.def Info: images/g4-tonestep-column3.jpg used on input line 63.
 (pdftex.def)             Requested size: 226.79846pt x 414.11055pt.
 
 
@@ -362,26 +362,26 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/SemProjReport/i
-mages/www-bme-rochester-edu-schematicDiagram-level.jpg>] <images/stim-psth-puretone-bw2.jpg, id=115, 563.10374pt x 421.5
+mages/www-bme-rochester-edu-schematicDiagram-level.jpg>] <images/stim-psth-puretone-bw2.jpg, id=117, 563.10374pt x 421.5
 75pt>
 File: images/stim-psth-puretone-bw2.jpg Graphic file (type jpg)
  <use images/stim-psth-puretone-bw2.jpg>
-Package pdftex.def Info: images/stim-psth-puretone-bw2.jpg used on input line 94.
+Package pdftex.def Info: images/stim-psth-puretone-bw2.jpg used on input line 95.
 (pdftex.def)             Requested size: 252.0pt x 188.66489pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 94--95
+Overfull \hbox (12.0pt too wide) in paragraph at lines 95--96
  [][] 
  []
 
 )
 ("C:\Users\Maelle\Documents\Epfl cours\Semestre 6\zSemesterProject\auditory-things\finalThings\report\SemProjReport\resu
-lts.tex" <images/rmds9.png, id=117, 700.86844pt x 493.845pt>
+lts.tex" <images/rmds9.png, id=119, 700.86844pt x 493.845pt>
 File: images/rmds9.png Graphic file (type png)
  <use images/rmds9.png>
 Package pdftex.def Info: images/rmds9.png used on input line 7.
 (pdftex.def)             Requested size: 504.0pt x 355.1386pt.
  [4 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/SemProjReport/i
-mages/g4-tonestep-column2.jpg> <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalTh
+mages/g4-tonestep-column3.jpg> <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalTh
 ings/report/SemProjReport/images/stim-psth-puretone-bw2.jpg>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -393,18 +393,18 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 43.
  [5 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/SemProjReport/i
 mages/rmds9.png>]
-Underfull \vbox (badness 7397) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<images/Deger2010.pdf, id=139, page=4, 609.78517pt x 813.0456pt>
+<images/Deger2010.pdf, id=141, page=4, 609.78517pt x 813.0456pt>
 File: images/Deger2010.pdf Graphic file (type pdf)
  <use images/Deger2010.pdf, page 4>
-Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 129.
+Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 125.
 (pdftex.def)             Requested size: 133.49875pt x 50.1875pt.
 File: images/Deger2010.pdf Graphic file (type pdf)
 
 <use images/Deger2010.pdf, page 4>
-Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 136.
+Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 132.
 (pdftex.def)             Requested size: 133.49875pt x 50.1875pt.
 )
 ("C:\Users\Maelle\Documents\Epfl cours\Semestre 6\zSemesterProject\auditory-things\finalThings\report\SemProjReport\conc
@@ -431,22 +431,23 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
 Here is how much of TeX's memory you used:
  6846 strings out of 493921
  102947 string characters out of 3147279
- 186998 words of memory out of 3000000
+ 187103 words of memory out of 3000000
  10034 multiletter control sequences out of 15000+200000
  23530 words of font info for 46 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  31i,6n,34p,564b,444s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SemProjReport.pdf (7 pages, 1853872 bytes).
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SemProjReport.pdf (7 pages, 1878287 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
+ 293 PDF objects out of 1000 (max. 8388607)
  35 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -10,7 +10,8 @@ It is a complicated cascade of linear and non-linears filters.
 %\includegraphics[width=0.45\textwidth]{images/www-bme-rochester-edu-schematicDiagram-level.jpg} %put in auditsys
 
 From the user point of view, the model consists of two main functions 
-that are called "catmodel\_IHC" and "catmodel\_Synapse". Their prototype is
+that are called "catmodel\_IHC" and "catmodel\_Synapse".
+ Their prototype is, in MatLab language,
 
 \texttt{vihc = catmodel\_IHC(pin, CF, nrep, tdres, reptime, cohc, cihc);}
 
@@ -55,11 +56,11 @@ simulation of a pure tone step stimulus.
 A nerve fiber with high SR with a 1 kHz characteristic frequency 
 was chosen.
 
-%\includegraphics[width=0.45\textwidth]{images/g4-tonestep-column2.jpg}
+%\includegraphics[width=0.45\textwidth]{images/g4-tonestep-column3.jpg}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.45\textwidth]{images/g4-tonestep-column2.jpg}
+	\includegraphics[width=0.45\textwidth]{images/g4-tonestep-column3.jpg}
 	\caption{Example of model results (\cite{Model1})}
 	\label{fig:g4tonestep}
 \end{figure}
@@ -79,7 +80,7 @@ The fourth graph represents the peristimulus time histogram (PSTH).
 For the project, the code of the model has been modified to put to zero 
 the absolute refractory period (ARP) of nerve fibers. 
 This transformation was done in the spike generator 
-part of the model (see in \autoref{fig:modelsch} the last step on the right).
+part of the model (see in \autoref{fig:modelsch} the step pointed by the arrow).
 After that, the spike trains with and without this refractory period could be compared.
 
 In \autoref{fig:psthcomp} you can see an example of a graph

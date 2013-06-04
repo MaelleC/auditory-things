@@ -1,6 +1,6 @@
 function [] = zgfourgraphs(y, vihc, psth, synout, reptime, nrep, tdres, gentitle)
 
-ifprint = 1
+ifprint = 0
 
 nbCol = 2;
 nbLig = 2;
@@ -41,7 +41,8 @@ figure;
  plot(c, synout, color);
  title(strcat(gentitle, ' : synapse output'));
  xlabel('Time (sec)');
- %ylabel('Spikes');
+ ylabel('Release rate (1/sec)');
+ axis([0 0.1 0 12000]); % !! for some, not ok
  
  c = (0:length(psth)-1);
  c = c * tdres;
@@ -49,6 +50,10 @@ figure;
  subplot(nbLig,nbCol,4);
  fact = tdres * nrep;
  plot(c, psth/fact, color);
- title(strcat(gentitle, ' : periodogram'));
+ title(strcat(gentitle, ' : PSTH'));% !! for some, should be periodogram
  xlabel('Time (sec)');
  ylabel('Firing rate (Hz)');
+ axis([0 0.1 0 5000]); % !! for some, not ok
+ 
+ %http://www.mathworks.ch/ch/help/matlab/ref/axis.html
+ % axis([xmin xmax ymin ymax])
