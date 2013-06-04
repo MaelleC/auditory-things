@@ -16,7 +16,12 @@ of acoustic signal with and without absolute refractory period (ARP).
 Four kinds of experiments where run and the means of RMD was calculated 
 for each of them, 
 with each type of nerve fiber, and three different intensities : 
-49dB SPL, 84dB SPL and 120dB SPL to have an overall view of effects. 
+49dB SPL, 84dB SPL and 120dB SPL (49 dB : average home, rainfall, 84 dB : busy road, 120 dB : threshold of discomfort, possible hearing loss) 
+% TODO
+%http://www.sengpielaudio.com/TableOfSoundPressureLevels.htm; citate ?
+%http://noiselimiters.co.uk/buy/noise-levels-what-is-noise.php
+
+to have an overall view of effects.
 For every experience, the bin size was 0.01 ms, the characteristic frequency was 1 kHz, 
 there was no damage on IHC or OHC, and we told the model to use approximations 
 for power-law function calculations. No noise was added to the stimuli.
@@ -37,14 +42,18 @@ $(max - baseline) / baseline$,
 where max was 
 the maximum of the periodogram of the encoded sounds when converted in 2 ms bins.
 The meaning of the baseline depended on the stimulus. 
-For the clicks it corresponded to the response of a 0 Pa pressure signal, 
-for the noise step it was the value of the periodogram just before the second 
-half of the period, in 10 ms bins. 
-The baseline for the pure tone step was the mean of value of periodogram 
+For the clicks it corresponded to the mean of response to a 0 Pa pressure signal,
+ with same number of repetitions than for the click stimulus, to be coherent. 
+The noise step has as baseline the value of the periodogram just before the second 
+half of the period, so just before the surprise of the sudden change in the stimulus,
+ in 10 ms bins. 
+The baseline for the pure tone step was the mean of periodogram values
 of a response to a pure tone of the frequency used for the stimulus (10 kHz),
-after the IHC were saturated and have no time to be depolarized. 
-It was seen in experiments that 0.02 ms were sufficient to attain saturation,
-so for the baseline the first 0.02 ms were not used.
+after the IHC were saturated, what could be seen in the potential, 
+which stays constant because it has not the time 
+to be depolarized between two periods of the stimulus. 
+The periodogram was computed from the same number of repetitions than for the stimulus, 
+like for click baseline, to be coherent with the stimulus.
 For the pure tone, the baseline was chosen as the mean of the periodogram.
 When baselines for clicks and for pure tone step where computed, 
 we took attention to the fact that the number of repetitions of stimulus
@@ -58,30 +67,72 @@ each decibel value experimented we have similar values in this sense :
 for clicks, pure tone steps and noise steps, the RMD without absolute refractory
 period is bigger than the normal case, and it is the opposite for pure tones.
 
+
+%TODO
 %\includegraphics[width=0.45\textwidth]{images/rmds9.jpg}
 
 
 We probably can explain the first fact because first, we are in presence of a highly 
 non-linear system and, 
 secondly, the three stimuli for which the RMD without ARP is bigger than with 
-ARP are stimuli with sudden changes. 
+ARP, are stimuli with sudden changes. 
 In fact, the click can be seen as an approximation of a delta function, 
+which induces a peak in the periodogram just after it, 
 and for the steps we have suddenly a signal for some time and suddenly, 
-we have no more of it, and that repeatedly. % so ...... ?
+we have no more of it, and that repeatedly, and at each of these changes, 
+we have a peak in the periodogram. 
+These peaks are then the ones which are used in the RMD computation as the maximum.
+In consequence, this RMD result can be interpreted like that : the absolute refractory period 
+seems to be able to lower the intensity of the strong response transient induced 
+when these kind of sudden changes happens.
 
+%% ! TODO
 The second fact, the fact that RMD is lower for pure tones without ARP, 
-corresponds to what can % ....... ?
+corresponds to what can be explain by the fact that we have less 
+interactions between frequencies in non-linear system,
+and with ARP, we have a more non-linear system.
 
 \subsection{Response according to frequencies of modulated pure tones}
 
-In \cite{Deger}, predictions are done for norm and angle of Fourier coefficients of 
-response of processes with refractory period.
-In fact, the mathematical link between $1/d$, $d$ being the absolute refractory period
-and the modulation frequency f is of first importance according to the predictions.
+In \cite{Deger}, predictions are done for norm and angle of the Fourier coefficients 
+(harmonics 0, 1, 2 and 3) of response of stochastic point processes with refractory period,
+under modulated pure tone stimuli, with various modulation frequencies.
 
-%.......?
+In fact, the mathematical link between $d$, $d$ being the absolute refractory period,
+and the modulation frequency f is of first importance according to the predictions,
+ as you can see in \autoref{fig:prednorm} (prediction for the norm of Fourier coefficient) and 
+\autoref{fig:predangle} (prediction for its angle). Here d was 80 ms. 
+In the graphs, the black ligns are for harmonic 0, dark gray for 1, mid gray for 2, light gray for 3.
 
-%image from paper ?
+%\includegraphics[page=...,viewport=llx lly urx ury,clip]{pdf-file}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics*[page=4,viewport=308 567 441 617]{images/Deger2010.pdf} %x, y, x, y
+	\caption{Predictions for norm (\cite{Deger}  their fig. 3 (c))}
+	\label{fig:prednorm}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics*[page=4,viewport=433 567 566 617]{images/Deger2010.pdf} %x, y, x, y
+	\caption{Predictions for angle (\cite{Deger} their fig. 3 (d))}
+	\label{fig:predangle}
+\end{figure}
+%http://tex.stackexchange.com/questions/40658/extracting-image-from-pdf-to-use-in-latex-document
+%pdfimages [options] <PDF-file> <image-root>, on Linux
+%http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Pictures
+%http://ctan.org/pkg/graphicx
+
+To see if the predictions are coherent with the model of the peripheral auditory 
+system, experiments with modulated pure tone were run. 
+The carrier frequency used was 10 kHz, the modulation frequency varied from 50 Hz to 4000 Hz
+with steps of 50 Hz. We chose nerve fibers with medium SR, 
+and the stimuli were of intensity 84 dB.
+
+
+
+
 
 
 
