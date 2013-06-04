@@ -20,7 +20,7 @@ cihc = 1;
 fibertype = 2; 
 implnt = 0;
 
-nrep = 100; %50 : 20 '
+nrep = 100; %50 : 20', 100: 36' 
 reptime = 2;
 
 if doonlygraph == 0

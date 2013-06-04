@@ -18,11 +18,11 @@ and
 \texttt{[synout, psth] = catmodel\_Synapse(vihc, CF, nrep, tdres, fibertype, implnt);}
 
 like specified in the "catmodel.m" file of the model. 
-Let us go deeper into what each parameters and return value of these functions mean.
+Let us go deeper into what each parameter and return value of these functions means.
 
 The first function, \texttt{catmodel\_IHC}, takes as parameters 
-a stimulus vector (\texttt{pin}, in Pa), sampled at some sampling rate that corresponds 
-to the bin size \texttt{tdres} (i.e. is the inverse of it), and 
+a stimulus vector (\texttt{pin}, in Pa), sampled at some sampling rate 
+that is the inverse of the bin size specified in \texttt{tdres}, and 
 the characteristic frequency (\texttt{CF}, in Hz) 
 of the IHC and for which we want to know the potential 
 (\texttt{vihc}, in Volt) when stimulated. 
@@ -61,7 +61,6 @@ was chosen.
 	\caption{Example of model results (\cite{Model1})}
 	\label{fig:g4tonestep}
 \end{figure}
-
 
 The first graph is a representation of one period of the stimulus, 
 sampled at 100'000 Hz (so with bins of 0.01 ms size), at 84dB SPL.
