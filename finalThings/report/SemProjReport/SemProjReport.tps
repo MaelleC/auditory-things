@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=results.tex
 
 [Frame0_View0,0]
-TopLine=62
-Cursor=4112
+TopLine=138
+Cursor=8129
 
 [Frame1]
 Flags=0
@@ -35,8 +35,8 @@ Class=LaTeXView
 Document=model.tex
 
 [Frame1_View0,0]
-TopLine=24
-Cursor=2577
+TopLine=29
+Cursor=1440
 
 [Frame2]
 Flags=0
@@ -53,8 +53,8 @@ Class=LaTeXView
 Document=auditsys.tex
 
 [Frame2_View0,0]
-TopLine=57
-Cursor=3357
+TopLine=66
+Cursor=3586
 
 [Frame3]
 Flags=0
@@ -68,11 +68,11 @@ NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
 Class=LaTeXView
-Document=introduction.tex
+Document=conclusion.tex
 
 [Frame3_View0,0]
-TopLine=12
-Cursor=931
+TopLine=0
+Cursor=347
 
 [Frame4]
 Flags=0
@@ -85,12 +85,12 @@ NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
-Class=LaTeXView
-Document=conclusion.tex
+Class=BibTeXView
+Document=bibliography.bib
 
 [Frame4_View0,0]
-TopLine=0
-Cursor=212
+TopLine=5
+Cursor=929
 
 [Frame5]
 Flags=0
@@ -121,12 +121,12 @@ NormalPos.left=4
 NormalPos.top=26
 NormalPos.right=1362
 NormalPos.bottom=438
-Class=BibTeXView
-Document=bibliography.bib
+Class=LaTeXView
+Document=introduction.tex
 
 [Frame6_View0,0]
-TopLine=5
-Cursor=929
+TopLine=12
+Cursor=931
 
 [SessionInfo]
 FrameCount=7

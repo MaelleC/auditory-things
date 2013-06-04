@@ -40,7 +40,7 @@ The pure tone of the pure tone step was of 10kHz frequency.
 
 The rate modulation depth (RMD) was defined as 
 
-\begin{equation}\label{rmdformula} RMD = (max - baseline) / baseline\end{equation},
+\begin{equation}\label{rmdformula} RMD = (max - baseline) / baseline\end{equation}
 %http://www.math.uiuc.edu/~hildebr/tex/displays.html
 
 where max was 
@@ -140,16 +140,18 @@ system, experiments with modulated pure tone were run.
 The carrier frequency used was 10 kHz, the modulation frequency varied from 50 Hz to 4000 Hz
 with steps of 50 Hz. We chose nerve fibers with medium SR, characteristic frequency 1 kHz 
 and the stimuli were of intensity 84 dB.
-The stimulis $x\left(t\right)$ were calculated like that :
+The stimulis $y\left(t\right)$ were calculated like that :
 
-\begin{equation}\label{freqstim} A \left(1+m\right)\odot x\end{equation}, %TODO
+\begin{equation}\label{freqstim} y\left(t\right) = A \left(1+sin \left(2 \pi t f_m \right)\right) sin \left(2 \pi t f_c \right)\end{equation} %TODO %\odot
 where $A$ is the amplitude,
+$f_m$ is the modulation frequency,
+$f_c$ is the carrier frequency.
 
  
 Two seconds of each stimulus were run, 
-then, second half of the PSTH was kept and its $\beta_k$ Fourier coefficients were calculated according the following formula.
+then, the second half of the PSTH was kept and its $\beta_k$ Fourier coefficients were calculated according the following formula.
 
-\begin{equation}\label{bkformula} \beta_k = \frac{1}{T} \sum_{j= 0}^{\frac{T}{\Delta t}} e^{i \omega k j \Delta t} z \left( j \Delta t\right)\Delta t\end{equation},
+\begin{equation}\label{bkformula} \beta_k = \frac{1}{T} \sum_{j= 0}^{\frac{T}{\Delta t}} e^{i \omega k j \Delta t} z \left( j \Delta t\right)\Delta t\end{equation}
 
 where $T$ is the period (1 second here), %1sec pour tous les stimulis. expliquer ?
  $\omega$ is $\frac{2\pi}{T}$,

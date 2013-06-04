@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.1.11)  4 JUN 2013 18:31
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.1.11)  4 JUN 2013 19:49
 entering extended mode
 **SemProjReport.tex
 
@@ -393,25 +393,25 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 43.
  [5 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/SemProjReport/i
 mages/rmds9.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7397) has occurred while \output is active []
 
 
 <images/Deger2010.pdf, id=141, page=4, 609.78517pt x 813.0456pt>
 File: images/Deger2010.pdf Graphic file (type pdf)
  <use images/Deger2010.pdf, page 4>
-Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 125.
+Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 122.
 (pdftex.def)             Requested size: 133.49875pt x 50.1875pt.
 File: images/Deger2010.pdf Graphic file (type pdf)
 
 <use images/Deger2010.pdf, page 4>
-Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 132.
+Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 129.
 (pdftex.def)             Requested size: 133.49875pt x 50.1875pt.
 )
 ("C:\Users\Maelle\Documents\Epfl cours\Semestre 6\zSemesterProject\auditory-things\finalThings\report\SemProjReport\conc
-lusion.tex")
+lusion.tex" [6 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/SemP
+rojReport/images/Deger2010.pdf>])
 ("C:\Users\Maelle\Documents\Epfl cours\Semestre 6\zSemesterProject\auditory-things\finalThings\report\SemProjReport\SemP
-rojReport.bbl" [6 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/S
-emProjReport/images/Deger2010.pdf>]
+rojReport.bbl"
 Missing character: There is no – in font ptmr7t!
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
@@ -429,13 +429,13 @@ Package rerunfilecheck Info: File `SemProjReport.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 6846 strings out of 493921
- 102947 string characters out of 3147279
- 187103 words of memory out of 3000000
- 10034 multiletter control sequences out of 15000+200000
+ 6848 strings out of 493921
+ 102969 string characters out of 3147279
+ 187186 words of memory out of 3000000
+ 10035 multiletter control sequences out of 15000+200000
  23530 words of font info for 46 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 31i,6n,34p,564b,444s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,6n,34p,564b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fil
@@ -445,9 +445,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pro
 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SemProjReport.pdf (7 pages, 1878287 bytes).
+Output written on SemProjReport.pdf (7 pages, 1881275 bytes).
 PDF statistics:
- 293 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 36 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
