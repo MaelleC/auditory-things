@@ -73,6 +73,7 @@ For the pure tone, the baseline was chosen as the mean of the periodogram.
 
 \autoref{fig:rmds} displays RMD values as obtained in our virtual experiments, 
 for several fiber types and sound intensities. 
+%TODO
 Error bars for noise steps and pure tones are standard deviation of the mean of the RMDs calculated for each repetition of the stimulus. 
 For clicks and pure tone step, the error bars are of value $\sigma_{< RMD >}$. To find this value, the standard deviation of the means of $m$ and $b$ were calculated and then propagated for the division with \autoref{errorprop}.
 
