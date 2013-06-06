@@ -5,7 +5,7 @@
 \begin{figure*}[ht]
 	\centering
   \includegraphics[width=\textwidth]{images/rmds9.png} %or jpg ?; TODO have a better one, and crop it with Paint, see if ok when printed
-	\caption{RMD values for different SR fibers and intensitie. Experiment labels are abbreviated 
+	\caption{RMD values for different SR fibers and intensities. Experiment labels are abbreviated 
 	(c. for click, p. t. st. for pure tone step, n. st. for noise step, p. t. for pure tone).
 	Some RMD results had to be scaled to fit properly in the graph and the scaling factor is written in the legend of the x-axis.
 	From left to right, we have sound intensities : 49 dB, 84 dB, 120 dB,
@@ -20,7 +20,7 @@ of acoustic signal with and without an absolute refractory period (ARP) of the a
 Four kinds of experiments where run and the average RMD was calculated 
 for each of them, 
 with each type of nerve fiber, and three different sound intensities : 
-49dB SPL, 84dB SPL and 120dB SPL (49 dB : average home, rainfall; 84 dB : busy road; 120 dB : threshold of discomfort, possible hearing loss) 
+49 dB SPL, 84 dB SPL and 120 dB SPL (49 dB : average home, rainfall; 84 dB : busy road; 120 dB : threshold of discomfort, possible hearing loss) 
 % TODO
 %http://www.sengpielaudio.com/TableOfSoundPressureLevels.htm; citate ?
 %http://noiselimiters.co.uk/buy/noise-levels-what-is-noise.php
@@ -36,7 +36,7 @@ The two step stimuli had a period of 100 ms and in the first half of the period
 there was noise or pure tone signal, and in the second half there was 0 Pa as pressure.
 The noise for the noise step was composed of random normal variables divided 
 by the square root of the bin size (gaussian white noise).
-The pure tone of the pure tone step was of 10kHz frequency.
+The pure tone of the pure tone step was of 10 kHz frequency.
 
 The rate modulation depth (RMD) was defined as 
 
@@ -56,7 +56,7 @@ For the clicks it corresponded to the mean response to a 0 Pa pressure signal,
 For the noise step, the baseline is the value of the periodogram just before the second 
 half of the period, so just before the stimulus onset,
  in 10 ms bins. 
-The baseline for the pure tone step was the mean of periodogram values
+The baseline for the pure tone step was the mean of PSTH values
 of a response to a pure tone of the frequency used for the stimulus (10 kHz),
 after the IHC were saturated (as could be seen in the potential, 
 which stays constant because it has not the time 
@@ -64,7 +64,7 @@ to be depolarized between two periods of the stimulus).
 The periodogram was computed from the same number of repetitions as for the pure tone step stimulus.
 For the pure tone, the baseline was chosen as the mean of the periodogram.
 For pure tones and noise steps, for each repetition the RMD was calculated and the final result is the mean, whereas
-for clicks and pure tone steps $b$ and $m$ where found separately and their means where used for the RMD calculation.
+for clicks and pure tone steps $b$ and $m$ where found separately and their means where then used for the RMD calculation.
 %When baselines for clicks and for pure tone step where computed, 
 %we took attention to the fact that the number of repetitions of stimulus
 %for the used periodogram should correspond to the one for the periodogram used for 
@@ -79,7 +79,7 @@ For clicks and pure tone step, the error bars are of value $\sigma_{< RMD >}$. T
 
 \begin{equation}\label{errorprop}\frac{\sigma_{< RMD >}}{|<RMD>|}= \sqrt{\left(\frac{\sigma_{< m >}}{< m >}\right)^2 + \left(\frac{\sigma_{< b >}}{< b >}\right)^2} \end{equation}
  
-As displayed on this figure, overall effects are these :
+As displayed on \autoref{fig:rmds}, overall effects are these:
 for clicks, pure tone steps and noise steps, the RMD without absolute refractory
 period is bigger than for the normal case, and it is the opposite for pure tones.
 
@@ -113,13 +113,13 @@ and the effects of ARP are strong enough to be seen.
 
 In \cite{Deger}, predictions are made for the absolute value (norm) and angle of the Fourier coefficients 
 (harmonics 0, 1, 2 and 3) of response of stochastic point processes with refractory period,
-to pure tone stimuli, as a function of the frequency. 
+to sinusoidal stimuli, as a function of the frequency. 
 This case roughly corresponds to a tone with a high frequency carrier function, 
 modulated by a low frequency oscillation. 
 In fact, the inner hair cells will not be able to follow the carrier frequency 
 and they will excite the nerve with a synaptic release rate dominated by the modulation.
 
-In fact, the product of the absolute refractory period $d$ and the modulation frequency $f$,
+The product of the absolute refractory period $d$ and the modulation frequency $f$,
 determines the response spectrum, as shown in \autoref{fig:prednorm} (norm of Fourier coefficient) and 
 \autoref{fig:predangle} (angle). Here $d$ was 80 ms. 
 In the graphs, the black ligns are for harmonic 0, dark gray for 1, mid gray for 2, light gray for 3.
@@ -137,7 +137,7 @@ $\beta_k$ is the k harmonic of the output.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics*[page=4,viewport=433 567 566 617]{images/Deger2010.pdf} %x, y, x, y
+	\includegraphics*[page=4,viewport=433 567 566 619]{images/Deger2010.pdf} %x, y, x, y
 	\caption{Predictions for angle (\cite{Deger} their fig. 3 (d))}
 	\label{fig:predangle}
 \end{figure}
@@ -156,11 +156,11 @@ $\beta_k$ is the k harmonic of the output.
 To see if the predictions are coherent with the model of the peripheral auditory 
 system, experiments with modulated pure tone were run. 
 The carrier frequency used was 10 kHz, the modulation frequency varied from 50 Hz to 4000 Hz
-with steps of 50 Hz. We chose nerve fibers with medium SR, characteristic frequency 1 kHz 
+with steps of 50 Hz. We chose nerve fibers with medium SR, characteristic frequency 5 kHz 
 and the stimuli were of intensity 84 dB.
 The stimulis $y\left(t\right)$ were calculated like that :
 
-\begin{equation}\label{freqstim} y\left(t\right) = A \left(1+sin \left(2 \pi t f_m \right)\right) sin \left(2 \pi t f_c \right)\end{equation} %TODO %\odot
+\begin{equation}\label{freqstim} y\left(t\right) = A \left(1+0.5sin \left(2 \pi t f_m \right)\right) sin \left(2 \pi t f_c \right)\end{equation} %TODO %\odot
 where $A$ is the amplitude,
 $f_m$ is the modulation frequency,
 $f_c$ is the carrier frequency.
@@ -180,7 +180,7 @@ and $k$ is the number of the caculated harmonic.
 In the model, the absolute refractory period is of 0.75 ms, so mutiples of $1/d$ are near 1333 Hz and 2666 Hz in our experiments.
 Sadly, not enough data could be yet calculated to see if the results match the predictions of 
 \cite{Deger}. 
-As you can see in \autoref{fig:norm1}, after 10'400 repetitions, the results are too noisy to be able to conclude anything. 
+As you can see in \autoref{fig:norm1}, after 10'400 repetitions, the results are too noisy to be able to conclude anything. %TODO nr rep
 The graph shows the norm of the first harmonic. The other norms and angles graphs are also chaotic, so we do not show them.
 
 %put frequ graph, even if to say : too noisy to see anything

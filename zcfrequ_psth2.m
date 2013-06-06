@@ -1,5 +1,5 @@
 carrierfrequ = 1e4;
-cf = 1e3;
+cf = 5 * 1e3;
 
 %if 10 : 35'
 nr_use = 1;
@@ -17,7 +17,7 @@ pressure_exp = -7;
 pressure = -6.32 * exp(pressure_exp);
 cohc = 1;
 cihc = 1;
-fibertype = 2; 
+fibertype = 3; 
 implnt = 0;
 
 nrep = 100; %50 : 20', 100: 36' 
@@ -36,7 +36,7 @@ if doonlygraph == 0
 		x = sin(2*pi*t*carrierfrequ);
 		
 		m = sin(2*pi*t*fm);
-		M=1;%modulation
+		M=0.5;%modulation
 		 
 		y = (1+M*m).*x;
 		 
@@ -47,7 +47,7 @@ if doonlygraph == 0
 		plot(y);
 		end
 		
-		zcfrequ_psth_nrep(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, fm);
+		zcfrequ_psth_nrep2(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, fm);
 	end
 else
 	ifprint = 0
@@ -69,7 +69,7 @@ else
 				for index=1:1:length(frequs)
 					frequ = frequs(index);
 					
-					filename = 'zsavef/frequ_psth';
+					filename = 'zsavef/frequ_psth2';
 					%gives us  'bpsth', 'bpsth_noref' 'repstot'
 					load(zcfilename(filename, num2str(frequ), fibertype, pressure_exp));
 					
@@ -117,7 +117,7 @@ else
 		for index=10:10:length(frequs)
 			frequ = frequs(index)
 					
-			filename = 'zsavef/frequ_psth';
+			filename = 'zsavef/frequ_psth2';
 			%gives us  'bpsth', 'bpsth_noref' 'repstot'
 			load(zcfilename(filename, num2str(frequ), fibertype, pressure_exp));
 			
