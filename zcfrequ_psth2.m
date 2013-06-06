@@ -20,11 +20,13 @@ cihc = 1;
 fibertype = 3; 
 implnt = 0;
 
-nrep = 100; %50 : 20', 100: 36' 
+nrep = 200; %50 : 20', 100: 36' if all frequencies ; 60 :: 200 : 51 ' % !!!!!!
 reptime = 2;
 
+endfrequ = 60; %
+
 if doonlygraph == 0
-	for index=1:1:length(frequs) %not draw everything
+	for index=1:1:endfrequ
 	
 		index
 		
@@ -66,7 +68,7 @@ else
 				normal = [];
 				noref = [];
 				
-				for index=1:1:length(frequs)
+				for index=1:1:endfrequ
 					frequ = frequs(index);
 					
 					filename = 'zsavef/frequ_psth2';
@@ -96,16 +98,16 @@ else
 				corrStr = [' fourier ' num2str(calc)];
 				
 				figure
-				plot(frequs, normal, style1, frequs, noref, style2);
+				plot(frequs(1 : endfrequ), normal, style1, frequs(1: endfrequ), noref, style2);
 				title([graphf corrStr])
 				legend('normal', 'no ref');
 				xlabel('Frequ Hz');
 				ylabel([graphf corrStr]);
 					
 				figure
-				plot(frequs, normal ./ noref, style1);
+				plot(frequs(1: endfrequ), normal ./ noref, style1);
 				title([graphf corrStr '/' corrStr ' noref'])
-				xlabel('Frequ Hz');
+				xlabel('Modulation frequency (Hz)');
 				ylabel([graphf corrStr '/' corrStr ' noref']);
 				
 			end	
@@ -114,7 +116,7 @@ else
 		repstot
 	
 	else
-		for index=10:10:length(frequs)
+		for index=10:10:endfrequ
 			frequ = frequs(index)
 					
 			filename = 'zsavef/frequ_psth2';

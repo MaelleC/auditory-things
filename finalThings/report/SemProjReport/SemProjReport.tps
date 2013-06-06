@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=results.tex
 
 [Frame0_View0,0]
-TopLine=153
-Cursor=8961
+TopLine=56
+Cursor=3457
 
 [Frame1]
 Flags=0
@@ -125,7 +125,7 @@ Class=BibTeXView
 Document=bibliography.bib
 
 [Frame6_View0,0]
-TopLine=5
+TopLine=0
 Cursor=784
 
 [SessionInfo]
