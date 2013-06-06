@@ -40,13 +40,13 @@ The pure tone of the pure tone step was of 10kHz frequency.
 
 The rate modulation depth (RMD) was defined as 
 
-\begin{equation}\label{rmdformula1} RMD =  < \frac{m}{b} - 1 >\end{equation}
+\begin{equation}\label{rmdformula1} RMD =  \frac{m - b}{b}\end{equation}
 %http://www.math.uiuc.edu/~hildebr/tex/displays.html
 
-for pure tone steps and noise steps, and as
-
-\begin{equation}\label{rmdformula2} RMD = \frac{< m >}{< b >} - 1\end{equation}
-
+%for pure tone steps and noise steps, and as
+%
+%\begin{equation}\label{rmdformula2} RMD = \frac{< m >}{< b >} - 1\end{equation}
+%
 for clicks and pure tone steps,
 where $m$ was 
 the maximum of the periodogram of the encoded sounds when converted in 2 ms bins.
@@ -61,9 +61,10 @@ of a response to a pure tone of the frequency used for the stimulus (10 kHz),
 after the IHC were saturated (as could be seen in the potential, 
 which stays constant because it has not the time 
 to be depolarized between two periods of the stimulus). 
-The periodogram was computed from the same number of repetitions as for the other stimuli, 
-like for the click baseline.
+The periodogram was computed from the same number of repetitions as for the pure tone step stimulus.
 For the pure tone, the baseline was chosen as the mean of the periodogram.
+For pure tones and noise steps, for each repetition the RMD was calculated and the final result is the mean, whereas
+for clicks and pure tone steps $b$ and $m$ where found separately and their means where used for the RMD calculation.
 %When baselines for clicks and for pure tone step where computed, 
 %we took attention to the fact that the number of repetitions of stimulus
 %for the used periodogram should correspond to the one for the periodogram used for 
@@ -76,7 +77,7 @@ for several fiber types and sound intensities.
 Error bars for noise steps and pure tones are standard deviation of the mean of the RMDs calculated for each repetition of the stimulus. 
 For clicks and pure tone step, the error bars are of value $\sigma_{< RMD >}$. To find this value, the standard deviation of the means of $m$ and $b$ were calculated and then propagated for the division with \autoref{errorprop}.
 
-\begin{equation}\label{errorprop}\frac{\sigma_{< RMD >}}{|<RMD>|}= \sqrt{\left(\frac{\sigma_{< m >}}{< m >}\right)^2 + \left(\frac{\sigma_{< b >}}{< b >}\right)^2}  \end{equation}
+\begin{equation}\label{errorprop}\frac{\sigma_{< RMD >}}{|<RMD>|}= \sqrt{\left(\frac{\sigma_{< m >}}{< m >}\right)^2 + \left(\frac{\sigma_{< b >}}{< b >}\right)^2} \end{equation}
  
 As displayed on this figure, overall effects are these :
 for clicks, pure tone steps and noise steps, the RMD without absolute refractory
@@ -145,6 +146,13 @@ $\beta_k$ is the k harmonic of the output.
 %http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Pictures
 %http://ctan.org/pkg/graphicx
 
+\begin{figure*}[ht]
+	\centering
+  \includegraphics[width=\textwidth]{images/frequs-norm1.jpg}
+	\caption{First harmonic of response to a modulated pure tone, in function of modulation frequency}
+	\label{fig:norm1}
+\end{figure*}
+
 To see if the predictions are coherent with the model of the peripheral auditory 
 system, experiments with modulated pure tone were run. 
 The carrier frequency used was 10 kHz, the modulation frequency varied from 50 Hz to 4000 Hz
@@ -169,10 +177,16 @@ $\Delta t$ is the bin size (0.01ms),
 $z\left(t\right)$ is the PSTH,
 and $k$ is the number of the caculated harmonic.
 
+In the model, the absolute refractory period is of 0.75 ms, so mutiples of $1/d$ are near 1333 Hz and 2666 Hz in our experiments.
 Sadly, not enough data could be yet calculated to see if the results match the predictions of 
-\cite{Deger}.
+\cite{Deger}. 
+As you can see in \autoref{fig:norm1}, after 10'400 repetitions, the results are too noisy to be able to conclude anything. 
+The graph shows the norm of the first harmonic. The other norms and angles graphs are also chaotic, so we do not show them.
 
 %put frequ graph, even if to say : too noisy to see anything
+%\includegraphics[width=\textwidth]{images/frequs-norm1.jpg}
+
+
 
 
 
