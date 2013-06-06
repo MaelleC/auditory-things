@@ -10,8 +10,8 @@ tdres = 1e-5;
 
 frequs = [50 *(1 : 80)];
 
-doonlygraph = 1
-fouriergraph = 1
+doonlygraph = 0
+fouriergraph = 0
 
 pressure_exp = -7;
 pressure = -6.32 * exp(pressure_exp);
