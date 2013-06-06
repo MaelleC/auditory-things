@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.1.11)  6 JUN 2013 06:59
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.1.11)  6 JUN 2013 08:48
 entering extended mode
 **SemProjReport.tex
 
@@ -456,42 +456,13 @@ File: images/Deger2010.pdf Graphic file (type pdf)
 <use images/Deger2010.pdf, page 4>
 Package pdftex.def Info: images/Deger2010.pdf, page4 used on input line 140.
 (pdftex.def)             Requested size: 133.49875pt x 50.1875pt.
-
-
-LaTeX Warning: File `images/frequs-norm1.jpg' not found on input line 151.
-
-
-! Package pdftex.def Error: File `images/frequs-norm1.jpg' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-\GenericError  ...                                
-                                                  \endgroup 
-<argument> ...for this image.\MessageBreak \@ehc }
-                                                  \Gin@drafttrue \fi 
-\ltx@secondoftwo #1#2->#2
-                         
-\Gread@jpg ...\GPT@IsBitmaptrue \Gread@pdftex {#1}
-                                                  \GPT@IsBitmapfalse 
-\Gin@setfile ...se #1\fi \endcsname {\Gin@base #2}
-                                                  \else \Gin@nosize {#3}\fi ...
-...
-l.151 ...idth=\textwidth]{images/frequs-norm1.jpg}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[6 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/SemProjReport/im
-ages/Deger2010.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7])
+ <images/norm1.jpg, id=153, 1372.12625pt x 654.445pt>
+File: images/norm1.jpg Graphic file (type jpg)
+ <use images/norm1.jpg>
+Package pdftex.def Info: images/norm1.jpg used on input line 151.
+(pdftex.def)             Requested size: 504.0pt x 240.38332pt.
+ [6 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/SemProjReport/i
+mages/Deger2010.pdf>])
 ("C:\Users\Maelle\Documents\Epfl cours\Semestre 6\zSemesterProject\auditory-things\finalThings\report\SemProjReport\conc
 lusion.tex")
 ("C:\Users\Maelle\Documents\Epfl cours\Semestre 6\zSemesterProject\auditory-things\finalThings\report\SemProjReport\SemP
@@ -499,9 +470,8 @@ rojReport.bbl"
 Missing character: There is no – in font ptmr7t!
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
- [8
-
-]
+ [7 <C:/Users/Maelle/Documents/Epfl cours/Semestre 6/zSemesterProject/auditory-things/finalThings/report/SemProjReport/i
+mages/norm1.jpg>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
 
 ("C:\Users\Maelle\Documents\Epfl cours\Semestre 6\zSemesterProject\auditory-things\finalThings\report\SemProjReport\SemP
@@ -513,10 +483,10 @@ Package rerunfilecheck Info: File `SemProjReport.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 7431 strings out of 493921
- 109519 string characters out of 3147279
- 197751 words of memory out of 3000000
- 10596 multiletter control sequences out of 15000+200000
+ 7434 strings out of 493921
+ 109593 string characters out of 3147279
+ 197759 words of memory out of 3000000
+ 10600 multiletter control sequences out of 15000+200000
  24204 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  31i,6n,34p,571b,322s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -529,9 +499,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pro
 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SemProjReport.pdf (8 pages, 1887655 bytes).
+Output written on SemProjReport.pdf (7 pages, 1966443 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 114 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 302 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

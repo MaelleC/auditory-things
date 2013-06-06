@@ -10,8 +10,8 @@ tdres = 1e-5;
 
 frequs = [50 *(1 : 80)];
 
-doonlygraph = 0
-fouriergraph = 0
+doonlygraph = 1
+fouriergraph = 1
 
 pressure_exp = -7;
 pressure = -6.32 * exp(pressure_exp);
@@ -50,6 +50,15 @@ if doonlygraph == 0
 		zcfrequ_psth_nrep(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, fm);
 	end
 else
+	ifprint = 0
+	if ifprint == 1
+		style1 = 'k';
+		style2 = 'g';
+	else
+		style1 = 'b';
+		style2 = 'g';
+	end
+	
 	if fouriergraph == 1
 		for takeAbs=0:1:1
 			for calc=0:1:3
@@ -87,14 +96,14 @@ else
 				corrStr = [' fourier ' num2str(calc)];
 				
 				figure
-				plot(frequs, normal, 'b', frequs, noref, 'g');
+				plot(frequs, normal, style1, frequs, noref, style2);
 				title([graphf corrStr])
 				legend('normal', 'no ref');
 				xlabel('Frequ Hz');
 				ylabel([graphf corrStr]);
 					
 				figure
-				plot(frequs, normal ./ noref);
+				plot(frequs, normal ./ noref, style1);
 				title([graphf corrStr '/' corrStr ' noref'])
 				xlabel('Frequ Hz');
 				ylabel([graphf corrStr '/' corrStr ' noref']);
