@@ -17,8 +17,8 @@ Class=LaTeXView
 Document=results.tex
 
 [Frame0_View0,0]
-TopLine=56
-Cursor=3457
+TopLine=162
+Cursor=9905
 
 [Frame1]
 Flags=0

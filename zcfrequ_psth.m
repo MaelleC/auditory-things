@@ -10,8 +10,8 @@ tdres = 1e-5;
 
 frequs = [50 *(1 : 80)];
 
-doonlygraph = 0
-fouriergraph = 0
+doonlygraph = 1
+fouriergraph = 1
 
 pressure_exp = -7;
 pressure = -6.32 * exp(pressure_exp);
@@ -50,7 +50,7 @@ if doonlygraph == 0
 		zcfrequ_psth_nrep(y, cf, nrep, tdres, reptime, cohc, cihc, fibertype, implnt, nr_use, pressure_exp, fm);
 	end
 else
-	ifprint = 0
+	ifprint = 1
 	if ifprint == 1
 		style1 = 'k';
 		style2 = 'g';
@@ -99,7 +99,7 @@ else
 				plot(frequs, normal, style1, frequs, noref, style2);
 				title([graphf corrStr])
 				legend('normal', 'no ref');
-				xlabel('Frequ Hz');
+				xlabel('Modulation frequency (Hz)');
 				ylabel([graphf corrStr]);
 					
 				figure
